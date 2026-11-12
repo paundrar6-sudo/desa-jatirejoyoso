@@ -1,0 +1,224 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="page-banner">
+    <div class="container">
+        <span class="banner-badge">Profil Pemerintah & Sejarah</span>
+        <h1 class="page-header-title">Profil Desa Jatirejoyoso</h1>
+        <p class="page-header-subtitle">Mengenal lebih dekat sejarah, visi misi, potensi wilayah, video dokumenter, dan jajaran aparatur Desa Jatirejoyoso.</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <!-- Sejarah & Visi Misi -->
+        <div class="grid-2-col">
+            <div class="content-box">
+                <div class="box-icon"><i class="fa-solid fa-scroll"></i></div>
+                <h2>Sejarah Singkat Desa</h2>
+                <p>Desa Jatirejoyoso memiliki riwayat panjang yang sarat dengan nilai-nilai kerukunan dan kerja keras. Nama <em>Jatirejoyoso</em> berakar dari harapan luhur para sesepuh pendahulu:</p>
+                <ul class="custom-list">
+                    <li><strong>Jati:</strong> Melambangkan keteguhan iman, kejujuran, dan watak yang kokoh bak pohon jati.</li>
+                    <li><strong>Rejo:</strong> Berarti kemakmuran, kesuburan, dan kesejahteraan hidup bagi setiap warga.</li>
+                    <li><strong>Yoso:</strong> Bermakna membangun, berupaya, dan menata masa depan bersama.</li>
+                </ul>
+                <p>Seiring waktu, Jatirejoyoso bertransformasi dari kawasan agraris tradisional menjadi desa yang dinamis, terbuka terhadap teknologi, namun tetap menjunjung tinggi gotong royong dan adat istiadat.</p>
+            </div>
+
+            <div class="content-box highlight-box">
+                <div class="box-icon"><i class="fa-solid fa-bullseye"></i></div>
+                <h2>Visi & Misi Desa</h2>
+                <div class="vision-quote">
+                    <blockquote>
+                        "Terwujudnya Desa Jatirejoyoso yang Maju, Sejahtera, Berkarakter, dan Berdaya Saing melalui Pemanfaatan Sumber Daya Berkelanjutan dan Pelayanan Prima."
+                    </blockquote>
+                </div>
+                <h3>Misi Utama:</h3>
+                <ol class="custom-numbered-list">
+                    <li>Meningkatkan kualitas tata kelola pemerintahan yang transparan, akuntabel, dan berbasis teknologi digital.</li>
+                    <li>Mengembangkan potensi pertanian, peternakan, dan UMKM berbasis ekonomi kerakyatan.</li>
+                    <li>Meningkatkan kualitas sarana dan prasarana dasar, jalan desa, dan jaringan irigasi.</li>
+                    <li>Mewujudkan masyarakat yang sehat, cerdas, berakhlak mulia, dan berkeadilan sosial.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- ====================================================================
+             VIDEO PROFIL & SHORT MOVIE DESA JATIREJOYOSO
+             ==================================================================== -->
+        <div class="video-showcase-section mt-5">
+            <div class="section-header text-center">
+                <span class="sub-heading">DOKUMENTER & POTENSI WILAYAH</span>
+                <h2 class="section-title">Video Profil & Short Movie Desa</h2>
+                <p class="section-desc">Saksikan keindahan alam, denyut kehidupan warga, dan kemajuan pembangunan Desa Jatirejoyoso melalui tayangan video resmi di bawah ini.</p>
+            </div>
+
+            <div class="video-player-container">
+                <!-- Mode Pemutar: Video File Lokal / Link Video -->
+                <div class="video-wrapper" id="villageVideoWrapper">
+                    <!-- HTML5 Local Video Player dengan Poster Thumbnail -->
+                    <video id="villageLocalVideo" controls poster="{{ url_for('static', filename='videos/video-thumbnail.svg') }}" preload="metadata">
+                        <source src="{{ url_for('static', filename='videos/profil-desa.mp4') }}" type="video/mp4">
+                        <source src="{{ url_for('static', filename='videos/short-movie-jatirejoyoso.mp4') }}" type="video/mp4">
+                        Browser Anda tidak mendukung pemutar video HTML5.
+                    </video>
+
+                    <!-- Overlay Placeholder Jika Video Belum Dimainkan -->
+                    <div class="video-play-overlay" id="videoPlayOverlay">
+                        <button class="btn-play-pulse" id="btnPlayVideo" aria-label="Putar Video Profil">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                        <span class="video-duration-badge"><i class="fa-solid fa-film"></i> Short Movie Dokumenter</span>
+                    </div>
+                </div>
+
+                <div class="video-meta-bar">
+                    <div class="video-meta-info">
+                        <h3><i class="fa-solid fa-circle-play text-primary"></i> Short Movie: Pesona & Potensi Jatirejoyoso</h3>
+                        <p>Dokumentasi resmi Pemerintah Desa Jatirejoyoso. Menampilkan bentang alam persawahan, geliat UMKM, serta pelayanan masyarakat terpadu.</p>
+                    </div>
+                    <div class="video-actions">
+                        <button class="btn btn-sm btn-outline" id="btnToggleYouTube" style="color: var(--primary-dark); border-color: var(--primary);">
+                            <i class="fa-brands fa-youtube text-danger"></i> Putar via YouTube Link
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Input / Embed Modal YouTube jika ingin memutar dari link eksternal -->
+                <div class="youtube-embed-box" id="youtubeEmbedBox" style="display: none;">
+                    <div class="yt-header">
+                        <span><i class="fa-brands fa-youtube text-danger"></i> Tonton melalui Tautan YouTube:</span>
+                        <button class="btn-close-yt" id="btnCloseYT">&times;</button>
+                    </div>
+                    <div class="yt-iframe-wrap">
+                        <iframe id="ytIframe" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=0" title="Video Profil Desa Jatirejoyoso" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====================================================================
+             STRUKTUR ORGANISASI PEMERINTAHAN DESA (> 5 ORANG DENGAN EFEK POP-UP HOVER)
+             ==================================================================== -->
+        <div class="team-section mt-5">
+            <div class="section-header text-center">
+                <span class="sub-heading">STRUKTUR ORGANISASI & APARATUR</span>
+                <h2 class="section-title">Pemerintah Desa Jatirejoyoso</h2>
+                <p class="section-desc">Aparatur desa yang siap melayani dengan integritas. Gerakkan kursor ke kartu aparatur untuk melihat profil secara fokus:</p>
+            </div>
+
+            <!-- Spotlight Hover Container: Kartu yang terkena kursor Pop-Up, yang lain Stay & Dimmed -->
+            <div class="team-grid team-spotlight-grid" id="teamSpotlightGrid">
+                
+                <!-- 1. Kepala Desa -->
+                <div class="team-card team-spotlight-card" data-person="kades">
+                    <div class="avatar-photo-wrap">
+                        <img src="{{ url_for('static', filename='foto/kades.svg') }}" alt="Foto Kepala Desa Bambang Triyono" class="avatar-photo" onerror="this.src='{{ url_for('static', filename='foto/kades.svg') }}'">
+                        <span class="avatar-badge-pin"><i class="fa-solid fa-crown"></i></span>
+                    </div>
+                    <h3 class="team-name">Bambang Triyono, S.P.</h3>
+                    <span class="role">Kepala Desa (Kades)</span>
+                    <p class="team-desc">Memimpin penyelenggaraan pemerintahan desa, pembinaan kemasyarakatan, serta pemberdayaan potensi desa Jatirejoyoso.</p>
+                    <div class="team-footer-meta">
+                        <span class="meta-tag"><i class="fa-solid fa-id-badge"></i> Pemimpin Desa</span>
+                    </div>
+                </div>
+
+                <!-- 2. Sekretaris Desa -->
+                <div class="team-card team-spotlight-card" data-person="sekdes">
+                    <div class="avatar-photo-wrap">
+                        <img src="{{ url_for('static', filename='foto/sekdes.svg') }}" alt="Foto Sekretaris Desa Siti Rahmawati" class="avatar-photo" onerror="this.src='{{ url_for('static', filename='foto/sekdes.svg') }}'">
+                        <span class="avatar-badge-pin"><i class="fa-solid fa-star"></i></span>
+                    </div>
+                    <h3 class="team-name">Siti Rahmawati, S.E.</h3>
+                    <span class="role">Sekretaris Desa (Sekdes)</span>
+                    <p class="team-desc">Mengkoordinasikan administrasi umum, penyusunan rancangan peraturan desa, keuangan, serta perencanaan pembangunan.</p>
+                    <div class="team-footer-meta">
+                        <span class="meta-tag"><i class="fa-solid fa-file-pen"></i> Administrasi Utama</span>
+                    </div>
+                </div>
+
+                <!-- 3. Kaur Keuangan -->
+                <div class="team-card team-spotlight-card">
+                    <div class="avatar-photo-wrap">
+                        <img src="{{ url_for('static', filename='foto/aparatur-pria.svg') }}" alt="Foto Kaur Keuangan Agus Purnomo" class="avatar-photo">
+                    </div>
+                    <h3 class="team-name">Agus Purnomo</h3>
+                    <span class="role">Kaur Keuangan</span>
+                    <p class="team-desc">Melaksanakan penatausahaan kas desa, penyusunan laporan pertanggungjawaban APBDes, serta perbendaharaan desa.</p>
+                    <div class="team-footer-meta">
+                        <span class="meta-tag"><i class="fa-solid fa-wallet"></i> Pengelolaan Keuangan</span>
+                    </div>
+                </div>
+
+                <!-- 4. Kaur Perencanaan -->
+                <div class="team-card team-spotlight-card">
+                    <div class="avatar-photo-wrap">
+                        <img src="{{ url_for('static', filename='foto/aparatur-wanita.svg') }}" alt="Foto Kaur Perencanaan Dewi Lestari" class="avatar-photo">
+                    </div>
+                    <h3 class="team-name">Dewi Lestari, S.Kom.</h3>
+                    <span class="role">Kaur Perencanaan</span>
+                    <p class="team-desc">Menyusun dokumen perencanaan desa (RPJMDes & RKPDes), memfasilitasi musrenbang, serta inventarisasi data pembangunan.</p>
+                    <div class="team-footer-meta">
+                        <span class="meta-tag"><i class="fa-solid fa-chart-line"></i> Perencanaan Pembangunan</span>
+                    </div>
+                </div>
+
+                <!-- 5. Kaur Tata Usaha & Umum -->
+                <div class="team-card team-spotlight-card">
+                    <div class="avatar-photo-wrap">
+                        <img src="{{ url_for('static', filename='foto/aparatur-pria.svg') }}" alt="Foto Kaur TU Eko Prasetyo" class="avatar-photo">
+                    </div>
+                    <h3 class="team-name">Eko Prasetyo</h3>
+                    <span class="role">Kaur Tata Usaha & Umum</span>
+                    <p class="team-desc">Mengelola persuratan dinas, kearsipan dokumen penting desa, penyediaan logistik kantor, serta ekspedisi administrasi.</p>
+                    <div class="team-footer-meta">
+                        <span class="meta-tag"><i class="fa-solid fa-envelope-open-text"></i> Tata Usaha & Logistik</span>
+                    </div>
+                </div>
+
+                <!-- 6. Kasi Pemerintahan -->
+                <div class="team-card team-spotlight-card">
+                    <div class="avatar-photo-wrap">
+                        <img src="{{ url_for('static', filename='foto/aparatur-pria.svg') }}" alt="Foto Kasi Pemerintahan Rahmat Hidayat" class="avatar-photo">
+                    </div>
+                    <h3 class="team-name">Rahmat Hidayat</h3>
+                    <span class="role">Kasi Pemerintahan</span>
+                    <p class="team-desc">Melaksanakan pembinaan ketenteraman ketertiban, administrasi kependudukan, pertanahan, serta penataan batas wilayah.</p>
+                    <div class="team-footer-meta">
+                        <span class="meta-tag"><i class="fa-solid fa-landmark"></i> Tata Praja & Wilayah</span>
+                    </div>
+                </div>
+
+                <!-- 7. Kasi Kesejahteraan (Kesra) -->
+                <div class="team-card team-spotlight-card">
+                    <div class="avatar-photo-wrap">
+                        <img src="{{ url_for('static', filename='foto/aparatur-wanita.svg') }}" alt="Foto Kasi Kesra Indah Permatasari" class="avatar-photo">
+                    </div>
+                    <h3 class="team-name">Indah Permatasari, S.Sos.</h3>
+                    <span class="role">Kasi Kesejahteraan (Kesra)</span>
+                    <p class="team-desc">Mengkoordinasikan pembangunan sarana fisik, pendampingan kesehatan, posyandu, keagamaan, serta bantuan sosial masyarakat.</p>
+                    <div class="team-footer-meta">
+                        <span class="meta-tag"><i class="fa-solid fa-hand-holding-heart"></i> Sosial & Kesejahteraan</span>
+                    </div>
+                </div>
+
+                <!-- 8. Kasi Pelayanan -->
+                <div class="team-card team-spotlight-card">
+                    <div class="avatar-photo-wrap">
+                        <img src="{{ url_for('static', filename='foto/aparatur-pria.svg') }}" alt="Foto Kasi Pelayanan Hadi Santoso" class="avatar-photo">
+                    </div>
+                    <h3 class="team-name">Hadi Santoso</h3>
+                    <span class="role">Kasi Pelayanan</span>
+                    <p class="team-desc">Memberikan pelayanan prima administrasi surat keterangan warga, pembinaan seni budaya, kepemudaan, dan olahraga desa.</p>
+                    <div class="team-footer-meta">
+                        <span class="meta-tag"><i class="fa-solid fa-headset"></i> Pelayanan Masyarakat</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

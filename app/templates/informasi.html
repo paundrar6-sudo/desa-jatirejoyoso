@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="page-banner">
+    <div class="container">
+        <span class="banner-badge">Pusat Berita & Pengumuman</span>
+        <h1 class="page-header-title">Informasi & Kabar Desa</h1>
+        <p class="page-header-subtitle">Dapatkan informasi terkini, agenda pembangunan, dan pengumuman resmi Desa Jatirejoyoso.</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <!-- Filter Kategori Ringkas -->
+        <div class="category-pills">
+            <button class="pill active">Semua</button>
+            <button class="pill">Pengumuman</button>
+            <button class="pill">Kegiatan Warga</button>
+            <button class="pill">Pembangunan</button>
+            <button class="pill">Bansos & Pertanian</button>
+        </div>
+
+        <div class="news-list-grid">
+            <article class="news-card-horizontal">
+                <div class="news-card-badge">Penting</div>
+                <div class="news-card-body">
+                    <span class="news-date"><i class="fa-regular fa-calendar"></i> 11 November 2026</span>
+                    <h2>Penyaluran Bantuan Pangan dan Pupuk Subsidi Tahap IV Tahun Anggaran 2026</h2>
+                    <p>Diumumkan kepada seluruh kelompok tani terdaftar bahwa penyaluran pupuk subsidi dan bantuan cadangan pangan akan dilaksanakan pada hari Kamis di Gudang Lumbung Desa. Harap membawa KTP dan kartu tani.</p>
+                    <div class="news-meta">
+                        <span><i class="fa-solid fa-user"></i> Oleh: Sekdes Jatirejoyoso</span>
+                        <span><i class="fa-solid fa-tag"></i> Pertanian & Ketahanan Pangan</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="news-card-horizontal">
+                <div class="news-card-badge info">Agenda</div>
+                <div class="news-card-body">
+                    <span class="news-date"><i class="fa-regular fa-calendar"></i> 08 November 2026</span>
+                    <h2>Musyawarah Perencanaan Pembangunan Desa (Musrenbangdes) Pembahasan RKPDes 2027</h2>
+                    <p>Pemerintah Desa bersama BPD mengundang seluruh perwakilan RT, RW, tokoh pemuda, dan tokoh perempuan untuk hadir dan menyuarakan aspirasi program pembangunan lingkungan di pendopo balai desa.</p>
+                    <div class="news-meta">
+                        <span><i class="fa-solid fa-user"></i> Oleh: BPD Jatirejoyoso</span>
+                        <span><i class="fa-solid fa-tag"></i> Musyawarah Desa</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="news-card-horizontal">
+                <div class="news-card-badge success">Kesehatan</div>
+                <div class="news-card-body">
+                    <span class="news-date"><i class="fa-regular fa-calendar"></i> 02 November 2026</span>
+                    <h2>Jadwal Vaksinasi & Cek Kesehatan Gratis untuk Lansia dan Penyandang Disabilitas</h2>
+                    <p>Kerjasama Puskesmas setempat dengan Kader PKK Desa Jatirejoyoso dalam program 'Desa Sehat Berdaya' yang meliputi pemeriksaan gula darah, tensi, dan pemberian suplemen vitamin gratis.</p>
+                    <div class="news-meta">
+                        <span><i class="fa-solid fa-user"></i> Oleh: Pokja IV PKK</span>
+                        <span><i class="fa-solid fa-tag"></i> Kesehatan Warga</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="news-card-horizontal">
+                <div class="news-card-badge">Pemberdayaan</div>
+                <div class="news-card-body">
+                    <span class="news-date"><i class="fa-regular fa-calendar"></i> 25 Oktober 2026</span>
+                    <h2>Sosialisasi Pengelolaan Bank Sampah Mandiri dan Budidaya Maggot di RW 02</h2>
+                    <p>Sebagai langkah strategis mengatasi residu sampah organik rumah tangga dan menghasilkan nilai ekonomis tambahan bagi warga melalui pakan ternak alternatif berprotein tinggi.</p>
+                    <div class="news-meta">
+                        <span><i class="fa-solid fa-user"></i> Oleh: Karang Taruna</span>
+                        <span><i class="fa-solid fa-tag"></i> Lingkungan Hidup</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

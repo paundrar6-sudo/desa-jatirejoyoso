@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Hero Section dengan Background Bergerak / Slider -->
+<section class="hero-section">
+    <div class="container hero-container">
+        <div class="hero-badge">
+            <span class="pulsing-dot"></span> Selamat Datang di Portal Resmi
+        </div>
+        <h1 class="hero-title">
+            DESA JATIREJOYOSO
+        </h1>
+        <p class="hero-subtitle">
+            Kearifan Lokal Menuju Kemandirian, Kemakmuran, dan Pelayanan Digital yang Transparan bagi Seluruh Warga.
+        </p>
+
+        <!-- Slider indicators for the background animation -->
+        <div class="bg-slider-controls">
+            <button class="slider-dot active" data-slide="0" title="Pemandangan Desa"></button>
+            <button class="slider-dot" data-slide="1" title="Balai Desa"></button>
+            <button class="slider-dot" data-slide="2" title="Persawahan & Alam"></button>
+            <span class="slider-label"><i class="fa-solid fa-camera"></i> Foto Desa Berubah Otomatis</span>
+        </div>
+
+        <div class="hero-cta-group">
+            <a href="{{ url_for('main.layanan') }}" class="btn btn-primary">
+                <i class="fa-solid fa-file-lines"></i> Layanan Surat Warga
+            </a>
+            <a href="{{ url_for('main.profil') }}" class="btn btn-outline">
+                <i class="fa-solid fa-compass"></i> Jelajahi Profil Desa
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Stats Counter -->
+<section class="stats-preview-section">
+    <div class="container">
+        <div class="stats-cards-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                <div class="stat-info">
+                    <span class="stat-number">4.850</span>
+                    <span class="stat-text">Total Penduduk</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-house-user"></i></div>
+                <div class="stat-info">
+                    <span class="stat-number">1.320</span>
+                    <span class="stat-text">Kepala Keluarga</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                <div class="stat-info">
+                    <span class="stat-number">4</span>
+                    <span class="stat-text">Dusun Wilayah</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-leaf"></i></div>
+                <div class="stat-info">
+                    <span class="stat-number">340 Ha</span>
+                    <span class="stat-text">Luas Pertanian</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Fitur Unggulan Desa -->
+<section class="features-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="sub-heading">KEMUDAHAN LAYANAN</span>
+            <h2 class="section-title">Akses Cepat Informasi & Layanan Desa</h2>
+            <p class="section-desc">Masyarakat kini dapat mengakses beragam fasilitas desa secara efisien dan transparan.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon bg-green">
+                    <i class="fa-solid fa-id-card-clip"></i>
+                </div>
+                <h3>Profil & Aparatur</h3>
+                <p>Mengenal struktur organisasi pemerintahan desa, visi & misi, serta sejarah berdirinya Jatirejoyoso.</p>
+                <a href="{{ url_for('main.profil') }}" class="feature-link">Lihat Profil <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon bg-blue">
+                    <i class="fa-solid fa-bullhorn"></i>
+                </div>
+                <h3>Warta & Informasi</h3>
+                <p>Update kegiatan kemasyarakatan, agenda pembangunan desa, serta pengumuman resmi terkini.</p>
+                <a href="{{ url_for('main.informasi') }}" class="feature-link">Baca Berita <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon bg-amber">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+                <h3>Transparansi APBDes</h3>
+                <p>Laporan Anggaran Pendapatan dan Belanja Desa (APBDes) 2026, sumber dana, pembiayaan, serta 5 bidang belanja desa.</p>
+                <a href="{{ url_for('main.statistik') }}" class="feature-link">Buka APBDES <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon bg-teal">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                </div>
+                <h3>Layanan Mandiri</h3>
+                <p>Permohonan surat keterangan domisili, usaha, dan dokumen kependudukan secara cepat dan mudah.</p>
+                <a href="{{ url_for('main.layanan') }}" class="feature-link">Urus Surat <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sekilas Berita Terbaru -->
+<section class="news-preview-section">
+    <div class="container">
+        <div class="section-header-flex">
+            <div>
+                <span class="sub-heading">KABAR TERKINI</span>
+                <h2 class="section-title">Berita & Informasi Terbaru</h2>
+            </div>
+            <a href="{{ url_for('main.informasi') }}" class="btn btn-secondary">
+                Lihat Semua Berita <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="news-grid">
+            <article class="news-card">
+                <div class="news-badge">Kegiatan Desa</div>
+                <div class="news-content">
+                    <span class="news-date"><i class="fa-regular fa-calendar"></i> 10 November 2026</span>
+                    <h3>Gotong Royong Normalisasi Saluran Irigasi Menghadapi Musim Tanam</h3>
+                    <p>Warga Desa Jatirejoyoso bersama kelompok tani bahu membahu membersihkan saluran irigasi tersier demi kelancaran pasokan air.</p>
+                    <a href="{{ url_for('main.informasi') }}" class="read-more">Selengkapnya &rarr;</a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <div class="news-badge">Pemberdayaan</div>
+                <div class="news-content">
+                    <span class="news-date"><i class="fa-regular fa-calendar"></i> 05 November 2026</span>
+                    <h3>Pelatihan Pemasaran Digital UMKM Produk Olahan Pangan Desa</h3>
+                    <p>Mendorong pelaku usaha mikro Desa Jatirejoyoso menembus pasar daring melalui pelatihan foto produk dan marketplace.</p>
+                    <a href="{{ url_for('main.informasi') }}" class="read-more">Selengkapnya &rarr;</a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <div class="news-badge">Kesehatan</div>
+                <div class="news-content">
+                    <span class="news-date"><i class="fa-regular fa-calendar"></i> 28 Oktober 2026</span>
+                    <h3>Pelaksanaan Posyandu Balita & Lansia Terpadu di Balai Dusun</h3>
+                    <p>Pemeriksaan rutin kesehatan anak, penimbangan balita, dan penyuluhan gizi seimbang untuk pencegahan stunting secara berkelanjutan.</p>
+                    <a href="{{ url_for('main.informasi') }}" class="read-more">Selengkapnya &rarr;</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

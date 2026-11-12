@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f2b1d"/>
+      <stop offset="40%" stop-color="#1b4d3e"/>
+      <stop offset="70%" stop-color="#2d6a4f"/>
+      <stop offset="100%" stop-color="#40916c"/>
+    </linearGradient>
+    <linearGradient id="sunGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="mountain1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a2b" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#142c20"/>
+    </linearGradient>
+    <linearGradient id="paddyField" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2d6a4f"/>
+      <stop offset="50%" stop-color="#1b4332"/>
+      <stop offset="100%" stop-color="#081c15"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1920" height="1080" fill="url(#skyGrad)"/>
+
+  <!-- Morning Sun -->
+  <circle cx="1400" cy="350" r="280" fill="url(#sunGlow)"/>
+  <circle cx="1400" cy="350" r="90" fill="#fffbeb" opacity="0.9"/>
+
+  <!-- Distant Mountains -->
+  <path d="M0 650 Q300 420 600 550 T1200 480 T1920 600 L1920 1080 L0 1080 Z" fill="url(#mountain1)" opacity="0.75"/>
+  <path d="M0 720 Q450 540 900 640 T1800 580 T1920 700 L1920 1080 L0 1080 Z" fill="#173427" opacity="0.9"/>
+
+  <!-- Terraced Rice Fields (Sawah Berundak Desa) -->
+  <path d="M0 780 C400 750, 700 820, 1100 780 C1500 740, 1750 810, 1920 790 L1920 1080 L0 1080 Z" fill="url(#paddyField)"/>
+  <path d="M0 860 C350 830, 800 890, 1250 840 C1650 800, 1850 870, 1920 860 L1920 1080 L0 1080 Z" fill="#1b4332"/>
+  <path d="M0 940 C500 910, 950 970, 1400 930 C1700 900, 1850 950, 1920 940 L1920 1080 L0 1080 Z" fill="#0d281e"/>
+
+  <!-- Water reflections on paddies -->
+  <ellipse cx="600" cy="830" rx="320" ry="15" fill="#52b788" opacity="0.35"/>
+  <ellipse cx="1450" cy="890" rx="400" ry="20" fill="#74c69d" opacity="0.25"/>
+
+  <!-- Silhouettes of coconut trees & bamboo -->
+  <g fill="#081c15" opacity="0.9">
+    <!-- Tree 1 -->
+    <path d="M220 950 Q230 780 210 650 Q215 650 225 950 Z"/>
+    <path d="M210 650 Q140 600 110 660 Q170 630 210 650 Z"/>
+    <path d="M210 650 Q260 580 320 620 Q260 625 210 650 Z"/>
+    <path d="M210 650 Q170 570 200 550 Q210 600 210 650 Z"/>
+    <path d="M210 650 Q280 670 330 710 Q260 680 210 650 Z"/>
+    
+    <!-- Tree 2 -->
+    <path d="M280 970 Q300 820 290 710 Q294 710 304 970 Z"/>
+    <path d="M290 710 Q230 670 200 720 Q260 690 290 710 Z"/>
+    <path d="M290 710 Q350 650 400 680 Q340 690 290 710 Z"/>
+
+    <!-- Distant birds -->
+    <path d="M800 380 Q820 365 840 380 Q860 365 880 380 Q860 375 840 388 Q820 375 800 380 Z" fill="#fff" opacity="0.4"/>
+    <path d="M860 350 Q875 338 890 350 Q905 338 920 350 Q905 346 890 357 Q875 346 860 350 Z" fill="#fff" opacity="0.3"/>
+  </g>
+</svg>
+

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title }} - DESA JATIREJOYOSO</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Main Style -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body data-page="{{ active_page }}" data-bg-theme="{{ bg_theme }}">
+
+    <!-- Dynamic Background Layer with Smooth Fade Animation -->
+    <div class="bg-scene-container" id="bgSceneContainer">
+        <div class="bg-slide active" style="background-image: url('{{ url_for('static', filename='images/bg-desa-1.svg') }}');"></div>
+        <div class="bg-slide" style="background-image: url('{{ url_for('static', filename='images/bg-desa-2.svg') }}');"></div>
+        <div class="bg-slide" style="background-image: url('{{ url_for('static', filename='images/bg-desa-3.svg') }}');"></div>
+        <div class="bg-overlay"></div>
+    </div>
+
+    <!-- Top Navigation Bar -->
+    <header class="site-header" id="siteHeader">
+        <div class="container header-content">
+            <a href="{{ url_for('main.beranda') }}" class="brand-logo">
+                <div class="logo-badge">
+                    <i class="fa-solid fa-landmark-dome"></i>
+                </div>
+                <div class="brand-text">
+                    <span class="village-title">DESA JATIREJOYOSO</span>
+                    <span class="village-tagline">Kabupaten Malang • Jawa Timur</span>
+                </div>
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="{{ url_for('main.beranda') }}" class="nav-link {% if active_page == 'beranda' %}active{% endif %}">
+                            <i class="fa-solid fa-house"></i> Beranda
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('main.profil') }}" class="nav-link {% if active_page == 'profil' %}active{% endif %}">
+                            <i class="fa-solid fa-id-card"></i> Profil
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('main.informasi') }}" class="nav-link {% if active_page == 'informasi' %}active{% endif %}">
+                            <i class="fa-solid fa-newspaper"></i> Informasi
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('main.statistik') }}" class="nav-link {% if active_page == 'statistik' %}active{% endif %}">
+                            <i class="fa-solid fa-chart-pie"></i> Statistik
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('main.layanan') }}" class="nav-link {% if active_page == 'layanan' %}active{% endif %}">
+                            <i class="fa-solid fa-hand-holding-hand"></i> Layanan
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('main.kontak') }}" class="nav-link {% if active_page == 'kontak' %}active{% endif %}">
+                            <i class="fa-solid fa-headset"></i> Kontak
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="page-content" id="pageContent">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="footer-brand">
+                    <i class="fa-solid fa-landmark-dome"></i>
+                    <h3>DESA JATIREJOYOSO</h3>
+                </div>
+                <p>Website Resmi Pemerintah Desa Jatirejoyoso sebagai sarana transparansi publik, publikasi informasi, dan pelayanan masyarakat yang terintegrasi.</p>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Desa%20Jatirejoyoso..." target="_blank" rel="noopener" aria-label="WhatsApp Admin" title="Hubungi WA Admin"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigasi Utama</h4>
+                <ul class="footer-links">
+                    <li><a href="{{ url_for('main.beranda') }}"><i class="fa-solid fa-chevron-right"></i> Beranda</a></li>
+                    <li><a href="{{ url_for('main.profil') }}"><i class="fa-solid fa-chevron-right"></i> Profil Desa</a></li>
+                    <li><a href="{{ url_for('main.informasi') }}"><i class="fa-solid fa-chevron-right"></i> Berita & Kegiatan</a></li>
+                    <li><a href="{{ url_for('main.statistik') }}"><i class="fa-solid fa-chevron-right"></i> Statistik APBDes</a></li>
+                    <li><a href="{{ url_for('main.layanan') }}"><i class="fa-solid fa-chevron-right"></i> Pelayanan Surat</a></li>
+                    <li><a href="{{ url_for('main.kontak') }}"><i class="fa-solid fa-chevron-right"></i> Hubungi Kami</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Jam Pelayanan & Kontak</h4>
+                <div class="office-hours">
+                    <p><i class="fa-regular fa-clock"></i> <strong>Senin - Jumat:</strong> 08.00 - 14.00 WIB</p>
+                    <p><i class="fa-solid fa-ban text-danger"></i> <strong>Sabtu - Minggu:</strong> Libur / Pelayanan Online</p>
+                </div>
+                <div class="contact-mini">
+                    <p>
+                        <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Desa%20Jatirejoyoso,%20saya%20ingin%20berkonsultasi..." target="_blank" rel="noopener" class="footer-wa-badge">
+                            <i class="fa-brands fa-whatsapp"></i> <strong>WA Admin:</strong> +62 812-3456-7890
+                        </a>
+                    </p>
+                    <p><i class="fa-solid fa-location-dot"></i> Jl. Raya Balai Desa Jatirejoyoso No. 01</p>
+                    <p><i class="fa-solid fa-envelope"></i> pemdes@jatirejoyoso.desa.id</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p>&copy; 2026 Pemerintah Desa Jatirejoyoso. Hak Cipta Dilindungi.</p>
+                <p class="credit">Dibuat dengan dedikasi untuk kemajuan desa</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>
+

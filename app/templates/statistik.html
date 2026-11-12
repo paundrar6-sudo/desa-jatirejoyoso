@@ -1,0 +1,332 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="page-banner">
+    <div class="container">
+        <span class="banner-badge">Transparansi Anggaran Publik</span>
+        <h1 class="page-header-title">Statistik APBDES Jatirejoyoso</h1>
+        <p class="page-header-subtitle">Laporan Transparansi Anggaran Pendapatan dan Belanja Desa (APBDes) Pemerintah Desa Jatirejoyoso Tahun Anggaran 2026.</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+
+        <!-- 4 Kotak Ringkasan Angka Kunci -->
+        <div class="apbdes-summary-grid">
+            <div class="apbdes-card featured">
+                <div class="apbdes-icon-wrap"><i class="fa-solid fa-scale-balanced"></i></div>
+                <div class="apbdes-card-info">
+                    <span class="apbdes-card-title">Total Anggaran Keseluruhan</span>
+                    <span class="apbdes-card-amount">Rp 1.876.076.677</span>
+                    <span class="apbdes-card-sub" style="color: #d1fae5;">Pendapatan + Pembiayaan Netto</span>
+                </div>
+            </div>
+
+            <div class="apbdes-card">
+                <div class="apbdes-icon-wrap" style="color: #0284c7; background: #e0f2fe;"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                <div class="apbdes-card-info">
+                    <span class="apbdes-card-title">Total Pendapatan Desa</span>
+                    <span class="apbdes-card-amount">Rp 1.571.058.902</span>
+                    <span class="apbdes-card-sub">PADes + Transfer + Lainnya</span>
+                </div>
+            </div>
+
+            <div class="apbdes-card">
+                <div class="apbdes-icon-wrap" style="color: #d97706; background: #fef3c7;"><i class="fa-solid fa-cart-shopping"></i></div>
+                <div class="apbdes-card-info">
+                    <span class="apbdes-card-title">Jumlah Belanja Desa</span>
+                    <span class="apbdes-card-amount">Rp 1.876.076.677</span>
+                    <span class="apbdes-card-sub">5 Bidang Penyelenggaraan</span>
+                </div>
+            </div>
+
+            <div class="apbdes-card">
+                <div class="apbdes-icon-wrap" style="color: #8b5cf6; background: #f3e8ff;"><i class="fa-solid fa-landmark"></i></div>
+                <div class="apbdes-card-info">
+                    <span class="apbdes-card-title">Pembiayaan Netto</span>
+                    <span class="apbdes-card-amount">Rp 305.017.775</span>
+                    <span class="apbdes-card-sub">Penutup Defisit Anggaran</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====================================================================
+             BAGIAN 1: TOTAL KESELURUHAN (PENDAPATAN, SURPLUS/DEFISIT & PEMBIAYAAN)
+             ==================================================================== -->
+        <div class="apbdes-grand-panel">
+            <div class="apbdes-grand-header">
+                <div>
+                    <span class="apbdes-grand-badge"><i class="fa-solid fa-shield-halved"></i> SUMBER PENDAPATAN & PENYEIMBANG ANGGARAN</span>
+                    <h2 class="section-title text-main mt-3" style="color: #0f172a; margin-bottom: 6px;">Total Keseluruhan Anggaran Masuk</h2>
+                    <p class="text-muted" style="margin-bottom: 0;">Kesatuan sumber penerimaan murni desa serta pembiayaan netto penutup defisit yang membentuk total keseluruhan anggaran belanja desa.</p>
+                </div>
+                <div class="apbdes-total-highlight">
+                    <span class="apbdes-total-label">Total Keseluruhan Dana:</span>
+                    <div class="apbdes-total-number">Rp 1.876.076.677</div>
+                </div>
+            </div>
+
+            <div class="apbdes-two-col">
+                <!-- Kolom Pendapatan & Rinciannya -->
+                <div class="apbdes-sub-box">
+                    <div class="apbdes-sub-box-title">
+                        <i class="fa-solid fa-money-bill-trend-up text-primary"></i>
+                        <span>A. Rincian Pendapatan Desa</span>
+                    </div>
+                    <ul class="apbdes-list">
+                        <li class="apbdes-list-item">
+                            <span class="item-name"><i class="fa-solid fa-circle-dot"></i> Pendapatan Asli Desa (PADes)</span>
+                            <span class="item-val">Rp 260.000.000</span>
+                        </li>
+                        <li class="apbdes-list-item">
+                            <span class="item-name"><i class="fa-solid fa-circle-dot"></i> Pendapatan Transfer</span>
+                            <span class="item-val">Rp 1.258.815.400</span>
+                        </li>
+                        <li class="apbdes-list-item">
+                            <span class="item-name"><i class="fa-solid fa-circle-dot"></i> Pendapatan Lain-Lain</span>
+                            <span class="item-val">Rp 52.243.502</span>
+                        </li>
+                        <li class="apbdes-list-item total-row">
+                            <span class="item-name"><i class="fa-solid fa-calculator"></i> JUMLAH PENDAPATAN</span>
+                            <span class="item-val">Rp 1.571.058.902</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Kolom Surplus / Defisit & Pembiayaan -->
+                <div class="apbdes-sub-box">
+                    <div class="apbdes-sub-box-title">
+                        <i class="fa-solid fa-arrow-right-arrow-left text-primary"></i>
+                        <span>B. Surplus / (Defisit) & Pembiayaan</span>
+                    </div>
+                    <ul class="apbdes-list">
+                        <li class="apbdes-list-item deficit-row">
+                            <span class="item-name"><i class="fa-solid fa-triangle-exclamation"></i> Surplus / (Defisit)</span>
+                            <span class="item-val">Rp (305.017.775)</span>
+                        </li>
+                        <li class="apbdes-list-item">
+                            <span class="item-name"><i class="fa-solid fa-circle-plus"></i> Penerimaan Pembiayaan</span>
+                            <span class="item-val">Rp 361.017.775</span>
+                        </li>
+                        <li class="apbdes-list-item">
+                            <span class="item-name"><i class="fa-solid fa-circle-minus"></i> Pengeluaran Pembiayaan</span>
+                            <span class="item-val">Rp 56.000.000</span>
+                        </li>
+                        <li class="apbdes-list-item total-row">
+                            <span class="item-name"><i class="fa-solid fa-check-double"></i> PEMBIAYAAN NETTO</span>
+                            <span class="item-val">Rp 305.017.775</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stat-highlight-card mt-4">
+                <i class="fa-solid fa-circle-info"></i>
+                <div>
+                    <strong>Prinsip Anggaran Berimbang:</strong> Defisit anggaran belanja sebesar <em>Rp (305.017.775)</em> tertutup penuh secara seimbang oleh Pembiayaan Netto sebesar <em>Rp 305.017.775</em>, sehingga total keseluruhan sumber dana bernilai <strong>Rp 1.876.076.677</strong> yang siap direalisasikan untuk 5 bidang belanja di bawah ini.
+                </div>
+            </div>
+        </div>
+
+        <!-- ====================================================================
+             BAGIAN 2: BELANJA (RANGKAIAN APA YANG DIGUNAKAN DARI TOTAL KESELURUHAN)
+             ==================================================================== -->
+        <div class="section-header mt-5">
+            <span class="sub-heading">ALOKASI & REALISASI BELANJA</span>
+            <h2 class="section-title">Rangkaian Penggunaan Dana APBDes 2026</h2>
+            <p class="section-desc">Berikut rincian alokasi dan apa saja yang digunakan dari total keseluruhan anggaran sebesar <strong>Rp 1.876.076.677</strong> untuk kemajuan dan pelayanan warga Desa Jatirejoyoso:</p>
+        </div>
+
+        <div class="belanja-cards-container">
+            <!-- 1. Bidang Penyelenggaraan Pemerintahan Desa -->
+            <div class="belanja-item-card">
+                <div class="belanja-card-top">
+                    <div class="belanja-title-group">
+                        <span class="belanja-badge-num">1</span>
+                        <div>
+                            <h3>Bidang Penyelenggaraan Pemerintahan Desa</h3>
+                            <small class="text-muted">Porsi alokasi: ~54.2% dari total keseluruhan belanja</small>
+                        </div>
+                    </div>
+                    <div class="belanja-amount-badge">Rp 1.017.306.629</div>
+                </div>
+                <div class="belanja-bar-wrap">
+                    <div class="belanja-bar-fill" style="width: 54.2%; background: linear-gradient(90deg, #10b981, #047857);"></div>
+                </div>
+                <ul class="belanja-sublist">
+                    <li>
+                        <span class="sub-name">Penyelenggaraan Belanja Siltap, Tunjangan & Operasional Pemdes</span>
+                        <span class="sub-val">Rp 885.525.229</span>
+                    </li>
+                    <li>
+                        <span class="sub-name">Penyediaan Sarana Prasarana Pemerintahan Desa</span>
+                        <span class="sub-val">Rp 34.000.000</span>
+                    </li>
+                    <li>
+                        <span class="sub-name">Pengelolaan Administrasi Kependudukan, Pencatatan Sipil, Statistik & Kearsipan</span>
+                        <span class="sub-val">Rp 6.278.400</span>
+                    </li>
+                    <li>
+                        <span class="sub-name">Penyelenggaraan Tata Praja Pemerintahan, Perencanaan, Keuangan & Pelaporan</span>
+                        <span class="sub-val">Rp 41.468.000</span>
+                    </li>
+                    <li>
+                        <span class="sub-name">Sub Bidang Pertanahan</span>
+                        <span class="sub-val">Rp 50.035.000</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 2. Bidang Pelaksanaan Pembangunan Desa -->
+            <div class="belanja-item-card">
+                <div class="belanja-card-top">
+                    <div class="belanja-title-group">
+                        <span class="belanja-badge-num">2</span>
+                        <div>
+                            <h3>Bidang Pelaksanaan Pembangunan Desa</h3>
+                            <small class="text-muted">Porsi alokasi: ~25.5% dari total keseluruhan belanja</small>
+                        </div>
+                    </div>
+                    <div class="belanja-amount-badge">Rp 477.831.120</div>
+                </div>
+                <div class="belanja-bar-wrap">
+                    <div class="belanja-bar-fill" style="width: 25.5%; background: linear-gradient(90deg, #38bdf8, #0284c7);"></div>
+                </div>
+                <ul class="belanja-sublist">
+                    <li>
+                        <span class="sub-name">Sub Bidang Pendidikan</span>
+                        <span class="sub-val">Rp 6.000.000</span>
+                    </li>
+                    <li>
+                        <span class="sub-name">Sub Bidang Kesehatan</span>
+                        <span class="sub-val">Rp 226.671.120</span>
+                    </li>
+                    <li>
+                        <span class="sub-name">Sub Bidang Pekerjaan Umum dan Penataan Ruang</span>
+                        <span class="sub-val">Rp 164.650.000</span>
+                    </li>
+                    <li>
+                        <span class="sub-name">Sub Bidang Kawasan Pemukiman</span>
+                        <span class="sub-val">Rp 80.510.000</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 3. Bidang Pembinaan Kemasyarakatan -->
+            <div class="belanja-item-card">
+                <div class="belanja-card-top">
+                    <div class="belanja-title-group">
+                        <span class="belanja-badge-num">3</span>
+                        <div>
+                            <h3>Bidang Pembinaan Kemasyarakatan</h3>
+                            <small class="text-muted">Porsi alokasi: ~12.1% dari total keseluruhan belanja</small>
+                        </div>
+                    </div>
+                    <div class="belanja-amount-badge">Rp 227.137.426</div>
+                </div>
+                <div class="belanja-bar-wrap">
+                    <div class="belanja-bar-fill" style="width: 12.1%; background: linear-gradient(90deg, #fbbf24, #d97706);"></div>
+                </div>
+                <ul class="belanja-sublist">
+                    <li>
+                        <span class="sub-name">Sub Bidang Ketenteraman, Ketertiban Umum & Perlindungan Masyarakat</span>
+                        <span class="sub-val">Rp 123.494.400</span>
+                    </li>
+                    <li>
+                        <span class="sub-name">Sub Bidang Kebudayaan dan Keagamaan</span>
+                        <span class="sub-val">Rp 77.500.000</span>
+                    </li>
+                    <li>
+                        <span class="sub-name">Sub Bidang Kepemudaan dan Olahraga</span>
+                        <span class="sub-val">Rp 6.430.026</span>
+                    </li>
+                    <li>
+                        <span class="sub-name">Sub Bidang Kelembagaan Masyarakat</span>
+                        <span class="sub-val">Rp 19.713.000</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 4. Bidang Pemberdayaan Masyarakat -->
+            <div class="belanja-item-card">
+                <div class="belanja-card-top">
+                    <div class="belanja-title-group">
+                        <span class="belanja-badge-num">4</span>
+                        <div>
+                            <h3>Bidang Pemberdayaan Masyarakat</h3>
+                            <small class="text-muted">Porsi alokasi: ~2.4% dari total keseluruhan belanja</small>
+                        </div>
+                    </div>
+                    <div class="belanja-amount-badge">Rp 45.801.502</div>
+                </div>
+                <div class="belanja-bar-wrap">
+                    <div class="belanja-bar-fill" style="width: 2.4%; background: linear-gradient(90deg, #a78bfa, #7c3aed);"></div>
+                </div>
+                <ul class="belanja-sublist">
+                    <li>
+                        <span class="sub-name">Sub Bidang Peningkatan Kapasitas Aparatur Desa</span>
+                        <span class="sub-val">Rp 9.800.000</span>
+                    </li>
+                    <li>
+                        <span class="sub-name">Sub Bidang Dukungan Penanaman Modal</span>
+                        <span class="sub-val">Rp 36.001.502</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 5. Bidang Penanggulangan Bencana, Darurat & Mendesak Desa -->
+            <div class="belanja-item-card">
+                <div class="belanja-card-top">
+                    <div class="belanja-title-group">
+                        <span class="belanja-badge-num">5</span>
+                        <div>
+                            <h3>Bidang Penanggulangan Bencana, Keadaan Darurat & Mendesak Desa</h3>
+                            <small class="text-muted">Porsi alokasi: ~5.8% dari total keseluruhan belanja</small>
+                        </div>
+                    </div>
+                    <div class="belanja-amount-badge">Rp 108.000.000</div>
+                </div>
+                <div class="belanja-bar-wrap">
+                    <div class="belanja-bar-fill" style="width: 5.8%; background: linear-gradient(90deg, #f87171, #dc2626);"></div>
+                </div>
+                <ul class="belanja-sublist">
+                    <li>
+                        <span class="sub-name">Sub Bidang Keadaan Mendesak</span>
+                        <span class="sub-val">Rp 108.000.000</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Kartu Total Akumulasi Belanja -->
+        <div class="content-box mt-4" style="background: linear-gradient(135deg, #064e3b, #047857); color: #ffffff; border: 1px solid rgba(255,255,255,0.2);">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+                <div>
+                    <h3 style="font-size: 1.4rem; font-weight: 800; color: #ffffff; margin-bottom: 4px;">TOTAL KESELURUHAN JUMLAH BELANJA DESA</h3>
+                    <p style="color: #a7f3d0; margin-bottom: 0; font-size: 0.95rem;">Akumulasi 5 bidang belanja yang terealisasikan sesuai pagu anggaran APBDes 2026.</p>
+                </div>
+                <div style="font-size: 2.2rem; font-weight: 900; color: #fef08a;">
+                    Rp 1.876.076.677
+                </div>
+            </div>
+        </div>
+
+        <!-- Banner Publikasi Baliho Resmi APBDES 2026 -->
+        <div class="baliho-banner-box">
+            <a href="{{ url_for('static', filename='images/apbdes-2026.jpg') }}" target="_blank" title="Klik untuk melihat dokumen baliho penuh">
+                <img src="{{ url_for('static', filename='images/apbdes-2026.jpg') }}" alt="Baliho Resmi APBDes Desa Jatirejoyoso Tahun Anggaran 2026" class="baliho-img-preview">
+            </a>
+            <div class="baliho-text-col">
+                <span class="apbdes-badge-year"><i class="fa-solid fa-certificate"></i> PUBLIKASI RESMI PEMKAB MALANG</span>
+                <h3>Transparansi Penuh untuk Seluruh Warga</h3>
+                <p>Data anggaran di atas diambil secara langsung dan akurat dari Infografis Resmi APBDES Pemerintah Desa Jatirejoyoso Tahun Anggaran 2026, Kecamatan Kepanjen, Kabupaten Malang. Warga berhak mengetahui dan mengawasi jalannya pembangunan desa secara terbuka.</p>
+                <a href="{{ url_for('static', filename='images/apbdes-2026.jpg') }}" target="_blank" class="btn btn-outline" style="color: var(--primary-dark); border-color: var(--primary);">
+                    <i class="fa-solid fa-magnifying-glass-plus"></i> Buka Foto Baliho Asli Ukuran Penuh
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

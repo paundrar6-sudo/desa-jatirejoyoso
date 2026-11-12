@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="100%" height="100%">
+  <defs>
+    <linearGradient id="vidGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#022c22"/>
+      <stop offset="50%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <radialGradient id="playGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#vidGrad)"/>
+  <!-- Mountain & Village Landscape Silhouette -->
+  <path d="M0 480 Q320 320 640 420 T1280 400 L1280 720 L0 720 Z" fill="#065f46" opacity="0.6"/>
+  <path d="M0 540 Q400 440 800 500 T1280 490 L1280 720 L0 720 Z" fill="#047857" opacity="0.8"/>
+  <rect y="640" width="1280" height="80" fill="#022c22"/>
+  
+  <!-- Glowing Play Button Area -->
+  <circle cx="640" cy="360" r="120" fill="url(#playGlow)"/>
+  <circle cx="640" cy="360" r="50" fill="#10b981"/>
+  <polygon points="630,340 660,360 630,380" fill="#ffffff"/>
+  
+  <text x="640" y="460" font-family="'Plus Jakarta Sans', sans-serif" font-size="28" font-weight="700" fill="#ffffff" text-anchor="middle">
+    SHORT MOVIE: PESONA DESA JATIREJOYOSO
+  </text>
+  <text x="640" y="495" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" fill="#a7f3d0" text-anchor="middle">
+    Klik untuk memutar video profil resmi desa
+  </text>
+</svg>
+

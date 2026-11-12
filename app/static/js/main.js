@@ -1,0 +1,385 @@
+/**
+ * WEBSITE RESMI DESA JATIREJOYOSO
+ * Interaktivitas, Efek Sentuhan / Klik, & Animasi Transisi Latar Belakang
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    // ====================================================================
+    // 1. SISTEM NOTIFIKASI TOAST INTERAKTIF
+    // ====================================================================
+    let toastContainer = document.querySelector('.toast-container');
+    if (!toastContainer) {
+        toastContainer = document.createElement('div');
+        toastContainer.className = 'toast-container';
+        document.body.appendChild(toastContainer);
+    }
+
+    /**
+     * Memunculkan notifikasi toast modern di layar
+     * @param {string} title - Judul notifikasi
+     * @param {string} message - Pesan singkat
+     * @param {string} icon - Icon FA (misal: 'fa-check', 'fa-whatsapp')
+     * @param {string} type - 'success', 'wa', atau 'info'
+     * @param {number} duration - Durasi tampil dalam milidetik (default 4000)
+     */
+    function showToast(title, message, icon = 'fa-circle-check', type = 'success', duration = 4000) {
+        const toast = document.createElement('div');
+        toast.className = 'site-toast';
+
+        const isWA = type === 'wa';
+        toast.innerHTML = `
+            <div class="site-toast-icon ${isWA ? 'wa' : ''}">
+                <i class="fa-solid ${icon}"></i>
+            </div>
+            <div class="site-toast-body">
+                <div class="site-toast-title">${title}</div>
+                <div class="site-toast-text">${message}</div>
+            </div>
+        `;
+
+        toastContainer.appendChild(toast);
+
+        // Hapus otomatis setelah durasi selesai
+        setTimeout(() => {
+            toast.classList.add('toast-closing');
+            setTimeout(() => {
+                if (toast.parentNode) {
+                    toast.parentNode.removeChild(toast);
+                }
+            }, 300);
+        }, duration);
+    }
+
+    // ====================================================================
+    // 2. TACTILE CLICK / RIPPLE EFFECT UNTUK SEMUA TOMBOL INTERAKTIF
+    // ====================================================================
+    document.addEventListener('click', (e) => {
+        const targetBtn = e.target.closest('.btn, .pill, .slider-dot, .nav-link, .catalog-card, .stat-card');
+        if (!targetBtn) return;
+
+        // Efek ripple gelombang sentuh
+        const circle = document.createElement('span');
+        circle.classList.add('ripple-circle');
+
+        const rect = targetBtn.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        circle.style.width = circle.style.height = `${size}px`;
+
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        circle.style.left = `${x}px`;
+        circle.style.top = `${y}px`;
+
+        // Bersihkan ripple lama jika ada
+        const existingRipple = targetBtn.querySelector('.ripple-circle');
+        if (existingRipple) {
+            existingRipple.remove();
+        }
+
+        targetBtn.appendChild(circle);
+        setTimeout(() => circle.remove(), 650);
+    });
+
+    // ====================================================================
+    // 3. INTERAKSI AJUKAN SURAT MENUJU WHATSAPP ADMIN DESA
+    // ====================================================================
+    const waServiceBtns = document.querySelectorAll('.btn-ajukan-wa');
+    waServiceBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            const serviceName = this.getAttribute('data-service') || 'Layanan Surat';
+            
+            // Berikan feedback instan ke user
+            showToast(
+                'Mengarahkan ke WhatsApp',
+                `Membuka chat WhatsApp Admin Desa Jatirejoyoso untuk permohonan <strong>${serviceName}</strong>...`,
+                'fa-whatsapp',
+                'wa',
+                4500
+            );
+        });
+    });
+
+    // ====================================================================
+    // 4. INTERAKSI FORM ASPIRASI & PENGADUAN (HALAMAN KONTAK)
+    // ====================================================================
+    const aspirasiForm = document.getElementById('aspirasiForm');
+    const btnAduanWA = document.getElementById('btnAduanWA');
+
+    if (aspirasiForm) {
+        aspirasiForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nama = document.getElementById('nama')?.value || 'Warga';
+            
+            showToast(
+                'Aspirasi Berhasil Dikirim',
+                `Terima kasih Bapak/Ibu <strong>${nama}</strong>. Laporan/aspirasi Anda telah tercatat pada sistem administrasi Desa Jatirejoyoso.`,
+                'fa-circle-check',
+                'success',
+                5000
+            );
+            this.reset();
+        });
+    }
+
+    if (btnAduanWA) {
+        btnAduanWA.addEventListener('click', function() {
+            const nama = document.getElementById('nama')?.value.trim();
+            const nik = document.getElementById('nik')?.value.trim();
+            const kategori = document.getElementById('kategori')?.value;
+            const pesan = document.getElementById('pesan')?.value.trim();
+
+            if (!nama || !pesan) {
+                showToast(
+                    'Lengkapi Data',
+                    'Mohon isi setidaknya Nama Lengkap dan Pesan sebelum mengirim ke WhatsApp Admin.',
+                    'fa-triangle-exclamation',
+                    'info',
+                    3500
+                );
+                return;
+            }
+
+            const waText = encodeURIComponent(
+                `*PENGADUAN / ASPIRASI WARGA DESA JATIREJOYOSO*\n\n` +
+                `*Nama:* ${nama}\n` +
+                `*NIK:* ${nik || '-'}\n` +
+                `*Kategori:* ${kategori || 'Umum'}\n` +
+                `*Pesan / Uraian:* ${pesan}\n\n` +
+                `Mohon ditindaklanjuti oleh Pemerintah Desa Jatirejoyoso. Terima kasih.`
+            );
+
+            showToast(
+                'Membuka WhatsApp Admin',
+                'Menghubungkan laporan Anda langsung ke WhatsApp Admin Pelayanan...',
+                'fa-whatsapp',
+                'wa',
+                4000
+            );
+
+            window.open(`https://wa.me/6281234567890?text=${waText}`, '_blank');
+        });
+    }
+
+    // ====================================================================
+    // 5. ANIMASI BACKGROUND MULTI-SLIDE & CROSSFADE (BERANDA & TRANSISI)
+    // ====================================================================
+    const bgSlides = document.querySelectorAll('.bg-slide');
+    const sliderDots = document.querySelectorAll('.slider-dot');
+    const currentPage = document.body.getAttribute('data-page') || 'beranda';
+    
+    let currentSlideIndex = 0;
+    let autoSlideInterval = null;
+    const slideDuration = 6000;
+
+    const pageToSlideMap = {
+        'beranda': 0,
+        'profil': 1,
+        'informasi': 2,
+        'statistik': 0,
+        'layanan': 1,
+        'kontak': 2
+    };
+
+    function switchSlide(targetIndex) {
+        if (!bgSlides || bgSlides.length === 0) return;
+
+        currentSlideIndex = (targetIndex + bgSlides.length) % bgSlides.length;
+
+        bgSlides.forEach((slide, idx) => {
+            if (idx === currentSlideIndex) {
+                slide.classList.add('active');
+            } else {
+                slide.classList.remove('active');
+            }
+        });
+
+        if (sliderDots && sliderDots.length > 0) {
+            sliderDots.forEach((dot, idx) => {
+                if (idx === currentSlideIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+    }
+
+    function startAutoSlide() {
+        if (currentPage === 'beranda' && bgSlides.length > 1) {
+            stopAutoSlide();
+            autoSlideInterval = setInterval(() => {
+                switchSlide(currentSlideIndex + 1);
+            }, slideDuration);
+        }
+    }
+
+    function stopAutoSlide() {
+        if (autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = null;
+        }
+    }
+
+    if (pageToSlideMap.hasOwnProperty(currentPage)) {
+        switchSlide(pageToSlideMap[currentPage]);
+    }
+
+    startAutoSlide();
+
+    sliderDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            switchSlide(index);
+            startAutoSlide();
+        });
+    });
+
+    // ====================================================================
+    // 6. STICKY NAVBAR & MOBILE NAVIGATION
+    // ====================================================================
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 30) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    if (mobileToggle && mainNav) {
+        mobileToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('show');
+            const spans = mobileToggle.querySelectorAll('span');
+            if (mainNav.classList.contains('show')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Tutup otomatis menu mobile saat link diklik
+        const navItems = mainNav.querySelectorAll('.nav-link');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    mainNav.classList.remove('show');
+                    const spans = mobileToggle.querySelectorAll('span');
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+        });
+    }
+
+    // ====================================================================
+    // 7. SMOOTH TRANSITION KETIKA BERPINDAH HALAMAN
+    // ====================================================================
+    const navLinks = document.querySelectorAll('.nav-link, .brand-logo, .footer-links a, .feature-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href && !href.startsWith('#') && !href.startsWith('javascript:') && !this.target) {
+                const pageContent = document.getElementById('pageContent');
+                if (pageContent) {
+                    pageContent.style.transition = 'opacity 0.28s ease, transform 0.28s ease';
+                    pageContent.style.opacity = '0';
+                    pageContent.style.transform = 'translateY(8px)';
+                }
+            }
+        });
+    });
+});
+
+
+// ====================================================================
+// 8. INTERAKSI PEMUTAR VIDEO PROFIL & SHORT MOVIE DESA
+// ====================================================================
+const villageLocalVideo = document.getElementById('villageLocalVideo');
+const videoPlayOverlay = document.getElementById('videoPlayOverlay');
+const btnPlayVideo = document.getElementById('btnPlayVideo');
+const btnToggleYouTube = document.getElementById('btnToggleYouTube');
+const youtubeEmbedBox = document.getElementById('youtubeEmbedBox');
+const btnCloseYT = document.getElementById('btnCloseYT');
+
+if (villageLocalVideo && videoPlayOverlay) {
+    function playVillageVideo() {
+        videoPlayOverlay.classList.add('hidden');
+        villageLocalVideo.play().catch(err => {
+            console.log("Menunggu interaksi pengguna untuk pemutaran video:", err);
+        });
+    }
+
+    videoPlayOverlay.addEventListener('click', playVillageVideo);
+    if (btnPlayVideo) {
+        btnPlayVideo.addEventListener('click', (e) => {
+            e.stopPropagation();
+            playVillageVideo();
+        });
+    }
+
+    villageLocalVideo.addEventListener('pause', () => {
+        if (villageLocalVideo.currentTime === 0) {
+            videoPlayOverlay.classList.remove('hidden');
+        }
+    });
+
+    villageLocalVideo.addEventListener('ended', () => {
+        videoPlayOverlay.classList.remove('hidden');
+    });
+}
+
+if (btnToggleYouTube && youtubeEmbedBox) {
+    btnToggleYouTube.addEventListener('click', () => {
+        const isHidden = youtubeEmbedBox.style.display === 'none';
+        youtubeEmbedBox.style.display = isHidden ? 'block' : 'none';
+        if (isHidden) {
+            if (villageLocalVideo) villageLocalVideo.pause();
+            youtubeEmbedBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    });
+}
+
+if (btnCloseYT && youtubeEmbedBox) {
+    btnCloseYT.addEventListener('click', () => {
+        youtubeEmbedBox.style.display = 'none';
+        const ytIframe = document.getElementById('ytIframe');
+        if (ytIframe) {
+            // Reset iframe agar audio berhenti
+            const src = ytIframe.src;
+            ytIframe.src = src;
+        }
+    });
+}
+
+// ====================================================================
+// 9. INTERAKSI KARTU APARATUR STRUKTUR ORGANISASI (POP UP & DETAIL)
+// ====================================================================
+const teamCards = document.querySelectorAll('.team-spotlight-card');
+teamCards.forEach(card => {
+    // Sentuhan mobile/tablet: tap untuk aktifkan spotlight
+    card.addEventListener('touchstart', function() {
+        teamCards.forEach(c => c.classList.remove('touch-active'));
+        this.classList.add('touch-active');
+    }, { passive: true });
+
+    // Klik untuk feedback detail
+    card.addEventListener('click', function() {
+        const name = this.querySelector('.team-name')?.innerText || 'Aparatur Desa';
+        const role = this.querySelector('.role')?.innerText || '';
+        showToast(
+            name,
+            `Jabatan: <strong>${role}</strong>. Melayani warga di Kantor Balai Desa Jatirejoyoso.`,
+            'fa-user-tie',
+            'info',
+            3500
+        );
+    });
+});
