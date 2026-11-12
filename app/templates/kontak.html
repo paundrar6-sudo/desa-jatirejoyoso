@@ -51,11 +51,23 @@
                     </div>
                 </div>
 
-                <div class="map-placeholder mt-3">
-                    <div class="map-box">
-                        <i class="fa-solid fa-map"></i>
-                        <p>Peta Wilayah Terintegrasi Google Maps</p>
-                        <small>Desa Jatirejoyoso, Jawa Timur</small>
+                <!-- Peta Wilayah Showcase -->
+                <div class="contact-map-card mt-4">
+                    <div class="contact-map-header">
+                        <h4><i class="fa-solid fa-map-location-dot text-primary"></i> Peta Lokasi & Wilayah Desa</h4>
+                        <span class="badge-pill-soft">Kec. Kepanjen</span>
+                    </div>
+                    <div class="contact-map-img-wrap btn-zoom-map" data-image="{{ url_for('static', filename='images/peta-desa.jpeg') }}" data-title="Peta Wilayah Desa Jatirejoyoso" title="Klik untuk memperbesar peta">
+                        <img src="{{ url_for('static', filename='images/peta-desa.jpeg') }}" alt="Peta Lokasi Desa Jatirejoyoso" class="contact-map-img">
+                        <div class="contact-map-overlay">
+                            <span class="zoom-pill"><i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk Perbesar Peta</span>
+                        </div>
+                    </div>
+                    <div class="contact-map-footer">
+                        <small class="text-muted"><i class="fa-solid fa-location-dot text-danger"></i> Balai Desa Jatirejoyoso, Kec. Kepanjen, Kab. Malang</small>
+                        <a href="https://maps.google.com/?q=Desa+Jatirejoyoso+Kepanjen+Malang" target="_blank" rel="noopener" class="map-link-nav">
+                            Buka di Google Maps <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
                     </div>
                 </div>
             </div>

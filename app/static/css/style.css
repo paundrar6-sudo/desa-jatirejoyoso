@@ -2411,3 +2411,516 @@ html, body {
     word-break: break-word;
     overflow-wrap: break-word;
 }
+
+/* ====================================================================
+   LOGO DESA STYLING (NAVBAR & FOOTER)
+   ==================================================================== */
+.logo-img-badge {
+    background: #ffffff !important;
+    padding: 3px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid rgba(52, 211, 153, 0.5);
+    overflow: hidden;
+}
+
+.brand-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 9px;
+    display: block;
+}
+
+.footer-logo-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    background: #ffffff;
+    padding: 4px;
+    border-radius: 12px;
+    border: 1.5px solid rgba(52, 211, 153, 0.4);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    flex-shrink: 0;
+}
+
+/* ====================================================================
+   FITUR PETA WILAYAH DESA (MODERN DIGITAL SHOWCASE MODEL)
+   ==================================================================== */
+.village-map-section {
+    padding: 70px 0;
+    position: relative;
+}
+
+.map-showcase-card {
+    background: var(--card-bg);
+    border-radius: 28px;
+    padding: 32px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 25px 40px -10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(16px);
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 32px;
+    align-items: stretch;
+}
+
+/* Kolom Visual Peta */
+.map-visual-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.map-badge-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ecfdf5;
+    color: var(--primary-dark);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid #a7f3d0;
+    margin-bottom: 14px;
+    align-self: flex-start;
+}
+
+.pulsing-green-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 8px #10b981;
+    animation: pulse 1.8s infinite;
+}
+
+.map-frame-box {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #022c22;
+    border: 2px solid rgba(16, 185, 129, 0.35);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    flex-grow: 1;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-image-featured {
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    object-fit: cover;
+    object-position: center;
+    filter: contrast(1.06) saturate(1.08);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+    display: block;
+}
+
+.map-frame-box:hover .map-image-featured {
+    transform: scale(1.04);
+    filter: contrast(1.1) saturate(1.12);
+}
+
+.map-hover-layer {
+    position: absolute;
+    inset: 0;
+    background: rgba(4, 30, 20, 0.45);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.map-frame-box:hover .map-hover-layer {
+    opacity: 1;
+}
+
+.btn-zoom-map {
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.map-quick-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 14px;
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    padding: 6px 4px;
+}
+
+.btn-text-action {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.btn-text-action:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* Kolom Sidebar Peta */
+.map-info-sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 22px;
+    padding: 26px;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1.5px solid #e2e8f0;
+}
+
+.sidebar-header .icon-tag {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: #ecfdf5;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    flex-shrink: 0;
+}
+
+.sidebar-header h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 2px;
+}
+
+.map-metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.metric-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 12px 14px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-val {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    line-height: 1.2;
+}
+
+.metric-lbl {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.boundary-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 22px;
+}
+
+.boundary-box h4 {
+    font-size: 0.92rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.boundary-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.boundary-list li {
+    font-size: 0.83rem;
+    color: #475569;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 18px;
+}
+
+.boundary-list li::before {
+    content: "•";
+    position: absolute;
+    left: 4px;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.map-actions-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Peta di Halaman Kontak */
+.contact-map-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 18px;
+    margin-top: 24px;
+}
+
+.contact-map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.contact-map-header h4 {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.badge-pill-soft {
+    background: #ecfdf5;
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 999px;
+}
+
+.contact-map-img-wrap {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    height: 180px;
+    background: #022c22;
+    cursor: pointer;
+}
+
+.contact-map-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.contact-map-img-wrap:hover .contact-map-img {
+    transform: scale(1.06);
+}
+
+.contact-map-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.contact-map-img-wrap:hover .contact-map-overlay {
+    opacity: 1;
+}
+
+.zoom-pill {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text-main);
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 999px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.contact-map-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.map-link-nav {
+    color: var(--primary);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.map-link-nav:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* ====================================================================
+   IMAGE LIGHTBOX MODAL (FULLSCREEN HIGH-RES VIEWER)
+   ==================================================================== */
+.image-modal-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.image-modal-lightbox.active {
+    display: flex;
+    animation: fadeInModal 0.25s ease-out forwards;
+}
+
+.lightbox-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 15, 10, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.lightbox-content {
+    position: relative;
+    z-index: 2;
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 24px;
+    max-width: 95vw;
+    max-height: 92vh;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    animation: zoomInModal 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+    background: #ef4444;
+    border-color: #ef4444;
+    transform: rotate(90deg);
+}
+
+.lightbox-header {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    padding-right: 40px;
+}
+
+.lightbox-img-wrap {
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: calc(92vh - 120px);
+    background: #020617;
+    border-radius: 16px;
+    padding: 8px;
+}
+
+.lightbox-img-wrap img {
+    max-width: 100%;
+    max-height: calc(88vh - 130px);
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+}
+
+.lightbox-img-wrap img.zoomed {
+    transform: scale(1.6);
+    cursor: zoom-out;
+}
+
+.lightbox-caption {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    text-align: center;
+    margin-top: 12px;
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomInModal {
+    from { transform: scale(0.92); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 992px) {
+    .map-showcase-card {
+        grid-template-columns: 1fr;
+    }
+}

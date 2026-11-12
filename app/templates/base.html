@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page_title }} - DESA JATIREJOYOSO</title>
     
+    <!-- Favicon Resmi Desa -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo-desa.jpeg') }}" type="image/jpeg">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/logo-desa.jpeg') }}">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,8 +34,8 @@
     <header class="site-header" id="siteHeader">
         <div class="container header-content">
             <a href="{{ url_for('main.beranda') }}" class="brand-logo">
-                <div class="logo-badge">
-                    <i class="fa-solid fa-landmark-dome"></i>
+                <div class="logo-badge logo-img-badge">
+                    <img src="{{ url_for('static', filename='images/logo-desa.jpeg') }}" alt="Logo Resmi Desa Jatirejoyoso" class="brand-logo-img">
                 </div>
                 <div class="brand-text">
                     <span class="village-title">DESA JATIREJOYOSO</span>
@@ -94,8 +98,11 @@
         <div class="container footer-grid">
             <div class="footer-col">
                 <div class="footer-brand">
-                    <i class="fa-solid fa-landmark-dome"></i>
-                    <h3>DESA JATIREJOYOSO</h3>
+                    <img src="{{ url_for('static', filename='images/logo-desa.jpeg') }}" alt="Logo Resmi Desa Jatirejoyoso" class="footer-logo-img">
+                    <div>
+                        <h3 style="margin-bottom: 2px;">DESA JATIREJOYOSO</h3>
+                        <small style="color: #a7f3d0; font-weight: 600;">Kec. Kepanjen, Kab. Malang</small>
+                    </div>
                 </div>
                 <p>Website Resmi Pemerintah Desa Jatirejoyoso sebagai sarana transparansi publik, publikasi informasi, dan pelayanan masyarakat yang terintegrasi.</p>
                 <div class="social-links">
@@ -143,6 +150,23 @@
             </div>
         </div>
     </footer>
+
+    <!-- Lightbox Modal untuk Peta / Gambar Resolusi Tinggi -->
+    <div class="image-modal-lightbox" id="imageLightboxModal">
+        <div class="lightbox-overlay" id="lightboxOverlay"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxCloseBtn" aria-label="Tutup Peta">&times;</button>
+            <div class="lightbox-header">
+                <span id="lightboxTitle"><i class="fa-solid fa-map-location-dot"></i> Peta Wilayah Desa Jatirejoyoso</span>
+            </div>
+            <div class="lightbox-img-wrap">
+                <img id="lightboxImg" src="" alt="Peta Desa Jatirejoyoso Resolusi Tinggi">
+            </div>
+            <div class="lightbox-caption">
+                Gunakan cubit (pinch) pada layar sentuh atau scroll mouse untuk melihat detail batas wilayah dan jalan desa.
+            </div>
+        </div>
+    </div>
 
     <!-- Main JavaScript -->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>

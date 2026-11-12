@@ -383,3 +383,56 @@ teamCards.forEach(card => {
         );
     });
 });
+
+
+// ====================================================================
+// 10. MODAL LIGHTBOX FULLSCREEN UNTUK PETA & FOTO RESOLUSI TINGGI
+// ====================================================================
+const lightboxModal = document.getElementById('imageLightboxModal');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxTitle = document.getElementById('lightboxTitle');
+const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
+const lightboxOverlay = document.getElementById('lightboxOverlay');
+
+function openLightbox(imgSrc, title = 'Peta Wilayah Desa Jatirejoyoso') {
+    if (!lightboxModal || !lightboxImg) return;
+    lightboxImg.src = imgSrc;
+    if (lightboxTitle) lightboxTitle.innerHTML = `<i class="fa-solid fa-map-location-dot"></i> ${title}`;
+    lightboxModal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Kunci scroll halaman saat modal aktif
+}
+
+function closeLightbox() {
+    if (!lightboxModal) return;
+    lightboxModal.classList.remove('active');
+    document.body.style.overflow = '';
+    if (lightboxImg) lightboxImg.classList.remove('zoomed');
+}
+
+// Buka saat tombol zoom peta atau gambar peta diklik
+document.querySelectorAll('.btn-zoom-map').forEach(el => {
+    el.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const imgSrc = this.getAttribute('data-image') || this.querySelector('img')?.src;
+        const title = this.getAttribute('data-title') || 'Peta Wilayah Desa Jatirejoyoso';
+        if (imgSrc) openLightbox(imgSrc, title);
+    });
+});
+
+if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
+if (lightboxOverlay) lightboxOverlay.addEventListener('click', closeLightbox);
+
+// Toggle zoom in/out saat klik gambar di dalam modal
+if (lightboxImg) {
+    lightboxImg.addEventListener('click', () => {
+        lightboxImg.classList.toggle('zoomed');
+    });
+}
+
+// Tutup dengan tombol keyboard ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightboxModal && lightboxModal.classList.contains('active')) {
+        closeLightbox();
+    }
+});

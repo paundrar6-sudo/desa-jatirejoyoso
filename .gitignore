@@ -2,13 +2,12 @@
 __pycache__/
 *.py[cod]
 *$py.class
+app/__pycache__/
 
-# Caches and environments
+# Environments
 .env
 .venv
 env/
 venv/
-ENV/
 .idea/
 .vscode/
-*.swp
