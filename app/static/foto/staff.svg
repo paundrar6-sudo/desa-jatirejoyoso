@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgStaff" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9d3c8d"/>
+      <stop offset="100%" stop-color="#6b2158"/>
+    </linearGradient>
+    <linearGradient id="skinStaff" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fde2d0"/>
+      <stop offset="100%" stop-color="#fca5a5"/>
+    </linearGradient>
+    <linearGradient id="hijabStaff" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4a1540"/>
+      <stop offset="100%" stop-color="#2a0824"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="120" fill="url(#bgStaff)"/>
+  <!-- Hijab Drape Outer -->
+  <path d="M68 85 Q120 40 172 85 Q182 145 168 188 Q120 200 72 188 Q58 145 68 85 Z" fill="url(#hijabStaff)"/>
+  <!-- Face -->
+  <ellipse cx="120" cy="116" rx="30" ry="35" fill="url(#skinStaff)"/>
+  <!-- Uniform -->
+  <path d="M48 240 L70 180 Q120 195 170 180 L192 240 Z" fill="#b49b78"/>
+  <circle cx="120" cy="120" r="114" fill="none" stroke="#ffcb29" stroke-width="4" opacity="0.75"/>
+</svg>

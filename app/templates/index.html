@@ -54,15 +54,15 @@
             <div class="stat-card">
                 <div class="stat-icon"><i class="fa-solid fa-map-location-dot"></i></div>
                 <div class="stat-info">
-                    <span class="stat-number">4</span>
+                    <span class="stat-number">5</span>
                     <span class="stat-text">Dusun Wilayah</span>
                 </div>
             </div>
             <div class="stat-card">
-                <div class="stat-icon"><i class="fa-solid fa-leaf"></i></div>
+                <div class="stat-icon"><i class="fa-solid fa-map"></i></div>
                 <div class="stat-info">
-                    <span class="stat-number">340 Ha</span>
-                    <span class="stat-text">Luas Pertanian</span>
+                    <span class="stat-number">302,9 Ha</span>
+                    <span class="stat-text">Luas Wilayah Desa</span>
                 </div>
             </div>
         </div>
@@ -75,7 +75,8 @@
         <div class="section-header text-center">
             <span class="sub-heading">KEMUDAHAN LAYANAN</span>
             <h2 class="section-title">Akses Cepat Informasi & Layanan Desa</h2>
-            <p class="section-desc">Masyarakat kini dapat mengakses beragam fasilitas desa secara efisien dan transparan.</p>
+            <p class="section-desc">Masyarakat kini dapat mengakses beragam fasilitas desa secara efisien dan
+                transparan.</p>
         </div>
 
         <div class="features-grid">
@@ -84,8 +85,10 @@
                     <i class="fa-solid fa-id-card-clip"></i>
                 </div>
                 <h3>Profil & Aparatur</h3>
-                <p>Mengenal struktur organisasi pemerintahan desa, visi & misi, serta sejarah berdirinya Jatirejoyoso.</p>
-                <a href="{{ url_for('main.profil') }}" class="feature-link">Lihat Profil <i class="fa-solid fa-arrow-right"></i></a>
+                <p>Mengenal struktur organisasi pemerintahan desa, visi & misi, serta sejarah berdirinya Jatirejoyoso.
+                </p>
+                <a href="{{ url_for('main.profil') }}" class="feature-link">Lihat Profil <i
+                        class="fa-solid fa-arrow-right"></i></a>
             </div>
 
             <div class="feature-card">
@@ -94,7 +97,8 @@
                 </div>
                 <h3>Warta & Informasi</h3>
                 <p>Update kegiatan kemasyarakatan, agenda pembangunan desa, serta pengumuman resmi terkini.</p>
-                <a href="{{ url_for('main.informasi') }}" class="feature-link">Baca Berita <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="{{ url_for('main.informasi') }}" class="feature-link">Baca Berita <i
+                        class="fa-solid fa-arrow-right"></i></a>
             </div>
 
             <div class="feature-card">
@@ -102,8 +106,10 @@
                     <i class="fa-solid fa-chart-pie"></i>
                 </div>
                 <h3>Transparansi APBDes</h3>
-                <p>Laporan Anggaran Pendapatan dan Belanja Desa (APBDes) 2026, sumber dana, pembiayaan, serta 5 bidang belanja desa.</p>
-                <a href="{{ url_for('main.statistik') }}" class="feature-link">Buka APBDES <i class="fa-solid fa-arrow-right"></i></a>
+                <p>Laporan Anggaran Pendapatan dan Belanja Desa (APBDes) 2026, sumber dana, pembiayaan, serta 5 bidang
+                    belanja desa.</p>
+                <a href="{{ url_for('main.statistik') }}" class="feature-link">Buka APBDES <i
+                        class="fa-solid fa-arrow-right"></i></a>
             </div>
 
             <div class="feature-card">
@@ -112,7 +118,8 @@
                 </div>
                 <h3>Layanan Mandiri</h3>
                 <p>Permohonan surat keterangan domisili, usaha, dan dokumen kependudukan secara cepat dan mudah.</p>
-                <a href="{{ url_for('main.layanan') }}" class="feature-link">Urus Surat <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="{{ url_for('main.layanan') }}" class="feature-link">Urus Surat <i
+                        class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
     </div>
@@ -124,7 +131,8 @@
         <div class="section-header text-center">
             <span class="sub-heading">GEOSPASIAL & TATA RUANG</span>
             <h2 class="section-title">Peta Wilayah Desa Jatirejoyoso</h2>
-            <p class="section-desc">Peta digital pemetaan wilayah, batas dusun, lahan persawahan produktif, dan tata ruang Desa Jatirejoyoso, Kec. Kepanjen.</p>
+            <p class="section-desc">Peta digital pemetaan wilayah, batas dusun, lahan persawahan produktif, dan tata
+                ruang Desa Jatirejoyoso, Kec. Kepanjen.</p>
         </div>
 
         <div class="map-showcase-card">
@@ -133,12 +141,15 @@
                 <div class="map-badge-status">
                     <span class="pulsing-green-dot"></span> Peta Resmi Wilayah Desa
                 </div>
-                
+
                 <div class="map-frame-box" id="mapTriggerFullscreen">
-                    <img src="{{ url_for('static', filename='images/peta-desa.jpeg') }}" alt="Peta Desa Jatirejoyoso" class="map-image-featured" id="featuredVillageMap">
-                    
+                    <img src="{{ url_for('static', filename='images/peta-desa.jpeg') }}" alt="Peta Desa Jatirejoyoso"
+                        class="map-image-featured" id="featuredVillageMap">
+
                     <div class="map-hover-layer">
-                        <button class="btn btn-sm btn-primary btn-zoom-map" data-image="{{ url_for('static', filename='images/peta-desa.jpeg') }}" data-title="Peta Lengkap Desa Jatirejoyoso">
+                        <button class="btn btn-sm btn-primary btn-zoom-map"
+                            data-image="{{ url_for('static', filename='images/peta-desa.jpeg') }}"
+                            data-title="Peta Lengkap Desa Jatirejoyoso">
                             <i class="fa-solid fa-expand"></i> Klik untuk Perbesar Peta Penuh
                         </button>
                     </div>
@@ -146,8 +157,10 @@
 
                 <div class="map-quick-toolbar">
                     <span><i class="fa-solid fa-crosshairs text-primary"></i> Kec. Kepanjen, Kab. Malang</span>
-                    <span><i class="fa-solid fa-layer-group text-primary"></i> 4 Dusun Terintegrasi</span>
-                    <button class="btn-text-action btn-zoom-map" data-image="{{ url_for('static', filename='images/peta-desa.jpeg') }}" data-title="Peta Lengkap Desa Jatirejoyoso">
+                    <span><i class="fa-solid fa-layer-group text-primary"></i> 5 Dusun Terpadu</span>
+                    <button class="btn-text-action btn-zoom-map"
+                        data-image="{{ url_for('static', filename='images/peta-desa.jpeg') }}"
+                        data-title="Peta Lengkap Desa Jatirejoyoso">
                         <i class="fa-solid fa-magnifying-glass-plus"></i> Zoom Resolusi Tinggi
                     </button>
                 </div>
@@ -165,12 +178,12 @@
 
                 <div class="map-metrics-grid">
                     <div class="metric-item">
-                        <span class="metric-val">4</span>
+                        <span class="metric-val">5</span>
                         <span class="metric-lbl">Dusun Wilayah</span>
                     </div>
                     <div class="metric-item">
-                        <span class="metric-val">340 Ha</span>
-                        <span class="metric-lbl">Luas Lahan Tani</span>
+                        <span class="metric-val">302,9 Ha</span>
+                        <span class="metric-lbl">Luas Wilayah Desa</span>
                     </div>
                     <div class="metric-item">
                         <span class="metric-val">320 mdpl</span>
@@ -193,10 +206,14 @@
                 </div>
 
                 <div class="map-actions-group">
-                    <button class="btn btn-primary btn-block btn-zoom-map" data-image="{{ url_for('static', filename='images/peta-desa.jpeg') }}" data-title="Peta Wilayah Desa Jatirejoyoso (Resolusi Tinggi)">
+                    <button class="btn btn-primary btn-block btn-zoom-map"
+                        data-image="{{ url_for('static', filename='images/peta-desa.jpeg') }}"
+                        data-title="Peta Wilayah Desa Jatirejoyoso (Resolusi Tinggi)">
                         <i class="fa-solid fa-map"></i> Buka Peta Ukuran Penuh
                     </button>
-                    <a href="https://maps.google.com/?q=Desa+Jatirejoyoso+Kepanjen+Malang" target="_blank" rel="noopener" class="btn btn-outline btn-block" style="color: var(--primary-dark); border-color: var(--primary);">
+                    <a href="https://maps.google.com/?q=Desa+Jatirejoyoso+Kepanjen+Malang" target="_blank"
+                        rel="noopener" class="btn btn-outline btn-block"
+                        style="color: var(--primary-dark); border-color: var(--primary);">
                         <i class="fa-solid fa-location-arrow"></i> Petunjuk Arah di Google Maps
                     </a>
                 </div>
@@ -224,7 +241,8 @@
                 <div class="news-content">
                     <span class="news-date"><i class="fa-regular fa-calendar"></i> 10 November 2026</span>
                     <h3>Gotong Royong Normalisasi Saluran Irigasi Menghadapi Musim Tanam</h3>
-                    <p>Warga Desa Jatirejoyoso bersama kelompok tani bahu membahu membersihkan saluran irigasi tersier demi kelancaran pasokan air.</p>
+                    <p>Warga Desa Jatirejoyoso bersama kelompok tani bahu membahu membersihkan saluran irigasi tersier
+                        demi kelancaran pasokan air.</p>
                     <a href="{{ url_for('main.informasi') }}" class="read-more">Selengkapnya &rarr;</a>
                 </div>
             </article>
@@ -234,7 +252,8 @@
                 <div class="news-content">
                     <span class="news-date"><i class="fa-regular fa-calendar"></i> 05 November 2026</span>
                     <h3>Pelatihan Pemasaran Digital UMKM Produk Olahan Pangan Desa</h3>
-                    <p>Mendorong pelaku usaha mikro Desa Jatirejoyoso menembus pasar daring melalui pelatihan foto produk dan marketplace.</p>
+                    <p>Mendorong pelaku usaha mikro Desa Jatirejoyoso menembus pasar daring melalui pelatihan foto
+                        produk dan marketplace.</p>
                     <a href="{{ url_for('main.informasi') }}" class="read-more">Selengkapnya &rarr;</a>
                 </div>
             </article>
@@ -244,7 +263,8 @@
                 <div class="news-content">
                     <span class="news-date"><i class="fa-regular fa-calendar"></i> 28 Oktober 2026</span>
                     <h3>Pelaksanaan Posyandu Balita & Lansia Terpadu di Balai Dusun</h3>
-                    <p>Pemeriksaan rutin kesehatan anak, penimbangan balita, dan penyuluhan gizi seimbang untuk pencegahan stunting secara berkelanjutan.</p>
+                    <p>Pemeriksaan rutin kesehatan anak, penimbangan balita, dan penyuluhan gizi seimbang untuk
+                        pencegahan stunting secara berkelanjutan.</p>
                     <a href="{{ url_for('main.informasi') }}" class="read-more">Selengkapnya &rarr;</a>
                 </div>
             </article>
@@ -252,4 +272,3 @@
     </div>
 </section>
 {% endblock %}
-

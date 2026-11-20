@@ -52,8 +52,8 @@ DESA JATIREJOYOSO/
 
 1. **Nama Website**: **DESA JATIREJOYOSO** (Terpampang jelas di Navbar, Hero, dan Footer).
 2. **Navigasi 6 Menu Utama**:
-   - **Beranda**: Halaman utama dengan sambutan resmi, kartu statistik cepat, keunggulan desa, dan kabar terkini.
-   - **Profil**: Sejarah nama Jatirejoyoso, visi & misi, serta daftar aparatur desa.
+   - **Beranda**: Halaman utama dengan tema warna ungu magenta & emas khas logo Desa Jatirejoyoso, metrik luas wilayah desa (302,9 Ha), 5 dusun terpadu, kartu APBDes, dan kabar terkini.
+   - **Profil**: Bagan struktur organisasi 14 aparatur pemerintah desa dengan susunan hierarki 1-1-3-3-5-1 (diletakkan paling atas), sejarah desa, visi misi, serta video profil/short movie desa.
    - **Informasi**: Berita kegiatan desa, pengumuman pembagian bansos/pupuk subsidi, dan agenda warga.
    - **Statistik**: Grafik data kependudukan (laki-laki/perempuan, mata pencaharian petani/pedagang, dan kelompok usia).
    - **Layanan**: Prosedur 4 langkah dan pengajuan surat (Domisili, SKU, SKTM, SKCK, Pengantar Nikah, dsb) yang terhubung langsung dengan WhatsApp Admin desa dengan pesan otomatis.

@@ -4,23 +4,24 @@
    ==================================================================== */
 
 :root {
-    --primary: #047857;
-    --primary-dark: #064e3b;
-    --primary-light: #10b981;
+    --primary: #7e3270;
+    --primary-dark: #581c4e;
+    --primary-light: #9d3c8d;
     --accent: #d97706;
-    --accent-light: #f59e0b;
-    --bg-dark: #091e14;
+    --accent-gold: #ffcb29;
+    --accent-light: #fef08a;
+    --bg-dark: #160a16;
     --text-main: #1e293b;
     --text-muted: #64748b;
     --text-light: #f8fafc;
-    --card-bg: rgba(255, 255, 255, 0.92);
-    --card-border: rgba(255, 255, 255, 0.6);
-    --glass-bg: rgba(15, 23, 42, 0.55);
+    --card-bg: rgba(255, 255, 255, 0.94);
+    --card-border: rgba(255, 255, 255, 0.65);
+    --glass-bg: rgba(30, 12, 28, 0.65);
     --transition-slow: 1.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: 0.3s ease;
     --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-    --shadow-glow: 0 0 25px rgba(16, 185, 129, 0.35);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.18), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --shadow-glow: 0 0 25px rgba(157, 60, 141, 0.45);
 }
 
 * {
@@ -74,27 +75,23 @@ body {
     transform: scale(1.0);
 }
 
-/* Overlay gradient untuk memastikan keterbacaan teks */
+/* Overlay gradient untuk memastikan keterbacaan teks (Sesuai Warna Logo Desa) */
 .bg-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        180deg,
-        rgba(9, 30, 20, 0.65) 0%,
-        rgba(9, 30, 20, 0.5) 40%,
-        rgba(9, 30, 20, 0.85) 100%
-    );
+    background: linear-gradient(180deg,
+            rgba(26, 10, 24, 0.72) 0%,
+            rgba(40, 15, 38, 0.55) 40%,
+            rgba(18, 7, 17, 0.90) 100%);
     z-index: -1;
     transition: background 0.8s ease;
 }
 
 /* Overlay lebih pekat untuk halaman konten selain beranda */
 body:not([data-page="beranda"]) .bg-overlay {
-    background: linear-gradient(
-        180deg,
-        rgba(9, 30, 20, 0.85) 0%,
-        rgba(15, 23, 42, 0.92) 100%
-    );
+    background: linear-gradient(180deg,
+            rgba(24, 9, 22, 0.90) 0%,
+            rgba(16, 6, 15, 0.96) 100%);
     backdrop-filter: blur(4px);
 }
 
@@ -115,16 +112,17 @@ body:not([data-page="beranda"]) .bg-overlay {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(9, 30, 20, 0.75);
+    background: rgba(28, 11, 26, 0.82);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 203, 41, 0.2);
     transition: all var(--transition-fast);
 }
 
 .site-header.scrolled {
-    background: rgba(6, 78, 59, 0.95);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: rgba(88, 28, 78, 0.96);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    border-bottom: 1px solid rgba(255, 203, 41, 0.35);
 }
 
 .header-content {
@@ -170,8 +168,8 @@ body:not([data-page="beranda"]) .bg-overlay {
 
 .village-tagline {
     font-size: 0.78rem;
-    color: #a7f3d0;
-    font-weight: 500;
+    color: #fde047;
+    font-weight: 600;
 }
 
 .nav-list {
@@ -195,14 +193,14 @@ body:not([data-page="beranda"]) .bg-overlay {
 
 .nav-link:hover {
     color: #ffffff;
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.14);
 }
 
 .nav-link.active {
     color: #ffffff;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    box-shadow: 0 4px 12px rgba(4, 120, 87, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    box-shadow: 0 4px 14px rgba(126, 50, 112, 0.5);
+    border: 1px solid rgba(255, 203, 41, 0.4);
 }
 
 .mobile-toggle {
@@ -243,12 +241,12 @@ body:not([data-page="beranda"]) .bg-overlay {
     align-items: center;
     gap: 8px;
     background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 203, 41, 0.35);
     padding: 6px 18px;
     border-radius: 999px;
     font-size: 0.85rem;
-    font-weight: 600;
-    color: #d1fae5;
+    font-weight: 700;
+    color: #fef08a;
     margin-bottom: 24px;
     backdrop-filter: blur(8px);
 }
@@ -256,16 +254,27 @@ body:not([data-page="beranda"]) .bg-overlay {
 .pulsing-dot {
     width: 8px;
     height: 8px;
-    background: #34d399;
+    background: #ffcb29;
     border-radius: 50%;
-    box-shadow: 0 0 10px #34d399;
+    box-shadow: 0 0 10px #ffcb29;
     animation: pulse 1.8s infinite;
 }
 
 @keyframes pulse {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); }
-    70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 203, 41, 0.7);
+    }
+
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 10px rgba(255, 203, 41, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 203, 41, 0);
+    }
 }
 
 .hero-title {
@@ -293,11 +302,11 @@ body:not([data-page="beranda"]) .bg-overlay {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.45);
     padding: 8px 18px;
     border-radius: 999px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 203, 41, 0.3);
     margin-bottom: 32px;
 }
 
@@ -316,16 +325,16 @@ body:not([data-page="beranda"]) .bg-overlay {
 }
 
 .slider-dot.active {
-    background: #34d399;
+    background: #ffcb29;
     transform: scale(1.3);
-    box-shadow: 0 0 8px #34d399;
+    box-shadow: 0 0 8px #ffcb29;
 }
 
 .slider-label {
     font-size: 0.8rem;
-    color: #a7f3d0;
+    color: #fef08a;
     margin-left: 8px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .hero-cta-group {
@@ -355,7 +364,13 @@ body:not([data-page="beranda"]) .bg-overlay {
 .btn-primary {
     background: linear-gradient(135deg, var(--primary-light), var(--primary));
     color: #ffffff;
-    box-shadow: 0 10px 20px rgba(4, 120, 87, 0.35);
+    box-shadow: 0 10px 20px rgba(126, 50, 112, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #b0469f, #66205a);
+    box-shadow: 0 14px 26px rgba(126, 50, 112, 0.55);
 }
 
 .btn-primary:hover {
@@ -537,10 +552,21 @@ body:not([data-page="beranda"]) .bg-overlay {
     margin-bottom: 20px;
 }
 
-.feature-icon.bg-green { background: linear-gradient(135deg, #10b981, #047857); }
-.feature-icon.bg-blue { background: linear-gradient(135deg, #0ea5e9, #0284c7); }
-.feature-icon.bg-amber { background: linear-gradient(135deg, #f59e0b, #d97706); }
-.feature-icon.bg-teal { background: linear-gradient(135deg, #14b8a6, #0f766e); }
+.feature-icon.bg-green {
+    background: linear-gradient(135deg, #10b981, #047857);
+}
+
+.feature-icon.bg-blue {
+    background: linear-gradient(135deg, #0ea5e9, #0284c7);
+}
+
+.feature-icon.bg-amber {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.feature-icon.bg-teal {
+    background: linear-gradient(135deg, #14b8a6, #0f766e);
+}
 
 .feature-card h3 {
     font-size: 1.25rem;
@@ -862,7 +888,8 @@ body:not([data-page="beranda"]) .bg-overlay {
     transition: all 0.25s ease;
 }
 
-.pill.active, .pill:hover {
+.pill.active,
+.pill:hover {
     background: #10b981;
     color: #ffffff;
     border-color: #10b981;
@@ -901,8 +928,15 @@ body:not([data-page="beranda"]) .bg-overlay {
     font-weight: 800;
 }
 
-.news-card-badge.info { background: #e0f2fe; color: #075985; }
-.news-card-badge.success { background: #dcfce7; color: #166534; }
+.news-card-badge.info {
+    background: #e0f2fe;
+    color: #075985;
+}
+
+.news-card-badge.success {
+    background: #dcfce7;
+    color: #166534;
+}
 
 .news-card-body h2 {
     font-size: 1.35rem;
@@ -1188,10 +1222,10 @@ body:not([data-page="beranda"]) .bg-overlay {
    FOOTER
    ==================================================================== */
 .site-footer {
-    background: #041d13;
-    color: #94a3b8;
+    background: #180917;
+    color: #cbd5e1;
     margin-top: auto;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 203, 41, 0.25);
 }
 
 .footer-grid {
@@ -1211,7 +1245,7 @@ body:not([data-page="beranda"]) .bg-overlay {
 
 .footer-brand i {
     font-size: 1.8rem;
-    color: #34d399;
+    color: #ffcb29;
 }
 
 .footer-brand h3 {
@@ -1265,7 +1299,7 @@ body:not([data-page="beranda"]) .bg-overlay {
 }
 
 .footer-links a {
-    color: #94a3b8;
+    color: #cbd5e1;
     text-decoration: none;
     font-size: 0.88rem;
     display: inline-flex;
@@ -1275,11 +1309,12 @@ body:not([data-page="beranda"]) .bg-overlay {
 }
 
 .footer-links a:hover {
-    color: #34d399;
+    color: #ffcb29;
     transform: translateX(4px);
 }
 
-.office-hours p, .contact-mini p {
+.office-hours p,
+.contact-mini p {
     font-size: 0.86rem;
     margin-bottom: 8px;
     display: flex;
@@ -1288,9 +1323,9 @@ body:not([data-page="beranda"]) .bg-overlay {
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding: 20px 0;
-    background: #02120b;
+    background: #0f050e;
     font-size: 0.82rem;
 }
 
@@ -1305,17 +1340,35 @@ body:not([data-page="beranda"]) .bg-overlay {
 /* ====================================================================
    UTILITY & RESPONSIVE
    ==================================================================== */
-.mt-3 { margin-top: 1.5rem; }
-.mt-4 { margin-top: 2rem; }
-.mt-5 { margin-top: 3rem; }
-.text-primary { color: var(--primary) !important; }
-.text-danger { color: #ef4444 !important; }
-.text-muted { color: var(--text-muted) !important; }
+.mt-3 {
+    margin-top: 1.5rem;
+}
+
+.mt-4 {
+    margin-top: 2rem;
+}
+
+.mt-5 {
+    margin-top: 3rem;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.text-danger {
+    color: #ef4444 !important;
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
 
 @media (max-width: 992px) {
     .grid-2-col {
         grid-template-columns: 1fr;
     }
+
     .footer-grid {
         grid-template-columns: 1fr;
     }
@@ -1325,9 +1378,11 @@ body:not([data-page="beranda"]) .bg-overlay {
     .hero-title {
         font-size: 2.3rem;
     }
+
     .mobile-toggle {
         display: flex;
     }
+
     .main-nav {
         position: absolute;
         top: 80px;
@@ -1336,20 +1391,24 @@ body:not([data-page="beranda"]) .bg-overlay {
         background: rgba(6, 78, 59, 0.98);
         padding: 20px;
         backdrop-filter: blur(20px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         display: none;
     }
+
     .main-nav.show {
         display: block;
     }
+
     .nav-list {
         flex-direction: column;
         gap: 10px;
     }
+
     .nav-link {
         border-radius: 8px;
         padding: 10px 16px;
     }
+
     .header-content {
         height: 70px;
     }
@@ -1726,7 +1785,7 @@ body:not([data-page="beranda"]) .bg-overlay {
 .baliho-img-preview {
     max-width: 220px;
     border-radius: 16px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     border: 3px solid #ffffff;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -1759,16 +1818,20 @@ body:not([data-page="beranda"]) .bg-overlay {
     .apbdes-two-col {
         grid-template-columns: 1fr;
     }
+
     .apbdes-grand-header {
         flex-direction: column;
         align-items: flex-start;
     }
+
     .apbdes-total-highlight {
         text-align: left;
     }
+
     .apbdes-total-number {
         font-size: 1.6rem;
     }
+
     .belanja-card-top {
         flex-direction: column;
         align-items: flex-start;
@@ -1780,20 +1843,35 @@ body:not([data-page="beranda"]) .bg-overlay {
    ==================================================================== */
 
 /* Global Smooth & Tactile Feel on Click */
-button, .btn, .nav-link, .pill, .slider-dot, .catalog-card, .feature-card, .news-card, .social-links a {
+button,
+.btn,
+.nav-link,
+.pill,
+.slider-dot,
+.catalog-card,
+.feature-card,
+.news-card,
+.social-links a {
     -webkit-tap-highlight-color: transparent;
     user-select: none;
     cursor: pointer;
 }
 
 /* Tombol / Link ditekan (Active state) memberikan respons fisik nyata */
-.btn:active, button:active, .nav-link:active, .pill:active, .social-links a:active {
+.btn:active,
+button:active,
+.nav-link:active,
+.pill:active,
+.social-links a:active {
     transform: scale(0.96) translateY(1px) !important;
     transition: transform 0.08s ease-out !important;
 }
 
 /* Material Design Ripple Effect Container */
-.btn, .pill, .catalog-card, .feature-card {
+.btn,
+.pill,
+.catalog-card,
+.feature-card {
     position: relative;
     overflow: hidden;
 }
@@ -1990,6 +2068,7 @@ button, .btn, .nav-link, .pill, .slider-dot, .catalog-card, .feature-card, .news
         opacity: 0;
         transform: translateY(20px) scale(0.92);
     }
+
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -1999,7 +2078,8 @@ button, .btn, .nav-link, .pill, .slider-dot, .catalog-card, .feature-card, .news
 /* ====================================================================
    ULTRA-RESPONSIVE FIXES (ANTI-PECAH DI SEGALA GADGET)
    ==================================================================== */
-html, body {
+html,
+body {
     max-width: 100vw;
     overflow-x: hidden;
 }
@@ -2037,7 +2117,10 @@ html, body {
         justify-content: center;
     }
 
-    .content-box, .apbdes-grand-panel, .contact-info-panel, .direct-contact-box {
+    .content-box,
+    .apbdes-grand-panel,
+    .contact-info-panel,
+    .direct-contact-box {
         padding: 20px 16px;
         border-radius: 18px;
     }
@@ -2066,7 +2149,10 @@ html, body {
         gap: 4px;
     }
 
-    .stats-cards-grid, .features-grid, .catalog-grid, .news-grid {
+    .stats-cards-grid,
+    .features-grid,
+    .catalog-grid,
+    .news-grid {
         grid-template-columns: 1fr;
     }
 
@@ -2082,6 +2168,7 @@ html, body {
     .catalog-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
+
     .stats-cards-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -2107,7 +2194,8 @@ html, body {
 .video-wrapper {
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    padding-top: 56.25%;
+    /* 16:9 Aspect Ratio */
     background: #000000;
     border-radius: 18px;
     overflow: hidden;
@@ -2166,9 +2254,17 @@ html, body {
 }
 
 @keyframes playPulse {
-    0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-    70% { box-shadow: 0 0 0 22px rgba(16, 185, 129, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 22px rgba(16, 185, 129, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
 }
 
 .video-duration-badge {
@@ -2274,10 +2370,10 @@ html, body {
     height: 100%;
     position: relative;
     transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-                box-shadow 0.35s ease,
-                border-color 0.3s ease,
-                opacity 0.35s ease,
-                filter 0.35s ease;
+        box-shadow 0.35s ease,
+        border-color 0.3s ease,
+        opacity 0.35s ease,
+        filter 0.35s ease;
     cursor: pointer;
 }
 
@@ -2338,7 +2434,7 @@ html, body {
     justify-content: center;
     font-size: 0.85rem;
     border: 2px solid #ffffff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .team-name {
@@ -2361,7 +2457,8 @@ html, body {
     font-size: 0.88rem;
     color: var(--text-muted);
     line-height: 1.55;
-    flex-grow: 1; /* Menjamin tinggi kartu seragam */
+    flex-grow: 1;
+    /* Menjamin tinggi kartu seragam */
     margin-bottom: 16px;
     word-break: break-word;
     overflow-wrap: break-word;
@@ -2389,17 +2486,27 @@ html, body {
    PENYESUAIAN TEKS & KOTAK AGAR TIDAK PECAH / OVERFLOW
    ==================================================================== */
 /* Normalisasi tinggi kartu pada seluruh grid */
-.features-grid, .catalog-grid, .news-grid, .steps-grid, .stats-cards-grid {
+.features-grid,
+.catalog-grid,
+.news-grid,
+.steps-grid,
+.stats-cards-grid {
     align-items: stretch;
 }
 
-.feature-card, .catalog-card, .news-card, .step-card {
+.feature-card,
+.catalog-card,
+.news-card,
+.step-card {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
-.feature-card p, .catalog-card p, .news-card p, .step-card p {
+.feature-card p,
+.catalog-card p,
+.news-card p,
+.step-card p {
     flex-grow: 1;
     word-break: break-word;
     overflow-wrap: break-word;
@@ -2407,7 +2514,10 @@ html, body {
 }
 
 /* Cegah teks judul meluap dari kotak */
-.feature-card h3, .catalog-card h3, .news-card h3, .step-card h4 {
+.feature-card h3,
+.catalog-card h3,
+.news-card h3,
+.step-card h4 {
     word-break: break-word;
     overflow-wrap: break-word;
 }
@@ -2775,7 +2885,7 @@ html, body {
     font-weight: 700;
     padding: 6px 14px;
     border-radius: 999px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .contact-map-footer {
@@ -2892,7 +3002,7 @@ html, body {
     max-height: calc(88vh - 130px);
     object-fit: contain;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     cursor: zoom-in;
     transition: transform 0.3s ease;
 }
@@ -2910,17 +3020,181 @@ html, body {
 }
 
 @keyframes fadeInModal {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes zoomInModal {
-    from { transform: scale(0.92); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+    from {
+        transform: scale(0.92);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 @media (max-width: 992px) {
     .map-showcase-card {
         grid-template-columns: 1fr;
+    }
+}
+
+
+/* ====================================================================
+   BAGAN STRUKTUR ORGANISASI PEMDES HIERARKI: 1 - 1 - 3 - 3 - 5 - 1
+   ==================================================================== */
+.org-structure-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    margin: 20px 0 40px 0;
+}
+
+.org-tier-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.org-tier-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fdf4fc;
+    color: var(--primary-dark);
+    font-size: 0.82rem;
+    font-weight: 800;
+    padding: 6px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(126, 50, 112, 0.25);
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(126, 50, 112, 0.08);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.org-tier-badge i {
+    color: var(--accent-gold);
+}
+
+.org-connector-vertical {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    position: relative;
+    width: 100%;
+}
+
+.org-connector-vertical span {
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary), var(--accent-gold));
+    border-radius: 3px;
+    opacity: 0.75;
+}
+
+.org-row-flex {
+    display: flex;
+    width: 100%;
+}
+
+.org-row-flex.row-center {
+    justify-content: center;
+}
+
+.org-row-flex.row-center .team-card {
+    max-width: 440px;
+    width: 100%;
+}
+
+.featured-kades {
+    border: 2px solid #ffcb29 !important;
+    background: linear-gradient(180deg, #ffffff, #fdf4fc) !important;
+    box-shadow: 0 16px 36px rgba(126, 50, 112, 0.22) !important;
+}
+
+.featured-kades .avatar-photo-wrap {
+    background: linear-gradient(135deg, #ffcb29, #d97706) !important;
+    box-shadow: 0 8px 24px rgba(255, 203, 41, 0.45) !important;
+}
+
+.featured-sekdes {
+    border: 1.5px solid rgba(126, 50, 112, 0.45) !important;
+    background: linear-gradient(180deg, #ffffff, #faf5ff) !important;
+}
+
+.featured-staff {
+    border: 1.5px solid rgba(126, 50, 112, 0.35) !important;
+}
+
+.org-row-grid {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+    align-items: stretch;
+}
+
+.org-row-grid.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.org-row-grid.grid-5 {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+/* Efek Spotlight Hover & Pop Up Interaktif pada Bagan Organisasi */
+.org-structure-wrapper:hover .team-spotlight-card:not(:hover) {
+    opacity: 0.52;
+    transform: scale(0.97);
+    filter: grayscale(25%);
+}
+
+.org-structure-wrapper .team-spotlight-card:hover {
+    opacity: 1 !important;
+    transform: translateY(-14px) scale(1.04) !important;
+    z-index: 20;
+    box-shadow: 0 25px 45px rgba(126, 50, 112, 0.4), 0 0 20px rgba(255, 203, 41, 0.45) !important;
+    border-color: #ffcb29 !important;
+    filter: none !important;
+}
+
+/* Responsive Breakpoints untuk Bagan Organisasi */
+@media (max-width: 1200px) {
+    .org-row-grid.grid-5 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .org-row-grid.grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .org-row-grid.grid-5 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+
+    .org-row-grid.grid-3,
+    .org-row-grid.grid-5 {
+        grid-template-columns: 1fr;
+    }
+
+    .org-row-flex.row-center .team-card {
+        max-width: 100%;
     }
 }
