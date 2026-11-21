@@ -3,124 +3,109 @@
 {% block content %}
 <section class="page-banner">
     <div class="container">
-        <span class="banner-badge">Layanan Aspirasi & Bantuan</span>
-        <h1 class="page-header-title">Kontak & Lokasi Balai Desa</h1>
-        <p class="page-header-subtitle">Hubungi kami atau sampaikan aspirasi, saran, dan pengaduan untuk kemajuan Desa Jatirejoyoso.</p>
+        <span class="banner-badge">Pusat Layanan Warga</span>
+        <h1 class="page-header-title">Layanan Administrasi & Pengaduan</h1>
+        <p class="page-header-subtitle">Saluran resmi komunikasi, konsultasi administrasi, dan penyampaian pengaduan masyarakat Desa Jatirejoyoso melalui WhatsApp Admin Desa.</p>
     </div>
 </section>
 
 <section class="content-section">
     <div class="container">
         <div class="grid-2-col">
-            <!-- Informasi Kontak & Lokasi -->
+            <!-- Informasi Kantor Balai Desa -->
             <div class="contact-info-panel">
-                <h2>Informasi Balai Desa</h2>
-                <p>Silakan hubungi saluran resmi Pemerintah Desa Jatirejoyoso atau berkunjung langsung ke Balai Desa pada jam kerja.</p>
+                <span class="sub-heading">KANTOR PEMERINTAH DESA</span>
+                <h2>Balai Desa Jatirejoyoso</h2>
+                <p>Masyarakat dapat berkunjung langsung ke Kantor Balai Desa selama jam operasional pelayanan atau menghubungi admin secara daring.</p>
 
                 <div class="contact-cards-vertical">
                     <div class="contact-info-item">
                         <div class="icon-wrap"><i class="fa-solid fa-map-location-dot"></i></div>
                         <div>
                             <h4>Alamat Kantor</h4>
-                            <p>Jl. Raya Balai Desa Jatirejoyoso No. 01, Kec. Kepanjen, Kab. Malang, Jawa Timur</p>
+                            <p>Jl. Raya Balai Desa Jatirejoyoso No. 01, Kec. Kepanjen, Kab. Malang, Jawa Timur 65163</p>
                         </div>
                     </div>
-
                     <div class="contact-info-item">
                         <div class="icon-wrap"><i class="fa-brands fa-whatsapp"></i></div>
                         <div>
-                            <h4>WhatsApp Pelayanan & Pengaduan</h4>
-                            <p>+62 812-3456-7890 (Layanan Cepat Tanggap)</p>
+                            <h4>Admin Administrasi & Pengaduan</h4>
+                            <p><strong>Vio Lita Dewi Islamia</strong> &bull; 0822-2169-6497</p>
                         </div>
                     </div>
-
-                    <div class="contact-info-item">
-                        <div class="icon-wrap"><i class="fa-solid fa-envelope"></i></div>
-                        <div>
-                            <h4>Email Resmi</h4>
-                            <p>sekretariat@jatirejoyoso.desa.id</p>
-                        </div>
-                    </div>
-
                     <div class="contact-info-item">
                         <div class="icon-wrap"><i class="fa-regular fa-clock"></i></div>
                         <div>
-                            <h4>Jam Buka Pelayanan</h4>
-                            <p>Senin - Jumat : 08.00 - 14.00 WIB<br><small class="text-muted">Sabtu & Minggu: Libur / Pelayanan Online</small></p>
+                            <h4>Waktu Pelayanan</h4>
+                            <p><strong>Senin - Jumat:</strong> 08.00 - 14.00 WIB<br><small class="text-muted">Sabtu & Minggu: Libur Pelayanan Tatap Muka</small></p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="icon-wrap"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <h4>Email Resmi Desa</h4>
+                            <p>pemdes@jatirejoyoso.desa.id</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Peta Wilayah Showcase -->
+                <!-- Peta Desa Card Interaktif -->
                 <div class="contact-map-card mt-4">
                     <div class="contact-map-header">
-                        <h4><i class="fa-solid fa-map-location-dot text-primary"></i> Peta Lokasi & Wilayah Desa</h4>
-                        <span class="badge-pill-soft">Kec. Kepanjen</span>
+                        <h4><i class="fa-solid fa-map-location-dot text-primary"></i> Peta Wilayah Jatirejoyoso</h4>
+                        <span class="badge-pill-soft">Luas 302,9 ha</span>
                     </div>
-                    <div class="contact-map-img-wrap btn-zoom-map" data-image="{{ url_for('static', filename='images/peta-desa.jpeg') }}" data-title="Peta Wilayah Desa Jatirejoyoso" title="Klik untuk memperbesar peta">
-                        <img src="{{ url_for('static', filename='images/peta-desa.jpeg') }}" alt="Peta Lokasi Desa Jatirejoyoso" class="contact-map-img">
+                    <div class="contact-map-img-wrap btn-zoom-map" data-image="{{ url_for('static', filename='images/peta-desa.jpeg') }}" data-title="Peta Wilayah Desa Jatirejoyoso, Kec. Kepanjen">
+                        <img src="{{ url_for('static', filename='images/peta-desa.jpeg') }}" alt="Peta Desa Jatirejoyoso" class="contact-map-img">
                         <div class="contact-map-overlay">
-                            <span class="zoom-pill"><i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk Perbesar Peta</span>
+                            <span class="zoom-pill"><i class="fa-solid fa-magnifying-glass-plus"></i> Klik Perbesar Peta</span>
                         </div>
                     </div>
                     <div class="contact-map-footer">
-                        <small class="text-muted"><i class="fa-solid fa-location-dot text-danger"></i> Balai Desa Jatirejoyoso, Kec. Kepanjen, Kab. Malang</small>
-                        <a href="https://maps.google.com/?q=Desa+Jatirejoyoso+Kepanjen+Malang" target="_blank" rel="noopener" class="map-link-nav">
-                            Buka di Google Maps <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        <small class="text-muted"><i class="fa-solid fa-circle-info"></i> Menampilkan batas 5 dusun</small>
+                        <a href="{{ url_for('main.beranda') }}#petaDesaSection" class="map-link-nav">
+                            Buka di Beranda <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Formulir Aspirasi & Pengaduan Warga -->
-            <div class="content-box">
-                <h2><i class="fa-solid fa-paper-plane text-primary"></i> Kotak Aspirasi & Pengaduan</h2>
-                <p class="text-muted">Aspirasi Anda sangat berharga bagi evaluasi dan peningkatan pelayanan masyarakat.</p>
+            <!-- Panel Pengaduan & Administrasi (Hanya 1 Tombol WA Saja) -->
+            <div class="contact-admin-panel content-box">
+                <div class="contact-admin-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                <span class="sub-heading">HUBUNGI ADMIN</span>
+                <h2>Layanan Administrasi & Pengaduan</h2>
+                <p class="text-muted">Untuk keperluan pengurusan administrasi umum, konsultasi kependudukan, penyampaian kritik, saran, maupun laporan pengaduan warga, silakan menghubungi admin desa secara langsung via WhatsApp.</p>
 
-                <form class="contact-form" id="aspirasiForm">
-                    <div class="form-group">
-                        <label for="nama"><i class="fa-solid fa-user"></i> Nama Lengkap</label>
-                        <input type="text" id="nama" class="form-control" placeholder="Masukkan nama lengkap Anda" required>
+                <div class="contact-admin-card-box">
+                    <div class="admin-profile-row">
+                        <div class="admin-avatar"><i class="fa-solid fa-user-shield"></i></div>
+                        <div class="admin-details">
+                            <span class="admin-role-tag">Admin Penanggung Jawab</span>
+                            <h3 class="admin-name">Vio Lita Dewi Islamia</h3>
+                            <span class="admin-phone"><i class="fa-brands fa-whatsapp text-success"></i> 0822-2169-6497</span>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="nik"><i class="fa-solid fa-id-card"></i> NIK (Nomor Induk Kependudukan)</label>
-                        <input type="text" id="nik" class="form-control" placeholder="16 digit NIK (KTP)" maxlength="16" required>
+                    <div class="admin-points-list">
+                        <div class="admin-point"><i class="fa-solid fa-check text-success"></i> Pelayanan respon cepat pada jam operasional kerja</div>
+                        <div class="admin-point"><i class="fa-solid fa-check text-success"></i> Kerahasiaan identitas pelapor pengaduan terjamin</div>
+                        <div class="admin-point"><i class="fa-solid fa-check text-success"></i> Koordinasi langsung dengan perangkat dan kepala desa</div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="telepon"><i class="fa-solid fa-phone"></i> Nomor WhatsApp / HP</label>
-                        <input type="tel" id="telepon" class="form-control" placeholder="Contoh: 0812xxxxxxxx" required>
+                    <!-- Tombol Tunggal Langsung ke WhatsApp -->
+                    <div class="mt-4">
+                        <a href="https://wa.me/6282221696497?text=Halo%20Bu%20Vio%20Lita%20Dewi%20Islamia%2C%20saya%20warga%20Desa%20Jatirejoyoso.%20Saya%20ingin%20menghubungi%20admin%20terkait%20layanan%20administrasi%20atau%20pengaduan%20desa." target="_blank" rel="noopener" class="btn btn-primary btn-single-wa">
+                            <i class="fa-brands fa-whatsapp"></i> Kirim via WhatsApp ke Vio Lita Dewi Islamia
+                        </a>
                     </div>
 
-                    <div class="form-group">
-                        <label for="kategori"><i class="fa-solid fa-tag"></i> Jenis Aspirasi</label>
-                        <select id="kategori" class="form-control" required>
-                            <option value="">-- Pilih Jenis --</option>
-                            <option value="Pengaduan Infrastruktur">Pengaduan Infrastruktur / Lingkungan</option>
-                            <option value="Kritik & Saran Pelayanan">Kritik & Saran Pelayanan Kantor</option>
-                            <option value="Usulan Pembangunan">Usulan Program / Ide Pembangunan</option>
-                            <option value="Pertanyaan Bantuan Sosial">Pertanyaan Bantuan Sosial</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="pesan"><i class="fa-solid fa-message"></i> Pesan / Uraian</label>
-                        <textarea id="pesan" rows="4" class="form-control" placeholder="Tuliskan secara jelas saran atau aduan Anda..." required></textarea>
-                    </div>
-
-                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                        <button type="submit" class="btn btn-primary" style="flex: 1;">
-                            <i class="fa-solid fa-paper-plane"></i> Kirim Aspirasi
-                        </button>
-                        <button type="button" id="btnAduanWA" class="btn btn-outline" style="color: var(--primary-dark); border-color: var(--primary); background: #ecfdf5;">
-                            <i class="fa-brands fa-whatsapp"></i> Kirim via WA
-                        </button>
-                    </div>
-                </form>
+                    <p class="contact-admin-note">
+                        <i class="fa-solid fa-circle-info"></i> Seluruh pesan dan pengaduan diarahkan secara terpadu melalui WhatsApp resmi di atas demi kecepatan respon dan kemudahan tindak lanjut.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 {% endblock %}
-

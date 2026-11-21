@@ -3,9 +3,9 @@
 {% block content %}
 <section class="page-banner">
     <div class="container">
-        <span class="banner-badge">Profil Pemerintah & Kelembagaan</span>
-        <h1 class="page-header-title">Struktur Organisasi & Profil Desa</h1>
-        <p class="page-header-subtitle">Bagan kelembagaan pemerintahan desa, profil 14 aparatur pelayan warga, sejarah berdirinya, visi misi, serta dokumenter Desa Jatirejoyoso.</p>
+        <span class="banner-badge">Profil Pemerintah Desa</span>
+        <h1 class="page-header-title">Profil Desa Jatirejoyoso</h1>
+        <p class="page-header-subtitle">Struktur organisasi pemerintah desa, sejarah berdirinya desa, visi-misi pembangunan, dan video dokumenter potensi wilayah.</p>
     </div>
 </section>
 
@@ -13,253 +13,172 @@
     <div class="container">
 
         <!-- ====================================================================
-             1. STRUKTUR ORGANISASI PEMERINTAH DESA (DILETAKKAN PALING ATAS, TOTAL 14 ORANG)
-             URUTAN TINGKATAN: 1 - 1 - 3 - 3 - 5 - 1
+             1. STRUKTUR ORGANISASI (DI PALING ATAS, 14 ORANG, URUTAN 1-1-3-3-5-1)
              ==================================================================== -->
-        <div class="team-section" style="margin-top: 0; margin-bottom: 70px;">
+        <div class="team-section">
             <div class="section-header text-center">
-                <span class="sub-heading">STRUKTUR ORGANISASI PEMERINTAH DESA</span>
-                <h2 class="section-title">Aparatur Pemerintah Desa Jatirejoyoso</h2>
-                <p class="section-desc">Bagan susunan 14 aparatur pemerintah desa yang berdedikasi melayani seluruh masyarakat dengan susunan hierarki <strong>1 - 1 - 3 - 3 - 5 - 1</strong>. Arahkan kursor ke kartu profil untuk efek pop-up interaktif:</p>
+                <span class="sub-heading">STRUKTUR ORGANISASI</span>
+                <h2 class="section-title">Pemerintah Desa Jatirejoyoso</h2>
+                <p class="section-desc">Susunan 14 perangkat dan staf Pemerintah Desa Jatirejoyoso periode aktif.</p>
             </div>
 
-            <div class="org-structure-wrapper" id="teamSpotlightGrid">
+            <!-- Struktur Bagan Hierarki 1 - 1 - 3 - 3 - 5 - 1 -->
+            <div class="org-structure-wrapper">
 
-                <!-- TINGKAT 1 (1 ORANG): KEPALA DESA -->
-                <div class="org-tier-block tier-1">
-                    <div class="org-tier-badge"><i class="fa-solid fa-crown"></i> Pimpinan Utama Desa (1)</div>
+                <!-- TIER 1: KEPALA DESA (1 Orang) -->
+                <div class="org-tier-block">
                     <div class="org-row-flex row-center">
-                        <div class="team-card team-spotlight-card featured-kades" data-person="kades">
+                        <article class="team-card team-spotlight-card featured-kades">
                             <div class="avatar-photo-wrap">
-                                <img src="{{ url_for('static', filename='foto/kades.svg') }}" alt="Foto Kepala Desa Bambang Triyono" class="avatar-photo" onerror="this.src='{{ url_for('static', filename='foto/kades.svg') }}'">
-                                <span class="avatar-badge-pin"><i class="fa-solid fa-crown"></i></span>
+                                <img src="{{ url_for('static', filename='foto/kades.svg') }}" alt="Foto Kepala Desa Didit Mulyo Santoso" class="avatar-photo">
                             </div>
-                            <h3 class="team-name">Bambang Triyono, S.P.</h3>
-                            <span class="role">Kepala Desa (Kades)</span>
-                            <p class="team-desc">Memimpin penyelenggaraan pemerintahan desa, pembinaan kemasyarakatan, serta penanggung jawab tertinggi pelaksanaan APBDes dan pembangunan Jatirejoyoso.</p>
-                            <div class="team-footer-meta">
-                                <span class="meta-tag"><i class="fa-solid fa-id-badge"></i> Pemimpin Pemerintahan</span>
-                            </div>
-                        </div>
+                            <h3 class="team-name">Didit Mulyo Santoso</h3>
+                            <span class="role">Kepala Desa</span>
+                        </article>
                     </div>
                 </div>
 
-                <!-- CONNECTOR LINE -->
                 <div class="org-connector-vertical"><span></span></div>
 
-                <!-- TINGKAT 2 (1 ORANG): SEKRETARIS DESA -->
-                <div class="org-tier-block tier-2">
-                    <div class="org-tier-badge"><i class="fa-solid fa-star"></i> Pimpinan Sekretariat (1)</div>
+                <!-- TIER 2: SEKRETARIS DESA (1 Orang) -->
+                <div class="org-tier-block">
                     <div class="org-row-flex row-center">
-                        <div class="team-card team-spotlight-card featured-sekdes" data-person="sekdes">
+                        <article class="team-card team-spotlight-card featured-sekdes">
                             <div class="avatar-photo-wrap">
-                                <img src="{{ url_for('static', filename='foto/sekdes.svg') }}" alt="Foto Sekretaris Desa Siti Rahmawati" class="avatar-photo" onerror="this.src='{{ url_for('static', filename='foto/sekdes.svg') }}'">
-                                <span class="avatar-badge-pin"><i class="fa-solid fa-star"></i></span>
+                                <img src="{{ url_for('static', filename='foto/sekdes.svg') }}" alt="Foto Sekretaris Desa Isbakhul Munir" class="avatar-photo">
                             </div>
-                            <h3 class="team-name">Siti Rahmawati, S.E.</h3>
-                            <span class="role">Sekretaris Desa (Sekdes)</span>
-                            <p class="team-desc">Memimpin sekretariat desa, mengkoordinasikan administrasi umum, penyusunan rancangan peraturan desa, keuangan, serta perencanaan pembangunan.</p>
-                            <div class="team-footer-meta">
-                                <span class="meta-tag"><i class="fa-solid fa-file-pen"></i> Koordinator Administrasi</span>
-                            </div>
-                        </div>
+                            <h3 class="team-name">Isbakhul Munir</h3>
+                            <span class="role">Sekretaris Desa</span>
+                        </article>
                     </div>
                 </div>
 
-                <!-- CONNECTOR LINE -->
                 <div class="org-connector-vertical"><span></span></div>
 
-                <!-- TINGKAT 3 (3 ORANG): KEPALA SEKSI (KASI) -->
-                <div class="org-tier-block tier-3">
-                    <div class="org-tier-badge"><i class="fa-solid fa-briefcase"></i> Kepala Seksi / Pelaksana Teknis (3)</div>
+                <!-- TIER 3: KEPALA SEKSI (3 Orang) -->
+                <div class="org-tier-block">
                     <div class="org-row-grid grid-3">
-                        
-                        <!-- 1. Kasi Pemerintahan -->
-                        <div class="team-card team-spotlight-card">
+                        <article class="team-card team-spotlight-card">
                             <div class="avatar-photo-wrap">
-                                <img src="{{ url_for('static', filename='foto/aparatur-pria.svg') }}" alt="Foto Kasi Pemerintahan Rahmat Hidayat" class="avatar-photo">
+                                <img src="{{ url_for('static', filename='foto/aparatur-pria.svg') }}" alt="Foto Very Dwi Nurdianto" class="avatar-photo">
                             </div>
-                            <h3 class="team-name">Rahmat Hidayat</h3>
+                            <h3 class="team-name">Very Dwi Nurdianto</h3>
                             <span class="role">Kasi Pemerintahan</span>
-                            <p class="team-desc">Melaksanakan manajemen tata praja pemerintahan, ketenteraman dan ketertiban umum, administrasi kependudukan, serta penataan pertanahan desa.</p>
-                            <div class="team-footer-meta">
-                                <span class="meta-tag"><i class="fa-solid fa-landmark"></i> Tata Praja & Wilayah</span>
-                            </div>
-                        </div>
+                        </article>
 
-                        <!-- 2. Kasi Kesejahteraan -->
-                        <div class="team-card team-spotlight-card">
+                        <article class="team-card team-spotlight-card">
                             <div class="avatar-photo-wrap">
-                                <img src="{{ url_for('static', filename='foto/aparatur-wanita.svg') }}" alt="Foto Kasi Kesra Indah Permatasari" class="avatar-photo">
+                                <img src="{{ url_for('static', filename='foto/aparatur-pria.svg') }}" alt="Foto Sholikin" class="avatar-photo">
                             </div>
-                            <h3 class="team-name">Indah Permatasari, S.Sos.</h3>
-                            <span class="role">Kasi Kesejahteraan (Kesra)</span>
-                            <p class="team-desc">Melaksanakan pembangunan sarana prasarana fisik perdesaan, program pemberdayaan warga, penanganan sosial, posyandu, dan keagamaan.</p>
-                            <div class="team-footer-meta">
-                                <span class="meta-tag"><i class="fa-solid fa-hand-holding-heart"></i> Sosial & Kesejahteraan</span>
-                            </div>
-                        </div>
+                            <h3 class="team-name">Sholikin</h3>
+                            <span class="role">Kasi Kesejahteraan</span>
+                        </article>
 
-                        <!-- 3. Kasi Pelayanan -->
-                        <div class="team-card team-spotlight-card">
+                        <article class="team-card team-spotlight-card">
                             <div class="avatar-photo-wrap">
-                                <img src="{{ url_for('static', filename='foto/aparatur-pria.svg') }}" alt="Foto Kasi Pelayanan Hadi Santoso" class="avatar-photo">
+                                <img src="{{ url_for('static', filename='foto/aparatur-pria.svg') }}" alt="Foto Ekwan" class="avatar-photo">
                             </div>
-                            <h3 class="team-name">Hadi Santoso</h3>
+                            <h3 class="team-name">Ekwan</h3>
                             <span class="role">Kasi Pelayanan</span>
-                            <p class="team-desc">Melaksanakan penyuluhan dan pembinaan kesadaran masyarakat, pelayanan penerbitan surat keterangan warga, kebudayaan, pemuda dan olahraga.</p>
-                            <div class="team-footer-meta">
-                                <span class="meta-tag"><i class="fa-solid fa-headset"></i> Pelayanan Masyarakat</span>
-                            </div>
-                        </div>
-
+                        </article>
                     </div>
                 </div>
 
-                <!-- CONNECTOR LINE -->
                 <div class="org-connector-vertical"><span></span></div>
 
-                <!-- TINGKAT 4 (3 ORANG): KEPALA URUSAN (KAUR) -->
-                <div class="org-tier-block tier-4">
-                    <div class="org-tier-badge"><i class="fa-solid fa-folder-open"></i> Kepala Urusan / Staf Pendukung Sekretariat (3)</div>
+                <!-- TIER 4: KEPALA URUSAN (3 Orang) -->
+                <div class="org-tier-block">
                     <div class="org-row-grid grid-3">
-                        
-                        <!-- 1. Kaur TU dan UMUM -->
-                        <div class="team-card team-spotlight-card">
+                        <article class="team-card team-spotlight-card">
                             <div class="avatar-photo-wrap">
-                                <img src="{{ url_for('static', filename='foto/aparatur-pria.svg') }}" alt="Foto Kaur TU Eko Prasetyo" class="avatar-photo">
+                                <img src="{{ url_for('static', filename='foto/aparatur-pria.svg') }}" alt="Foto Muhamad Sulton" class="avatar-photo">
                             </div>
-                            <h3 class="team-name">Eko Prasetyo</h3>
+                            <h3 class="team-name">Muhamad Sulton</h3>
                             <span class="role">Kaur TU dan UMUM</span>
-                            <p class="team-desc">Mengelola persuratan dinas keluar dan masuk, kearsipan dokumen aset desa, penyediaan operasional logistik, dan ekspedisi kantor.</p>
-                            <div class="team-footer-meta">
-                                <span class="meta-tag"><i class="fa-solid fa-envelope-open-text"></i> Tata Usaha & Kearsipan</span>
-                            </div>
-                        </div>
+                        </article>
 
-                        <!-- 2. Kaur Keuangan -->
-                        <div class="team-card team-spotlight-card">
+                        <article class="team-card team-spotlight-card">
                             <div class="avatar-photo-wrap">
-                                <img src="{{ url_for('static', filename='foto/aparatur-pria.svg') }}" alt="Foto Kaur Keuangan Agus Purnomo" class="avatar-photo">
+                                <img src="{{ url_for('static', filename='foto/aparatur-pria.svg') }}" alt="Foto Mochammad Arifin" class="avatar-photo">
                             </div>
-                            <h3 class="team-name">Agus Purnomo</h3>
+                            <h3 class="team-name">Mochammad Arifin</h3>
                             <span class="role">Kaur Keuangan</span>
-                            <p class="team-desc">Melaksanakan penatausahaan kas desa, pembukuan keuangan APBDes, penerimaan pendapatan, serta penyusunan pertanggungjawaban anggaran.</p>
-                            <div class="team-footer-meta">
-                                <span class="meta-tag"><i class="fa-solid fa-wallet"></i> Perbendaharaan & Kas</span>
-                            </div>
-                        </div>
+                        </article>
 
-                        <!-- 3. Kaur Perencanaan -->
-                        <div class="team-card team-spotlight-card">
+                        <article class="team-card team-spotlight-card">
                             <div class="avatar-photo-wrap">
-                                <img src="{{ url_for('static', filename='foto/aparatur-wanita.svg') }}" alt="Foto Kaur Perencanaan Dewi Lestari" class="avatar-photo">
+                                <img src="{{ url_for('static', filename='foto/aparatur-pria.svg') }}" alt="Foto Muhamad Rudi" class="avatar-photo">
                             </div>
-                            <h3 class="team-name">Dewi Lestari, S.Kom.</h3>
+                            <h3 class="team-name">Muhamad Rudi</h3>
                             <span class="role">Kaur Perencanaan</span>
-                            <p class="team-desc">Menyusun dokumen perencanaan strategis desa (RPJMDes & RKPDes), memfasilitasi Musrenbangdes, serta inventarisasi data pembangunan.</p>
-                            <div class="team-footer-meta">
-                                <span class="meta-tag"><i class="fa-solid fa-chart-line"></i> Dokumen Perencanaan</span>
-                            </div>
-                        </div>
-
+                        </article>
                     </div>
                 </div>
 
-                <!-- CONNECTOR LINE -->
                 <div class="org-connector-vertical"><span></span></div>
 
-                <!-- TINGKAT 5 (5 ORANG): KEPALA DUSUN (KASUN) -->
-                <div class="org-tier-block tier-5">
-                    <div class="org-tier-badge"><i class="fa-solid fa-map-location-dot"></i> Unsur Kewilayahan / Kepala Dusun (5 Dusun)</div>
+                <!-- TIER 5: KEPALA DUSUN (5 Orang: Tamanayu, Wonoayu, Mergosingo, Dawuhan, Balong) -->
+                <div class="org-tier-block">
                     <div class="org-row-grid grid-5">
-                        
-                        <!-- 1. Kasun Tamanayu -->
-                        <div class="team-card team-spotlight-card">
+                        <article class="team-card team-spotlight-card">
                             <div class="avatar-photo-wrap">
-                                <img src="{{ url_for('static', filename='foto/kasun.svg') }}" alt="Foto Kasun Tamanayu" class="avatar-photo">
+                                <img src="{{ url_for('static', filename='foto/kasun.svg') }}" alt="Foto Agus Hermanto" class="avatar-photo">
                             </div>
-                            <h3 class="team-name">Sugeng Riyadi</h3>
-                            <span class="role">Kepala Dusun Tamanayu</span>
-                            <p class="team-desc">Melaksanakan kepemimpinan kewilayahan, kerukunan warga RT/RW, dan keamanan wilayah Dusun Tamanayu.</p>
-                            <div class="team-footer-meta">
-                                <span class="meta-tag"><i class="fa-solid fa-location-dot"></i> Wilayah Tamanayu</span>
-                            </div>
-                        </div>
+                            <h3 class="team-name">Agus Hermanto</h3>
+                            <span class="role">Kepala Dusun</span>
+                            <small class="text-muted" style="font-weight: 700; font-size: 0.78rem;">Dusun Tamanayu</small>
+                        </article>
 
-                        <!-- 2. Kasun Wonoayu -->
-                        <div class="team-card team-spotlight-card">
+                        <article class="team-card team-spotlight-card">
                             <div class="avatar-photo-wrap">
-                                <img src="{{ url_for('static', filename='foto/kasun.svg') }}" alt="Foto Kasun Wonoayu" class="avatar-photo">
+                                <img src="{{ url_for('static', filename='foto/kasun.svg') }}" alt="Foto Dwi Chandra Setya Budi" class="avatar-photo">
                             </div>
-                            <h3 class="team-name">Supardi</h3>
-                            <span class="role">Kepala Dusun Wonoayu</span>
-                            <p class="team-desc">Melaksanakan pendataan warga, gotong royong lingkungan, dan pembinaan ketertiban di Dusun Wonoayu.</p>
-                            <div class="team-footer-meta">
-                                <span class="meta-tag"><i class="fa-solid fa-location-dot"></i> Wilayah Wonoayu</span>
-                            </div>
-                        </div>
+                            <h3 class="team-name">Dwi Chandra Setya Budi</h3>
+                            <span class="role">Kepala Dusun</span>
+                            <small class="text-muted" style="font-weight: 700; font-size: 0.78rem;">Dusun Wonoayu</small>
+                        </article>
 
-                        <!-- 3. Kasun Mergosingo -->
-                        <div class="team-card team-spotlight-card">
+                        <article class="team-card team-spotlight-card">
                             <div class="avatar-photo-wrap">
-                                <img src="{{ url_for('static', filename='foto/kasun.svg') }}" alt="Foto Kasun Mergosingo" class="avatar-photo">
+                                <img src="{{ url_for('static', filename='foto/kasun.svg') }}" alt="Foto Mochamad Badrus Salam" class="avatar-photo">
                             </div>
-                            <h3 class="team-name">Slamet Wahyudi</h3>
-                            <span class="role">Kepala Dusun Mergosingo</span>
-                            <p class="team-desc">Membina kegiatan masyarakat, koordinasi pertanian dan irigasi lingkungan di Dusun Mergosingo.</p>
-                            <div class="team-footer-meta">
-                                <span class="meta-tag"><i class="fa-solid fa-location-dot"></i> Wilayah Mergosingo</span>
-                            </div>
-                        </div>
+                            <h3 class="team-name">Mochamad Badrus Salam</h3>
+                            <span class="role">Kepala Dusun</span>
+                            <small class="text-muted" style="font-weight: 700; font-size: 0.78rem;">Dusun Mergosingo</small>
+                        </article>
 
-                        <!-- 4. Kasun Dawuhan -->
-                        <div class="team-card team-spotlight-card">
+                        <article class="team-card team-spotlight-card">
                             <div class="avatar-photo-wrap">
-                                <img src="{{ url_for('static', filename='foto/kasun.svg') }}" alt="Foto Kasun Dawuhan" class="avatar-photo">
+                                <img src="{{ url_for('static', filename='foto/kasun.svg') }}" alt="Foto Mukhamad Afifudin" class="avatar-photo">
                             </div>
-                            <h3 class="team-name">Ahmad Fauzi</h3>
-                            <span class="role">Kepala Dusun Dawuhan</span>
-                            <p class="team-desc">Mengkoordinasikan aspirasi warga, ketentraman lingkungan, serta pelayanan sosial di Dusun Dawuhan.</p>
-                            <div class="team-footer-meta">
-                                <span class="meta-tag"><i class="fa-solid fa-location-dot"></i> Wilayah Dawuhan</span>
-                            </div>
-                        </div>
+                            <h3 class="team-name">Mukhamad Afifudin</h3>
+                            <span class="role">Kepala Desa</span>
+                            <small class="text-muted" style="font-weight: 700; font-size: 0.78rem;">Dusun Dawuhan</small>
+                        </article>
 
-                        <!-- 5. Kasun Balong -->
-                        <div class="team-card team-spotlight-card">
+                        <article class="team-card team-spotlight-card">
                             <div class="avatar-photo-wrap">
-                                <img src="{{ url_for('static', filename='foto/kasun.svg') }}" alt="Foto Kasun Balong" class="avatar-photo">
+                                <img src="{{ url_for('static', filename='foto/aparatur-wanita.svg') }}" alt="Foto Vio Lita Dewi Islamia" class="avatar-photo">
                             </div>
-                            <h3 class="team-name">Moch. Sholeh</h3>
-                            <span class="role">Kepala Dusun Balong</span>
-                            <p class="team-desc">Melaksanakan koordinasi kewilayahan, keamanan poskamling, dan kerukunan tetangga di Dusun Balong.</p>
-                            <div class="team-footer-meta">
-                                <span class="meta-tag"><i class="fa-solid fa-location-dot"></i> Wilayah Balong</span>
-                            </div>
-                        </div>
-
+                            <h3 class="team-name">Vio Lita Dewi Islamia</h3>
+                            <span class="role">Kepala Dusun</span>
+                            <small class="text-muted" style="font-weight: 700; font-size: 0.78rem;">Dusun Balong</small>
+                        </article>
                     </div>
                 </div>
 
-                <!-- CONNECTOR LINE -->
                 <div class="org-connector-vertical"><span></span></div>
 
-                <!-- TINGKAT 6 (1 ORANG): STAFF ADMINISTRASI DESA -->
-                <div class="org-tier-block tier-6">
-                    <div class="org-tier-badge"><i class="fa-solid fa-users-gear"></i> Pelaksana Teknis Administrasi & Front Office (1)</div>
+                <!-- TIER 6: STAFF ADMINISTRASI DESA (1 Orang) -->
+                <div class="org-tier-block">
                     <div class="org-row-flex row-center">
-                        <div class="team-card team-spotlight-card featured-staff">
+                        <article class="team-card team-spotlight-card featured-staff">
                             <div class="avatar-photo-wrap">
-                                <img src="{{ url_for('static', filename='foto/staff.svg') }}" alt="Foto Staff Administrasi Desa" class="avatar-photo">
+                                <img src="{{ url_for('static', filename='foto/staff.svg') }}" alt="Foto Alivian Praditama Santoso P" class="avatar-photo">
                             </div>
-                            <h3 class="team-name">Nur Aini, A.Md.</h3>
+                            <h3 class="team-name">Alivian Praditama Santoso P</h3>
                             <span class="role">Staff Administrasi Desa</span>
-                            <p class="team-desc">Membantu loket pelayanan administrasi harian, input data kependudukan digital, persuratan online, dan front office balai desa.</p>
-                            <div class="team-footer-meta">
-                                <span class="meta-tag"><i class="fa-solid fa-laptop-code"></i> Administrasi & Pelayanan</span>
-                            </div>
-                        </div>
+                        </article>
                     </div>
                 </div>
 
@@ -269,13 +188,7 @@
         <!-- ====================================================================
              2. SEJARAH SINGKAT DESA & VISI MISI
              ==================================================================== -->
-        <div class="section-header text-center mt-5">
-            <span class="sub-heading">SEJARAH & CITA-CITA LUHUR</span>
-            <h2 class="section-title">Sejarah, Visi, dan Misi Desa</h2>
-            <p class="section-desc">Mengenal akar nilai luhur pendahulu dan arah masa depan kemakmuran Desa Jatirejoyoso.</p>
-        </div>
-
-        <div class="grid-2-col">
+        <div class="grid-2-col mt-5">
             <div class="content-box">
                 <div class="box-icon"><i class="fa-solid fa-scroll"></i></div>
                 <h2>Sejarah Singkat Desa</h2>
@@ -285,7 +198,7 @@
                     <li><strong>Rejo:</strong> Berarti kemakmuran, kesuburan, dan kesejahteraan hidup bagi setiap warga.</li>
                     <li><strong>Yoso:</strong> Bermakna membangun, berupaya, dan menata masa depan bersama.</li>
                 </ul>
-                <p>Seiring waktu, Jatirejoyoso bertransformasi dari kawasan agraris tradisional menjadi desa yang dinamis, terbuka terhadap teknologi, namun tetap menjunjung tinggi gotong royong dan adat istiadat di 5 dusun wilayahnya.</p>
+                <p>Seiring waktu, Jatirejoyoso bertransformasi dari kawasan agraris tradisional menjadi desa yang dinamis, terbuka terhadap teknologi digital, dengan tetap melestarikan kearifan lokal dan gotong royong.</p>
             </div>
 
             <div class="content-box highlight-box">
@@ -300,57 +213,53 @@
                 <ol class="custom-numbered-list">
                     <li>Meningkatkan kualitas tata kelola pemerintahan yang transparan, akuntabel, dan berbasis teknologi digital.</li>
                     <li>Mengembangkan potensi pertanian, peternakan, dan UMKM berbasis ekonomi kerakyatan.</li>
-                    <li>Meningkatkan kualitas sarana dan prasarana dasar, jalan desa, dan jaringan irigasi di 5 dusun.</li>
+                    <li>Meningkatkan kualitas sarana prasarana desa, akses jalan, dan irigasi pertanian.</li>
                     <li>Mewujudkan masyarakat yang sehat, cerdas, berakhlak mulia, dan berkeadilan sosial.</li>
                 </ol>
             </div>
         </div>
 
         <!-- ====================================================================
-             3. VIDEO PROFIL & SHORT MOVIE DESA JATIREJOYOSO
+             3. VIDEO PROFIL & SHORT MOVIE DOKUMENTER DESA
              ==================================================================== -->
         <div class="video-showcase-section mt-5">
             <div class="section-header text-center">
-                <span class="sub-heading">DOKUMENTER & POTENSI WILAYAH</span>
+                <span class="sub-heading">DOKUMENTASI POTENSI DESA</span>
                 <h2 class="section-title">Video Profil & Short Movie Desa</h2>
-                <p class="section-desc">Saksikan keindahan alam, denyut kehidupan warga di 5 dusun, dan kemajuan pembangunan Desa Jatirejoyoso melalui tayangan video resmi di bawah ini.</p>
+                <p class="section-desc">Saksikan tayangan visual bentang alam pertanian, dinamika kehidupan warga, dan kemajuan pembangunan Desa Jatirejoyoso.</p>
             </div>
 
             <div class="video-player-container">
-                <!-- Mode Pemutar: Video File Lokal / Link Video -->
                 <div class="video-wrapper" id="villageVideoWrapper">
-                    <!-- HTML5 Local Video Player dengan Poster Thumbnail -->
                     <video id="villageLocalVideo" controls poster="{{ url_for('static', filename='videos/video-thumbnail.svg') }}" preload="metadata">
                         <source src="{{ url_for('static', filename='videos/profil-desa.mp4') }}" type="video/mp4">
                         <source src="{{ url_for('static', filename='videos/short-movie-jatirejoyoso.mp4') }}" type="video/mp4">
-                        Browser Anda tidak mendukung pemutar video HTML5.
+                        Browser Anda belum mendukung tag video HTML5.
                     </video>
 
-                    <!-- Overlay Placeholder Jika Video Belum Dimainkan -->
                     <div class="video-play-overlay" id="videoPlayOverlay">
                         <button class="btn-play-pulse" id="btnPlayVideo" aria-label="Putar Video Profil">
                             <i class="fa-solid fa-play"></i>
                         </button>
-                        <span class="video-duration-badge"><i class="fa-solid fa-film"></i> Short Movie Dokumenter</span>
+                        <span class="video-duration-badge"><i class="fa-solid fa-film"></i> Putar Video Profil</span>
                     </div>
                 </div>
 
                 <div class="video-meta-bar">
                     <div class="video-meta-info">
                         <h3><i class="fa-solid fa-circle-play text-primary"></i> Short Movie: Pesona & Potensi Jatirejoyoso</h3>
-                        <p>Dokumentasi resmi Pemerintah Desa Jatirejoyoso. Menampilkan bentang alam persawahan, geliat UMKM, serta pelayanan masyarakat terpadu.</p>
+                        <p>Dokumentasi resmi Pemerintah Desa Jatirejoyoso. Meliputi keindahan area persawahan 302,9 ha, kehidupan 5 dusun, dan pelayanan terpadu.</p>
                     </div>
                     <div class="video-actions">
                         <button class="btn btn-sm btn-outline" id="btnToggleYouTube" style="color: var(--primary-dark); border-color: var(--primary);">
-                            <i class="fa-brands fa-youtube text-danger"></i> Putar via YouTube Link
+                            <i class="fa-brands fa-youtube text-danger"></i> Tonton via YouTube
                         </button>
                     </div>
                 </div>
 
-                <!-- Input / Embed Modal YouTube jika ingin memutar dari link eksternal -->
                 <div class="youtube-embed-box" id="youtubeEmbedBox" style="display: none;">
                     <div class="yt-header">
-                        <span><i class="fa-brands fa-youtube text-danger"></i> Tonton melalui Tautan YouTube:</span>
+                        <span><i class="fa-brands fa-youtube text-danger"></i> Tautan YouTube Desa Jatirejoyoso:</span>
                         <button class="btn-close-yt" id="btnCloseYT">&times;</button>
                     </div>
                     <div class="yt-iframe-wrap">

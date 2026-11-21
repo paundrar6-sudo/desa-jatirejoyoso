@@ -3,9 +3,9 @@
 {% block content %}
 <section class="page-banner">
     <div class="container">
-        <span class="banner-badge">Pusat Berita & Pengumuman</span>
+        <span class="banner-badge">Pusat Informasi & Agenda</span>
         <h1 class="page-header-title">Informasi & Kabar Desa</h1>
-        <p class="page-header-subtitle">Dapatkan informasi terkini, agenda pembangunan, dan pengumuman resmi Desa Jatirejoyoso.</p>
+        <p class="page-header-subtitle">Berita resmi, pengumuman publik, serta agenda kalender kegiatan Pemerintah dan Warga Desa Jatirejoyoso.</p>
     </div>
 </section>
 
@@ -20,13 +20,14 @@
             <button class="pill">Bansos & Pertanian</button>
         </div>
 
+        <!-- Daftar Berita Terkini -->
         <div class="news-list-grid">
             <article class="news-card-horizontal">
                 <div class="news-card-badge">Penting</div>
                 <div class="news-card-body">
                     <span class="news-date"><i class="fa-regular fa-calendar"></i> 11 November 2026</span>
                     <h2>Penyaluran Bantuan Pangan dan Pupuk Subsidi Tahap IV Tahun Anggaran 2026</h2>
-                    <p>Diumumkan kepada seluruh kelompok tani terdaftar bahwa penyaluran pupuk subsidi dan bantuan cadangan pangan akan dilaksanakan pada hari Kamis di Gudang Lumbung Desa. Harap membawa KTP dan kartu tani.</p>
+                    <p>Diumumkan kepada seluruh kelompok tani terdaftar di 5 dusun bahwa penyaluran pupuk subsidi dan cadangan pangan bertempat di Gudang Lumbung Desa Jatirejoyoso. Warga diimbau membawa KTP asli dan kartu tani.</p>
                     <div class="news-meta">
                         <span><i class="fa-solid fa-user"></i> Oleh: Sekdes Jatirejoyoso</span>
                         <span><i class="fa-solid fa-tag"></i> Pertanian & Ketahanan Pangan</span>
@@ -39,7 +40,7 @@
                 <div class="news-card-body">
                     <span class="news-date"><i class="fa-regular fa-calendar"></i> 08 November 2026</span>
                     <h2>Musyawarah Perencanaan Pembangunan Desa (Musrenbangdes) Pembahasan RKPDes 2027</h2>
-                    <p>Pemerintah Desa bersama BPD mengundang seluruh perwakilan RT, RW, tokoh pemuda, dan tokoh perempuan untuk hadir dan menyuarakan aspirasi program pembangunan lingkungan di pendopo balai desa.</p>
+                    <p>Pemerintah Desa bersama BPD mengundang seluruh perwakilan RT, RW, tokoh pemuda, dan tokoh perempuan untuk hadir menyuarakan aspirasi program pembangunan lingkungan di pendopo balai desa.</p>
                     <div class="news-meta">
                         <span><i class="fa-solid fa-user"></i> Oleh: BPD Jatirejoyoso</span>
                         <span><i class="fa-solid fa-tag"></i> Musyawarah Desa</span>
@@ -51,8 +52,8 @@
                 <div class="news-card-badge success">Kesehatan</div>
                 <div class="news-card-body">
                     <span class="news-date"><i class="fa-regular fa-calendar"></i> 02 November 2026</span>
-                    <h2>Jadwal Vaksinasi & Cek Kesehatan Gratis untuk Lansia dan Penyandang Disabilitas</h2>
-                    <p>Kerjasama Puskesmas setempat dengan Kader PKK Desa Jatirejoyoso dalam program 'Desa Sehat Berdaya' yang meliputi pemeriksaan gula darah, tensi, dan pemberian suplemen vitamin gratis.</p>
+                    <h2>Jadwal Posyandu Lansia & Pemeriksaan Kesehatan Gratis Balita</h2>
+                    <p>Pemeriksaan kesehatan berkala, pengukuran tekanan darah, penimbangan berat badan balita, dan pemberian makanan tambahan (PMT) bergizi yang diselenggarakan serentak oleh Kader PKK Desa.</p>
                     <div class="news-meta">
                         <span><i class="fa-solid fa-user"></i> Oleh: Pokja IV PKK</span>
                         <span><i class="fa-solid fa-tag"></i> Kesehatan Warga</span>
@@ -64,8 +65,8 @@
                 <div class="news-card-badge">Pemberdayaan</div>
                 <div class="news-card-body">
                     <span class="news-date"><i class="fa-regular fa-calendar"></i> 25 Oktober 2026</span>
-                    <h2>Sosialisasi Pengelolaan Bank Sampah Mandiri dan Budidaya Maggot di RW 02</h2>
-                    <p>Sebagai langkah strategis mengatasi residu sampah organik rumah tangga dan menghasilkan nilai ekonomis tambahan bagi warga melalui pakan ternak alternatif berprotein tinggi.</p>
+                    <h2>Sosialisasi Pengelolaan Bank Sampah Mandiri & Budidaya Maggot RW 02</h2>
+                    <p>Program pemberdayaan lingkungan untuk mengolah sampah organik rumah tangga bernilai ekonomis serta menghasilkan pakan unggas alternatif tinggi protein bagi kelompok peternak desa.</p>
                     <div class="news-meta">
                         <span><i class="fa-solid fa-user"></i> Oleh: Karang Taruna</span>
                         <span><i class="fa-solid fa-tag"></i> Lingkungan Hidup</span>
@@ -73,7 +74,144 @@
                 </div>
             </article>
         </div>
+
+        <!-- ====================================================================
+             FITUR KALENDER ACARA DESA (ACARA TERDAHULU & ACARA MENDATANG)
+             ==================================================================== -->
+        <section class="village-calendar-section mt-5" id="kalenderAcaraSection" aria-labelledby="calendarTitle">
+            <div class="section-header text-center">
+                <span class="sub-heading">AGENDA & KALENDER KEGIATAN</span>
+                <h2 class="section-title" id="calendarTitle">Kalender Acara Desa Jatirejoyoso</h2>
+                <p class="section-desc">Pantau seluruh agenda kegiatan yang telah terlaksana maupun yang akan datang. Klik tanggal atau daftar acara untuk membaca rincian dan penjelasannya.</p>
+            </div>
+
+            <div class="village-calendar-layout">
+                <!-- Panel Interaktif Grid Kalender -->
+                <div class="calendar-panel">
+                    <div class="calendar-toolbar">
+                        <button type="button" class="calendar-nav-btn" id="calendarPrev" aria-label="Bulan sebelumnya">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <h3 id="calendarMonthLabel" aria-live="polite">November 2026</h3>
+                        <button type="button" class="calendar-nav-btn" id="calendarNext" aria-label="Bulan berikutnya">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="calendar-weekdays" aria-hidden="true">
+                        <span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span><span>Min</span>
+                    </div>
+
+                    <div class="calendar-days" id="calendarDays" aria-label="Tanggal dalam kalender"></div>
+
+                    <div class="calendar-legend">
+                        <span><i class="legend-dot past"></i> Acara Telah Terlaksana</span>
+                        <span><i class="legend-dot upcoming"></i> Acara Akan Datang</span>
+                        <span><i class="legend-dot today"></i> Hari Ini</span>
+                    </div>
+                </div>
+
+                <!-- Panel Detail Rincian Acara -->
+                <aside class="calendar-detail-panel" aria-live="polite">
+                    <span class="calendar-detail-kicker"><i class="fa-regular fa-calendar-check text-primary"></i> RINCIAN ACARA</span>
+                    <h3 id="calendarSelectedDate" class="selected-date-heading">Pilih tanggal di kalender</h3>
+                    
+                    <div id="calendarEventDetails" class="calendar-event-details">
+                        <div class="calendar-empty-state">
+                            <i class="fa-solid fa-calendar-day" style="font-size: 2.2rem; color: #94a3b8; margin-bottom: 10px;"></i>
+                            <p>Klik tanggal atau agenda di bawah untuk membaca penjelasan acara secara mendalam.</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Daftar List Agenda Keseluruhan -->
+            <div class="calendar-agenda-list mt-4">
+                <div class="calendar-agenda-heading">
+                    <div>
+                        <h3>Daftar Acara & Agenda Desa</h3>
+                        <p id="calendarUpcomingNote" class="calendar-upcoming-note" aria-live="polite"></p>
+                    </div>
+                    <span id="calendarEventCount" class="badge-count-pill">Memuat...</span>
+                </div>
+                <div id="calendarAgendaItems" class="calendar-agenda-items"></div>
+            </div>
+
+            <!-- JSON Database Acara (Terdahulu & Mendatang) -->
+            <script type="application/json" id="villageCalendarEvents">
+            [
+                {
+                    "date": "2026-10-25",
+                    "title": "Sosialisasi Pengelolaan Bank Sampah Mandiri dan Budidaya Maggot",
+                    "category": "Lingkungan Hidup",
+                    "location": "Balai Dusun Mergosingo (RW 02)",
+                    "time": "08.30 - 11.30 WIB",
+                    "description": "Pelatihan pemilahan sampah organik rumah tangga dan pembudidayaan larva lalat Black Soldier Fly (BSF/maggot). Menghadirkan praktisi pertanian sirkular untuk membantu warga memproduksi pupuk kasgot dan pakan ternak lele mandiri."
+                },
+                {
+                    "date": "2026-11-02",
+                    "title": "Posyandu Lansia & Pemeriksaan Kesehatan Gratis",
+                    "category": "Kesehatan Warga",
+                    "location": "Poskesdes Jatirejoyoso",
+                    "time": "08.00 - 12.00 WIB",
+                    "description": "Pemeriksaan tensi darah, kolesterol, gula darah, serta pembagian vitamin gratis bagi warga lansia dan disabilitas hasil kolaborasi Tenaga Medis Puskesmas dengan Kader Kesehatan PKK Desa Jatirejoyoso."
+                },
+                {
+                    "date": "2026-11-08",
+                    "title": "Musyawarah Perencanaan Pembangunan Desa (Musrenbangdes) RKPDes 2027",
+                    "category": "Musyawarah Desa",
+                    "location": "Pendopo Balai Desa Jatirejoyoso",
+                    "time": "09.00 - 14.30 WIB",
+                    "description": "Forum musyawarah resmi penyusunan Rencana Kerja Pemerintah Desa (RKPDes) Tahun Anggaran 2027 yang dihadiri Kepala Desa, BPD, Babinsa, Bhabinkamtibmas, serta perwakilan RT/RW untuk menampung usulan fisik dan pemberdayaan."
+                },
+                {
+                    "date": "2026-11-11",
+                    "title": "Penyaluran Bantuan Pangan dan Pupuk Subsidi Tahap IV",
+                    "category": "Pertanian & Bansos",
+                    "location": "Gudang Lumbung Pangan Desa",
+                    "time": "08.00 - 13.00 WIB",
+                    "description": "Pemberian bantuan pangan cadangan pemerintah serta pendistribusian alokasi pupuk bersubsidi tahap akhir tahun anggaran 2026 bagi para petani pemilik Kartu Tani di 5 wilayah dusun."
+                },
+                {
+                    "date": "2026-11-26",
+                    "title": "Kerja Bakti Massal Normalisasi Saluran Irigasi Tersier Jelang Musim Tanam",
+                    "category": "Gotong Royong",
+                    "location": "Sepanjang Saluran Dusun Dawuhan & Balong",
+                    "time": "06.30 - 10.30 WIB",
+                    "description": "Kegiatan gotong royong warga petani dan perangkat desa dalam membersihkan gulma dan endapan lumpur di saluran irigasi tersier untuk memastikan pasokan air lancar menyambut masa tanam padi musim hujan."
+                },
+                {
+                    "date": "2026-12-05",
+                    "title": "Pelatihan Digital Marketing & Legalitas Usaha (NIB) bagi UMKM Desa",
+                    "category": "Pemberdayaan Ekonomi",
+                    "location": "Aula Balai Desa Jatirejoyoso",
+                    "time": "09.00 - 14.00 WIB",
+                    "description": "Bimbingan teknis pendampingan legalitas Nomor Induk Berusaha (NIB) dan strategi foto produk serta pemasaran via media sosial untuk pelaku usaha mikro kecil Desa Jatirejoyoso."
+                },
+                {
+                    "date": "2026-12-18",
+                    "title": "Rembuk Stunting & Evaluasi Program Makanan Bergizi Balita",
+                    "category": "Kesehatan Terpadu",
+                    "location": "Balai Pertemuan Balong",
+                    "time": "08.30 - 11.30 WIB",
+                    "description": "Pertemuan evaluasi pencegahan stunting akhir tahun bersama bidan desa, pendamping desa, dan kader posyandu guna memastikan target zero stunting di Desa Jatirejoyoso tercapai."
+                },
+                {
+                    "date": "2026-12-30",
+                    "title": "Doa Bersama Akhir Tahun & Gelar Seni Budaya Warga",
+                    "category": "Kebudayaan & Keagamaan",
+                    "location": "Halaman Utama Kantor Balai Desa",
+                    "time": "19.30 WIB - Selesai",
+                    "description": "Kegiatan silaturahmi akbar masyarakat dari 5 dusun (Tamanayu, Wonoayu, Mergosingo, Dawuhan, Balong) dengan istighosah doa bersama, refleksi capaian desa, dan penampilan seni hadrah / karawitan lokal."
+                }
+            ]
+            </script>
+        </section>
+
     </div>
 </section>
 {% endblock %}
 
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/calendar.js') }}"></script>
+{% endblock %}

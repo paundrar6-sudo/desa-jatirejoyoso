@@ -157,7 +157,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 4000
             );
 
-            window.open(`https://wa.me/6281234567890?text=${waText}`, '_blank');
+            window.open(`https://wa.me/6282221696497?text=${waText}`, '_blank');
+        });
+    }
+
+    // Feedback instan untuk tombol tunggal WhatsApp di kontak
+    const singleWaBtn = document.querySelector('.btn-single-wa');
+    if (singleWaBtn) {
+        singleWaBtn.addEventListener('click', function() {
+            showToast(
+                'Menghubungi Admin Desa',
+                'Membuka chat WhatsApp resmi dengan Ibu <strong>Vio Lita Dewi Islamia</strong>...',
+                'fa-whatsapp',
+                'wa',
+                4000
+            );
         });
     }
 
