@@ -1,0 +1,249 @@
+---
+interface Props {
+  title: string;
+  activePage: string;
+  bgTheme?: string;
+  noindex?: boolean;
+}
+
+const { title, activePage, bgTheme = activePage, noindex = false } = Astro.props;
+
+const navItems = [
+  { page: 'beranda', href: '/', label: 'Beranda', icon: 'fa-house' },
+  { page: 'profil', href: '/profil', label: 'Profil', icon: 'fa-id-card' },
+  { page: 'informasi', href: '/informasi', label: 'Informasi', icon: 'fa-newspaper' },
+  { page: 'statistik', href: '/statistik', label: 'Statistik', icon: 'fa-chart-pie' },
+  { page: 'layanan', href: '/layanan', label: 'Layanan', icon: 'fa-hand-holding-hand' },
+  { page: 'kontak', href: '/kontak', label: 'Kontak', icon: 'fa-headset' },
+];
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <title>{title} - DESA JATIREJOYOSO</title>
+
+    <link rel="shortcut icon" href="/images/logo-desa.jpeg" type="image/jpeg" />
+    <link rel="apple-touch-icon" href="/images/logo-desa.jpeg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/app.css" />
+  </head>
+  <body data-page={activePage} data-bg-theme={bgTheme}>
+    <div class="bg-scene-container" id="bgSceneContainer">
+      <div class="bg-slide active" style="background-image: url('/images/bg-desa-1.svg');"></div>
+      <div class="bg-slide" style="background-image: url('/images/bg-desa-2.svg');"></div>
+      <div class="bg-slide" style="background-image: url('/images/bg-desa-3.svg');"></div>
+      <div class="bg-overlay"></div>
+    </div>
+
+    <header class="site-header" id="siteHeader">
+      <div class="container header-content">
+        <a href="/" class="brand-logo">
+          <div class="logo-badge logo-img-badge">
+            <img
+              src="/images/logo-desa.jpeg"
+              alt="Logo Resmi Desa Jatirejoyoso"
+              class="brand-logo-img"
+            />
+          </div>
+          <div class="brand-text">
+            <span class="village-title">DESA JATIREJOYOSO</span>
+            <span class="village-tagline">Kecamatan Kepanjen • Kabupaten Malang</span>
+          </div>
+        </a>
+
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="main-nav" id="mainNav">
+          <ul class="nav-list">
+            {
+              navItems.map((item) => (
+                <li class="nav-item">
+                  <a
+                    href={item.href}
+                    class:list={['nav-link', { active: activePage === item.page }]}
+                  >
+                    <i class:list={['fa-solid', item.icon]} /> {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-content" id="pageContent">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <img
+              src="/images/logo-desa.jpeg"
+              alt="Logo Resmi Desa Jatirejoyoso"
+              class="footer-logo-img"
+            />
+            <div>
+              <h3 style="margin-bottom: 2px;">DESA JATIREJOYOSO</h3>
+              <small style="color: #fef08a; font-weight: 600;">Kec. Kepanjen, Kab. Malang</small>
+            </div>
+          </div>
+          <p>
+            Website Resmi Pemerintah Desa Jatirejoyoso sebagai sarana transparansi publik, publikasi
+            informasi, dan pelayanan masyarakat yang terintegrasi.
+          </p>
+          <div class="social-links">
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"
+              ><i class="fa-brands fa-facebook"></i></a
+            >
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"
+              ><i class="fa-brands fa-instagram"></i></a
+            >
+            <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"
+              ><i class="fa-brands fa-youtube"></i></a
+            >
+            <a
+              href="https://wa.me/6282221696497?text=Halo%20Admin%20Desa%20Jatirejoyoso..."
+              target="_blank"
+              rel="noopener"
+              aria-label="WhatsApp Admin"
+              title="Hubungi WA Admin Vio Lita Dewi Islamia"
+              ><i class="fa-brands fa-whatsapp"></i></a
+            >
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigasi Utama</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="/"><i class="fa-solid fa-chevron-right"></i> Beranda</a>
+            </li>
+            <li>
+              <a href="/profil"
+                ><i class="fa-solid fa-chevron-right"></i> Profil & Struktur Organisasi</a
+              >
+            </li>
+            <li>
+              <a href="/informasi"
+                ><i class="fa-solid fa-chevron-right"></i> Informasi & Kalender Acara</a
+              >
+            </li>
+            <li>
+              <a href="/statistik"
+                ><i class="fa-solid fa-chevron-right"></i> Statistik APBDes 2026</a
+              >
+            </li>
+            <li>
+              <a href="/layanan"
+                ><i class="fa-solid fa-chevron-right"></i> Pelayanan 3 Persuratan</a
+              >
+            </li>
+            <li>
+              <a href="/kontak"
+                ><i class="fa-solid fa-chevron-right"></i> Layanan Administrasi & Pengaduan</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kontak & Jam Pelayanan</h4>
+          <div class="office-hours">
+            <p><i class="fa-regular fa-clock"></i> <strong>Senin - Jumat:</strong> 08.00 - 14.00 WIB</p>
+            <p>
+              <i class="fa-solid fa-ban text-danger"></i>
+              <strong>Sabtu - Minggu:</strong> Libur Pelayanan Tatap Muka
+            </p>
+          </div>
+          <div class="contact-mini">
+            <p>
+              <a
+                href="https://wa.me/6285746320214?text=Halo%20Pak%20Mochamad%20Arifin%2C%20saya%20ingin%20berkonsultasi%20layanan%20persuratan..."
+                target="_blank"
+                rel="noopener"
+                class="footer-wa-badge"
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+                <strong>Pelayanan Surat:</strong> Mochamad Arifin (0857-4632-0214)
+              </a>
+            </p>
+            <p style="margin-top: 8px;">
+              <a
+                href="https://wa.me/6282221696497?text=Halo%20Bu%20Vio%20Lita%20Dewi%20Islamia%2C%20saya%20ingin%20berkonsultasi%20administrasi%20atau%20pengaduan..."
+                target="_blank"
+                rel="noopener"
+                class="footer-wa-badge admin-pengaduan-badge"
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+                <strong>Administrasi & Pengaduan:</strong> Vio Lita Dewi Islamia (0822-2169-6497)
+              </a>
+            </p>
+            <p style="margin-top: 10px;">
+              <i class="fa-solid fa-location-dot"></i> Jl. Raya Balai Desa Jatirejoyoso No. 01,
+              Kepanjen
+            </p>
+            <p><i class="fa-solid fa-envelope"></i> pemdes@jatirejoyoso.desa.id</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-flex">
+          <p>&copy; 2026 Pemerintah Desa Jatirejoyoso. Hak Cipta Dilindungi.</p>
+          <p class="credit">Dibuat dengan dedikasi untuk kemajuan Desa Jatirejoyoso</p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="image-modal-lightbox" id="imageLightboxModal">
+      <div class="lightbox-overlay" id="lightboxOverlay"></div>
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightboxCloseBtn" aria-label="Tutup Peta">&times;</button>
+        <div class="lightbox-header">
+          <span id="lightboxTitle"
+            ><i class="fa-solid fa-map-location-dot"></i> Peta Wilayah Desa Jatirejoyoso</span
+          >
+        </div>
+        <div class="lightbox-img-wrap">
+          <img id="lightboxImg" src="" alt="Peta Desa Jatirejoyoso Resolusi Tinggi" />
+        </div>
+        <div class="lightbox-caption">
+          Gunakan cubit (pinch) pada layar sentuh atau klik mouse untuk memperbesar detail batas 5
+          dusun dan tata ruang desa.
+        </div>
+      </div>
+    </div>
+
+    <script is:inline src="/js/main.js"></script>
+    {
+      ['beranda', 'profil', 'informasi'].includes(activePage) && (
+        <script is:inline src="/js/public.js"></script>
+      )
+    }
+    <slot name="scripts" />
+  </body>
+</html>

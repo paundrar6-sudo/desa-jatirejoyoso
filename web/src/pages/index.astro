@@ -1,0 +1,246 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Beranda";
+const activePage = "beranda";
+---
+
+<BaseLayout title={title} activePage={activePage}>
+<!-- Hero Section dengan Background Bergerak / Slider -->
+<section class="hero-section">
+    <div class="container hero-container">
+        <div class="hero-badge">
+            <span class="pulsing-dot"></span> Selamat Datang di Portal Resmi
+        </div>
+        <h1 class="hero-title">
+            DESA JATIREJOYOSO
+        </h1>
+        <p class="hero-subtitle">
+            Kearifan Lokal Menuju Kemandirian, Kemakmuran, dan Pelayanan Digital yang Transparan bagi Seluruh Warga.
+        </p>
+
+        <!-- Slider indicators for the background animation -->
+        <div class="bg-slider-controls">
+            <button class="slider-dot active" data-slide="0" title="Pemandangan Desa"></button>
+            <button class="slider-dot" data-slide="1" title="Balai Desa"></button>
+            <button class="slider-dot" data-slide="2" title="Persawahan & Alam"></button>
+            <span class="slider-label"><i class="fa-solid fa-camera"></i> Foto Desa Berubah Otomatis</span>
+        </div>
+
+        <div class="hero-cta-group">
+            <a href="/layanan" class="btn btn-primary">
+                <i class="fa-solid fa-file-lines"></i> Layanan Surat Warga
+            </a>
+            <a href="/profil" class="btn btn-outline">
+                <i class="fa-solid fa-compass"></i> Jelajahi Profil Desa
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Stats Counter -->
+<section class="stats-preview-section">
+    <div class="container">
+        <div class="stats-cards-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                <div class="stat-info">
+                    <span class="stat-number">4.850</span>
+                    <span class="stat-text">Total Penduduk</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-house-user"></i></div>
+                <div class="stat-info">
+                    <span class="stat-number">1.320</span>
+                    <span class="stat-text">Kepala Keluarga</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                <div class="stat-info">
+                    <span class="stat-number">5</span>
+                    <span class="stat-text">Dusun Wilayah</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-map"></i></div>
+                <div class="stat-info">
+                    <span class="stat-number">302,9 Ha</span>
+                    <span class="stat-text">Luas Wilayah Desa</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Fitur Unggulan Desa -->
+<section class="features-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="sub-heading">KEMUDAHAN LAYANAN</span>
+            <h2 class="section-title">Akses Cepat Informasi & Layanan Desa</h2>
+            <p class="section-desc">Masyarakat kini dapat mengakses beragam fasilitas desa secara efisien dan
+                transparan.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon bg-green">
+                    <i class="fa-solid fa-id-card-clip"></i>
+                </div>
+                <h3>Profil & Aparatur</h3>
+                <p>Mengenal struktur organisasi pemerintahan desa, visi & misi, serta sejarah berdirinya Jatirejoyoso.
+                </p>
+                <a href="/profil" class="feature-link">Lihat Profil <i
+                        class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon bg-blue">
+                    <i class="fa-solid fa-bullhorn"></i>
+                </div>
+                <h3>Warta & Informasi</h3>
+                <p>Update kegiatan kemasyarakatan, agenda pembangunan desa, serta pengumuman resmi terkini.</p>
+                <a href="/informasi" class="feature-link">Baca Berita <i
+                        class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon bg-amber">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+                <h3>Transparansi APBDes</h3>
+                <p>Laporan Anggaran Pendapatan dan Belanja Desa (APBDes) 2026, sumber dana, pembiayaan, serta 5 bidang
+                    belanja desa.</p>
+                <a href="/statistik" class="feature-link">Buka APBDES <i
+                        class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon bg-teal">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                </div>
+                <h3>Layanan Mandiri</h3>
+                <p>Permohonan surat keterangan domisili, usaha, dan dokumen kependudukan secara cepat dan mudah.</p>
+                <a href="/layanan" class="feature-link">Urus Surat <i
+                        class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Peta Geospasial & Tata Ruang Wilayah Desa -->
+<section class="village-map-section" id="petaWilayah">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="sub-heading">GEOSPASIAL & TATA RUANG</span>
+            <h2 class="section-title">Peta Wilayah Desa Jatirejoyoso</h2>
+            <p class="section-desc">Peta digital pemetaan wilayah, batas dusun, lahan persawahan produktif, dan tata
+                ruang Desa Jatirejoyoso, Kec. Kepanjen.</p>
+        </div>
+
+        <div class="map-showcase-card">
+            <!-- Kolom Visual Peta dengan Model Frame Modern -->
+            <div class="map-visual-wrap">
+                <div class="map-badge-status">
+                    <span class="pulsing-green-dot"></span> Peta Resmi Wilayah Desa
+                </div>
+
+                <div class="map-frame-box" id="mapTriggerFullscreen">
+                    <img src="/images/peta-desa.jpeg" alt="Peta Desa Jatirejoyoso"
+                        class="map-image-featured" id="featuredVillageMap">
+
+                    <div class="map-hover-layer">
+                        <button class="btn btn-sm btn-primary btn-zoom-map"
+                            data-image="/images/peta-desa.jpeg"
+                            data-title="Peta Lengkap Desa Jatirejoyoso">
+                            <i class="fa-solid fa-expand"></i> Klik untuk Perbesar Peta Penuh
+                        </button>
+                    </div>
+                </div>
+
+                <div class="map-quick-toolbar">
+                    <span><i class="fa-solid fa-crosshairs text-primary"></i> Kec. Kepanjen, Kab. Malang</span>
+                    <span><i class="fa-solid fa-layer-group text-primary"></i> 5 Dusun Terpadu</span>
+                    <button class="btn-text-action btn-zoom-map"
+                        data-image="/images/peta-desa.jpeg"
+                        data-title="Peta Lengkap Desa Jatirejoyoso">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i> Zoom Resolusi Tinggi
+                    </button>
+                </div>
+            </div>
+
+            <!-- Kolom Informasi Wilayah & Batas -->
+            <div class="map-info-sidebar">
+                <div class="sidebar-header">
+                    <div class="icon-tag"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <div>
+                        <h3>Profil Wilayah Desa</h3>
+                        <small class="text-muted">Karakteristik & Batas Geografis</small>
+                    </div>
+                </div>
+
+                <div class="map-metrics-grid">
+                    <div class="metric-item">
+                        <span class="metric-val">5</span>
+                        <span class="metric-lbl">Dusun Wilayah</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-val">302,9 Ha</span>
+                        <span class="metric-lbl">Luas Wilayah Desa</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-val">320 mdpl</span>
+                        <span class="metric-lbl">Ketinggian Rata-rata</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-val">Tropis</span>
+                        <span class="metric-lbl">Iklim Agraris Subur</span>
+                    </div>
+                </div>
+
+                <div class="boundary-box">
+                    <h4><i class="fa-solid fa-compass text-primary"></i> Batas-Batas Wilayah:</h4>
+                    <ul class="boundary-list">
+                        <li><strong>Sebelah Utara:</strong> Berbatasan dengan Desa Dilem & Kepanjen</li>
+                        <li><strong>Sebelah Timur:</strong> Berbatasan dengan Desa Sengguruh</li>
+                        <li><strong>Sebelah Selatan:</strong> Berbatasan dengan Aliran Sungai Brantas</li>
+                        <li><strong>Sebelah Barat:</strong> Berbatasan dengan Desa Sukoraharjo</li>
+                    </ul>
+                </div>
+
+                <div class="map-actions-group">
+                    <button class="btn btn-primary btn-block btn-zoom-map"
+                        data-image="/images/peta-desa.jpeg"
+                        data-title="Peta Wilayah Desa Jatirejoyoso (Resolusi Tinggi)">
+                        <i class="fa-solid fa-map"></i> Buka Peta Ukuran Penuh
+                    </button>
+                    <a href="https://maps.google.com/?q=Desa+Jatirejoyoso+Kepanjen+Malang" target="_blank"
+                        rel="noopener" class="btn btn-outline btn-block"
+                        style="color: var(--primary-dark); border-color: var(--primary);">
+                        <i class="fa-solid fa-location-arrow"></i> Petunjuk Arah di Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sekilas Berita Terbaru -->
+<section class="news-preview-section">
+    <div class="container">
+        <div class="section-header-flex">
+            <div>
+                <span class="sub-heading">KABAR TERKINI</span>
+                <h2 class="section-title">Berita & Informasi Terbaru</h2>
+            </div>
+            <a href="/informasi" class="btn btn-secondary">
+                Lihat Semua Berita <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="news-grid" id="homeNewsGrid"></div>
+    </div>
+</section>
+</BaseLayout>

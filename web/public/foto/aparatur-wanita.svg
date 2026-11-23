@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgWanita" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <linearGradient id="hijabW" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="skinW" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fee2e2"/>
+      <stop offset="100%" stop-color="#fca5a5"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="120" fill="url(#bgWanita)"/>
+  <path d="M68 85 Q120 40 172 85 Q182 145 168 188 Q120 200 72 188 Q58 145 68 85 Z" fill="url(#hijabW)"/>
+  <ellipse cx="120" cy="116" rx="30" ry="35" fill="url(#skinW)"/>
+  <path d="M48 240 L70 180 Q120 195 170 180 L192 240 Z" fill="#b49b78"/>
+  <circle cx="120" cy="120" r="114" fill="none" stroke="#38bdf8" stroke-width="4" opacity="0.6"/>
+</svg>
+

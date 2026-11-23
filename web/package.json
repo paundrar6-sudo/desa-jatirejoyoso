@@ -1,0 +1,26 @@
+{
+  "name": "desa-jatirejoyoso-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "test:e2e": "playwright test",
+    "db:local": "wrangler d1 execute DB --local --file=./db/schema.sql",
+    "db:seed": "wrangler d1 execute DB --local --file=./db/seed.sql"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^14.4.9",
+    "astro": "^7.4.13"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@cloudflare/workers-types": "^5.20261122.2",
+    "@playwright/test": "^1.65.1",
+    "typescript": "^6.0.3",
+    "wrangler": "^4.166.0"
+  }
+}

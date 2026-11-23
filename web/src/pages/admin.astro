@@ -1,0 +1,211 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Admin Konten';
+---
+
+<BaseLayout title={title} activePage="admin" bgTheme="beranda" noindex={true}>
+  <section class="content-section">
+    <div class="admin-shell">
+      <h1>Admin Konten Desa</h1>
+      <p class="admin-subtitle">
+        Kelola berita, aparatur, dan agenda. Perubahan langsung tampil di halaman publik.
+      </p>
+
+      <!-- LOGIN -->
+      <div class="admin-card" id="adminLoginCard">
+        <h2>Login Admin</h2>
+        <form id="adminLoginForm">
+          <label class="admin-label" for="adminPassword">Password</label>
+          <input
+            class="admin-input"
+            type="password"
+            id="adminPassword"
+            name="password"
+            autocomplete="current-password"
+            required
+          />
+          <div class="admin-actions">
+            <button class="admin-btn admin-btn-primary" type="submit">Masuk</button>
+          </div>
+        </form>
+        <div class="admin-status" id="adminLoginStatus"></div>
+      </div>
+
+      <!-- DASHBOARD -->
+      <div id="adminDashboard" class="admin-hidden">
+        <div class="admin-card">
+          <div class="admin-tabs" id="adminTabs">
+            <button class="admin-tab active" data-type="articles" type="button">Berita</button>
+            <button class="admin-tab" data-type="officials" type="button">Aparatur</button>
+            <button class="admin-tab" data-type="events" type="button">Agenda</button>
+          </div>
+          <div class="admin-actions" style="margin-top: 0;">
+            <button class="admin-btn admin-btn-ghost" id="adminReloadBtn" type="button">
+              Muat Ulang Data
+            </button>
+            <button class="admin-btn admin-btn-secondary" id="adminLogoutBtn" type="button">
+              Keluar
+            </button>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <h2 id="adminFormTitle">Tambah Berita</h2>
+          <form id="adminContentForm">
+            <!-- ARTICLES -->
+            <div data-type-fields="articles">
+              <label class="admin-label">Judul</label>
+              <input class="admin-input" type="text" name="title" maxlength="200" required />
+
+              <div class="admin-grid-2">
+                <div>
+                  <label class="admin-label">Kategori (opsional)</label>
+                  <input class="admin-input" type="text" name="category" maxlength="100" />
+                </div>
+                <div>
+                  <label class="admin-label">Label (opsional)</label>
+                  <input class="admin-input" type="text" name="badge" maxlength="50" />
+                </div>
+                <div>
+                  <label class="admin-label">Penulis (opsional)</label>
+                  <input class="admin-input" type="text" name="author" maxlength="100" />
+                </div>
+                <div>
+                  <label class="admin-label">Tanggal Terbit</label>
+                  <input class="admin-input" type="date" name="published_at" required />
+                </div>
+                <div>
+                  <label class="admin-label">Penempatan</label>
+                  <select class="admin-select" name="placement">
+                    <option value="info">Halaman Informasi</option>
+                    <option value="home">Beranda (maks 3)</option>
+                  </select>
+                </div>
+              </div>
+
+              <label class="admin-label">Ringkasan</label>
+              <textarea class="admin-textarea" name="excerpt" maxlength="2000" required></textarea>
+
+              <label class="admin-label">Filter Grup (halaman Informasi)</label>
+              <div class="admin-check-group">
+                <label class="admin-check-row" style="margin-top: 0;">
+                  <input type="checkbox" name="filter_groups" value="Pengumuman" />
+                  Pengumuman
+                </label>
+                <label class="admin-check-row" style="margin-top: 0;">
+                  <input type="checkbox" name="filter_groups" value="Kegiatan Warga" />
+                  Kegiatan Warga
+                </label>
+                <label class="admin-check-row" style="margin-top: 0;">
+                  <input type="checkbox" name="filter_groups" value="Pembangunan" />
+                  Pembangunan
+                </label>
+              </div>
+
+              <label class="admin-check-row">
+                <input type="checkbox" name="is_published" checked />
+                Terbitkan artikel ini
+              </label>
+            </div>
+
+            <!-- OFFICIALS -->
+            <div data-type-fields="officials" class="admin-hidden">
+              <div class="admin-grid-2">
+                <div>
+                  <label class="admin-label">Nama</label>
+                  <input class="admin-input" type="text" name="official_name" maxlength="150" />
+                </div>
+                <div>
+                  <label class="admin-label">Jabatan</label>
+                  <input class="admin-input" type="text" name="role" maxlength="100" />
+                </div>
+                <div>
+                  <label class="admin-label">Tier (1-6)</label>
+                  <input
+                    class="admin-input"
+                    type="number"
+                    name="tier"
+                    min="1"
+                    max="6"
+                    step="1"
+                  />
+                </div>
+                <div>
+                  <label class="admin-label">Unit / Dusun (opsional)</label>
+                  <input class="admin-input" type="text" name="unit" maxlength="100" />
+                </div>
+                <div>
+                  <label class="admin-label">Foto (path, mis. /foto/kades.svg)</label>
+                  <input class="admin-input" type="text" name="photo" maxlength="300" />
+                </div>
+                <div>
+                  <label class="admin-label">Urutan</label>
+                  <input
+                    class="admin-input"
+                    type="number"
+                    name="sort_order"
+                    min="0"
+                    max="9999"
+                    step="1"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- EVENTS -->
+            <div data-type-fields="events" class="admin-hidden">
+              <div class="admin-grid-2">
+                <div>
+                  <label class="admin-label">Tanggal Acara</label>
+                  <input class="admin-input" type="date" name="event_date" />
+                </div>
+                <div>
+                  <label class="admin-label">Kategori</label>
+                  <input class="admin-input" type="text" name="event_category" maxlength="100" />
+                </div>
+                <div>
+                  <label class="admin-label">Lokasi (opsional)</label>
+                  <input class="admin-input" type="text" name="location" maxlength="200" />
+                </div>
+                <div>
+                  <label class="admin-label">Waktu (opsional)</label>
+                  <input class="admin-input" type="text" name="event_time" maxlength="100" />
+                </div>
+              </div>
+
+              <label class="admin-label">Judul Acara</label>
+              <input class="admin-input" type="text" name="event_title" maxlength="200" />
+
+              <label class="admin-label">Deskripsi</label>
+              <textarea class="admin-textarea" name="description" maxlength="4000"></textarea>
+            </div>
+
+            <div class="admin-actions">
+              <button class="admin-btn admin-btn-primary" type="submit" id="adminSubmitBtn">
+                Simpan
+              </button>
+              <button class="admin-btn admin-btn-secondary" type="button" id="adminResetBtn">
+                Reset Form
+              </button>
+            </div>
+          </form>
+          <div class="admin-status" id="adminFormStatus"></div>
+        </div>
+
+        <div class="admin-card">
+          <h2 id="adminListTitle">Daftar Berita</h2>
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead id="adminTableHead"></thead>
+              <tbody id="adminTableBody"></tbody>
+            </table>
+          </div>
+          <div class="admin-status" id="adminListStatus"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline src="/js/admin.js"></script>
+</BaseLayout>

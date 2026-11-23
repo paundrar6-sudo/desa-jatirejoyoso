@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Layanan Masyarakat";
+const activePage = "layanan";
+---
+
+<BaseLayout title={title} activePage={activePage}>
+<section class="page-banner">
+    <div class="container">
+        <span class="banner-badge">Pelayanan Administrasi Desa</span>
+        <h1 class="page-header-title">Layanan Persuratan</h1>
+        <p class="page-header-subtitle">Pengurusan surat pengantar dan administrasi kependudukan cepat dan mudah. Pilih jenis layanan dan konsultasikan langsung melalui WhatsApp Admin Pelayanan.</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <!-- Panduan Alur Pelayanan -->
+        <div class="service-steps-container">
+            <div class="section-header text-center">
+                <span class="sub-heading">ALUR CEPAT & PRAKTIS</span>
+                <h2 class="section-title">Tata Cara Pengajuan Surat</h2>
+                <p class="section-desc">Ikuti 4 langkah mudah untuk mengurus dokumen administrasi desa secara online maupun offline.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num">1</div>
+                    <h4>Siapkan Persyaratan</h4>
+                    <p>Siapkan foto/fotokopi KTP, Kartu Keluarga (KK), dan surat pengantar RT/RW setempat.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">2</div>
+                    <h4>Pilih Jenis Persuratan</h4>
+                    <p>Tentukan surat yang dibutuhkan dari 3 katalog pelayanan persuratan resmi desa di bawah.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">3</div>
+                    <h4>Kirim Permohonan via WA</h4>
+                    <p>Klik tombol WhatsApp untuk langsung terhubung dengan admin pelayanan Bapak <strong>Mochamad Arifin</strong>.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">4</div>
+                    <h4>Verifikasi & Pengambilan</h4>
+                    <p>Admin memverifikasi berkas, menerbitkan surat dinas, dan mengabari saat surat siap diambil.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Banner Kontak Cepat Admin Persuratan -->
+        <div class="service-direct-contact mt-4">
+            <div class="direct-contact-box">
+                <div class="direct-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                <div class="direct-text">
+                    <h3>Admin Pelayanan Persuratan Desa</h3>
+                    <p>Petugas Pelayanan: <strong>Mochamad Arifin</strong> &bull; WhatsApp: <strong>0857-4632-0214</strong></p>
+                    <small class="text-muted"><i class="fa-regular fa-clock"></i> Jam Pelayanan: Senin - Jumat, 08.00 - 14.00 WIB</small>
+                </div>
+                <a href="https://wa.me/6285746320214?text=Halo%20Pak%20Mochamad%20Arifin%2C%20saya%20warga%20Desa%20Jatirejoyoso%20ingin%20berkonsultasi%20dan%20mengajukan%20layanan%20persuratan." target="_blank" rel="noopener" class="btn btn-primary btn-wa-direct">
+                    <i class="fa-brands fa-whatsapp"></i> Hubungi Mochamad Arifin
+                </a>
+            </div>
+        </div>
+
+        <!-- Katalog Pelayanan 3 Persuratan Simple -->
+        <div class="services-catalog mt-5">
+            <div class="section-header text-center">
+                <span class="sub-heading">KATALOG PELAYANAN</span>
+                <h2 class="section-title">3 Kelompok Layanan Persuratan</h2>
+                <p class="section-desc">Pilih permohonan surat di bawah ini dan klik tombol untuk langsung mengajukan via WhatsApp ke admin pelayanan.</p>
+            </div>
+            
+            <div class="catalog-grid service-catalog-three">
+                <!-- 1. Surat Keterangan Domisili -->
+                <div class="catalog-card">
+                    <div class="catalog-icon"><i class="fa-solid fa-address-card"></i></div>
+                    <h3>Surat Keterangan Domisili</h3>
+                    <p>Surat keterangan resmi yang menyatakan tempat tinggal atau domisili pemohon di wilayah hukum Desa Jatirejoyoso untuk keperluan perbankan, pekerjaan, atau sekolah.</p>
+                    <div class="catalog-requirements">
+                        <strong><i class="fa-solid fa-list-check"></i> Dokumen Persyaratan:</strong>
+                        <ul style="margin: 6px 0 0 16px; padding: 0; font-size: 0.85rem; color: #475569;">
+                            <li>Surat Pengantar RT & RW</li>
+                            <li>Foto / Scan KTP Pemohon</li>
+                            <li>Foto / Scan Kartu Keluarga (KK)</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/6285746320214?text=Halo%20Pak%20Mochamad%20Arifin%2C%20saya%20ingin%20mengajukan%20Surat%20Keterangan%20Domisili%20Desa%20Jatirejoyoso.%20Berikut%20data%20saya%3A%0ANama%3A%20%0ANIK%3A%20%0AAlamat%2FDusun%3A%20" target="_blank" rel="noopener" class="btn btn-sm btn-primary btn-ajukan-wa" data-service="Surat Keterangan Domisili">
+                        <i class="fa-brands fa-whatsapp"></i> Ajukan Surat via WA
+                    </a>
+                </div>
+
+                <!-- 2. Surat Keterangan Usaha (SKU) -->
+                <div class="catalog-card">
+                    <div class="catalog-icon"><i class="fa-solid fa-shop"></i></div>
+                    <h3>Surat Keterangan Usaha (SKU)</h3>
+                    <p>Surat bukti legalitas keberadaan dan kepemilikan unit usaha warga di wilayah desa untuk pengajuan permodalan, KUR perbankan, izin edar, atau bansos UMKM.</p>
+                    <div class="catalog-requirements">
+                        <strong><i class="fa-solid fa-list-check"></i> Dokumen Persyaratan:</strong>
+                        <ul style="margin: 6px 0 0 16px; padding: 0; font-size: 0.85rem; color: #475569;">
+                            <li>Surat Pengantar RT & RW</li>
+                            <li>Foto / Scan KTP & KK Pemilik Usaha</li>
+                            <li>Foto Tempat / Aktivitas Usaha</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/6285746320214?text=Halo%20Pak%20Mochamad%20Arifin%2C%20saya%20ingin%20mengajukan%20Surat%20Keterangan%20Usaha%20%28SKU%29%20Desa%20Jatirejoyoso.%20Berikut%20data%20usaha%20saya%3A%0ANama%20Pemilik%3A%20%0ANama%20Usaha%3A%20%0ABidang%20Usaha%3A%20" target="_blank" rel="noopener" class="btn btn-sm btn-primary btn-ajukan-wa" data-service="Surat Keterangan Usaha (SKU)">
+                        <i class="fa-brands fa-whatsapp"></i> Ajukan Surat via WA
+                    </a>
+                </div>
+
+                <!-- 3. Surat Pengantar & Keterangan Lainnya -->
+                <div class="catalog-card">
+                    <div class="catalog-icon"><i class="fa-solid fa-file-signature"></i></div>
+                    <h3>Surat Pengantar & Keterangan Lainnya</h3>
+                    <p>Melayani pengantar SKCK, pengantar nikah (Model N), Surat Keterangan Tidak Mampu (SKTM), surat kematian, surat ahli waris, dan surat keterangan umum lainnya.</p>
+                    <div class="catalog-requirements">
+                        <strong><i class="fa-solid fa-list-check"></i> Dokumen Persyaratan:</strong>
+                        <ul style="margin: 6px 0 0 16px; padding: 0; font-size: 0.85rem; color: #475569;">
+                            <li>KTP & Kartu Keluarga (KK)</li>
+                            <li>Pengantar RT / RW</li>
+                            <li>Dokumen pendukung sesuai kebutuhan surat</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/6285746320214?text=Halo%20Pak%20Mochamad%20Arifin%2C%20saya%20ingin%20mengajukan%20Surat%20Pengantar%20%2F%20Keterangan%20Lainnya%20%28SKCK%2FNikah%2FSKTM%2Fdll%29.%20Mohon%20informasi%20kelengkapan%20berkasnya." target="_blank" rel="noopener" class="btn btn-sm btn-primary btn-ajukan-wa" data-service="Surat Pengantar dan Keterangan Lainnya">
+                        <i class="fa-brands fa-whatsapp"></i> Ajukan Surat via WA
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</BaseLayout>

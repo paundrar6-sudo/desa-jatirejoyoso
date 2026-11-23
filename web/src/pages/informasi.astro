@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Informasi & Berita";
+const activePage = "informasi";
+---
+
+<BaseLayout title={title} activePage={activePage}>
+<section class="page-banner">
+    <div class="container">
+        <span class="banner-badge">Pusat Informasi & Agenda</span>
+        <h1 class="page-header-title">Informasi & Kabar Desa</h1>
+        <p class="page-header-subtitle">Berita resmi, pengumuman publik, serta agenda kalender kegiatan Pemerintah dan Warga Desa Jatirejoyoso.</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <!-- Filter Kategori Ringkas -->
+        <div class="category-pills">
+            <button class="pill active" data-filter="all">Semua</button>
+            <button class="pill" data-filter="Pengumuman">Pengumuman</button>
+            <button class="pill" data-filter="Kegiatan Warga">Kegiatan Warga</button>
+            <button class="pill" data-filter="Pembangunan">Pembangunan</button>
+            <button class="pill" data-filter="Bansos & Pertanian">Bansos & Pertanian</button>
+        </div>
+
+        <!-- Daftar Berita Terkini -->
+        <div class="news-list-grid" id="newsList"></div>
+
+        <!-- ====================================================================
+             FITUR KALENDER ACARA DESA (ACARA TERDAHULU & ACARA MENDATANG)
+             ==================================================================== -->
+        <section class="village-calendar-section mt-5" id="kalenderAcaraSection" aria-labelledby="calendarTitle">
+            <div class="section-header text-center">
+                <span class="sub-heading">AGENDA & KALENDER KEGIATAN</span>
+                <h2 class="section-title" id="calendarTitle">Kalender Acara Desa Jatirejoyoso</h2>
+                <p class="section-desc">Pantau seluruh agenda kegiatan yang telah terlaksana maupun yang akan datang. Klik tanggal atau daftar acara untuk membaca rincian dan penjelasannya.</p>
+            </div>
+
+            <div class="village-calendar-layout">
+                <!-- Panel Interaktif Grid Kalender -->
+                <div class="calendar-panel">
+                    <div class="calendar-toolbar">
+                        <button type="button" class="calendar-nav-btn" id="calendarPrev" aria-label="Bulan sebelumnya">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <h3 id="calendarMonthLabel" aria-live="polite">November 2026</h3>
+                        <button type="button" class="calendar-nav-btn" id="calendarNext" aria-label="Bulan berikutnya">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="calendar-weekdays" aria-hidden="true">
+                        <span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span><span>Min</span>
+                    </div>
+
+                    <div class="calendar-days" id="calendarDays" aria-label="Tanggal dalam kalender"></div>
+
+                    <div class="calendar-legend">
+                        <span><i class="legend-dot past"></i> Acara Telah Terlaksana</span>
+                        <span><i class="legend-dot upcoming"></i> Acara Akan Datang</span>
+                        <span><i class="legend-dot today"></i> Hari Ini</span>
+                    </div>
+                </div>
+
+                <!-- Panel Detail Rincian Acara -->
+                <aside class="calendar-detail-panel" aria-live="polite">
+                    <span class="calendar-detail-kicker"><i class="fa-regular fa-calendar-check text-primary"></i> RINCIAN ACARA</span>
+                    <h3 id="calendarSelectedDate" class="selected-date-heading">Pilih tanggal di kalender</h3>
+                    
+                    <div id="calendarEventDetails" class="calendar-event-details">
+                        <div class="calendar-empty-state">
+                            <i class="fa-solid fa-calendar-day" style="font-size: 2.2rem; color: #94a3b8; margin-bottom: 10px;"></i>
+                            <p>Klik tanggal atau agenda di bawah untuk membaca penjelasan acara secara mendalam.</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Daftar List Agenda Keseluruhan -->
+            <div class="calendar-agenda-list mt-4">
+                <div class="calendar-agenda-heading">
+                    <div>
+                        <h3>Daftar Acara & Agenda Desa</h3>
+                        <p id="calendarUpcomingNote" class="calendar-upcoming-note" aria-live="polite"></p>
+                    </div>
+                    <span id="calendarEventCount" class="badge-count-pill">Memuat...</span>
+                </div>
+                <div id="calendarAgendaItems" class="calendar-agenda-items"></div>
+            </div>
+
+            <!-- JSON Database Acara (Terdahulu & Mendatang) -->
+            
+        </section>
+
+    </div>
+</section>
+
+<script is:inline src="/js/calendar.js"></script>
+</BaseLayout>

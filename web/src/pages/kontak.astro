@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Kontak & Lokasi";
+const activePage = "kontak";
+---
+
+<BaseLayout title={title} activePage={activePage}>
+<section class="page-banner">
+    <div class="container">
+        <span class="banner-badge">Pusat Layanan Warga</span>
+        <h1 class="page-header-title">Layanan Administrasi & Pengaduan</h1>
+        <p class="page-header-subtitle">Saluran resmi komunikasi, konsultasi administrasi, dan penyampaian pengaduan masyarakat Desa Jatirejoyoso melalui WhatsApp Admin Desa.</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container">
+        <div class="grid-2-col">
+            <!-- Informasi Kantor Balai Desa -->
+            <div class="contact-info-panel">
+                <span class="sub-heading">KANTOR PEMERINTAH DESA</span>
+                <h2>Balai Desa Jatirejoyoso</h2>
+                <p>Masyarakat dapat berkunjung langsung ke Kantor Balai Desa selama jam operasional pelayanan atau menghubungi admin secara daring.</p>
+
+                <div class="contact-cards-vertical">
+                    <div class="contact-info-item">
+                        <div class="icon-wrap"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <div>
+                            <h4>Alamat Kantor</h4>
+                            <p>Jl. Raya Balai Desa Jatirejoyoso No. 01, Kec. Kepanjen, Kab. Malang, Jawa Timur 65163</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="icon-wrap"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div>
+                            <h4>Admin Administrasi & Pengaduan</h4>
+                            <p><strong>Vio Lita Dewi Islamia</strong> &bull; 0822-2169-6497</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="icon-wrap"><i class="fa-regular fa-clock"></i></div>
+                        <div>
+                            <h4>Waktu Pelayanan</h4>
+                            <p><strong>Senin - Jumat:</strong> 08.00 - 14.00 WIB<br><small class="text-muted">Sabtu & Minggu: Libur Pelayanan Tatap Muka</small></p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="icon-wrap"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <h4>Email Resmi Desa</h4>
+                            <p>pemdes@jatirejoyoso.desa.id</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Peta Desa Card Interaktif -->
+                <div class="contact-map-card mt-4">
+                    <div class="contact-map-header">
+                        <h4><i class="fa-solid fa-map-location-dot text-primary"></i> Peta Wilayah Jatirejoyoso</h4>
+                        <span class="badge-pill-soft">Luas 302,9 ha</span>
+                    </div>
+                    <div class="contact-map-img-wrap btn-zoom-map" data-image="/images/peta-desa.jpeg" data-title="Peta Wilayah Desa Jatirejoyoso, Kec. Kepanjen">
+                        <img src="/images/peta-desa.jpeg" alt="Peta Desa Jatirejoyoso" class="contact-map-img">
+                        <div class="contact-map-overlay">
+                            <span class="zoom-pill"><i class="fa-solid fa-magnifying-glass-plus"></i> Klik Perbesar Peta</span>
+                        </div>
+                    </div>
+                    <div class="contact-map-footer">
+                        <small class="text-muted"><i class="fa-solid fa-circle-info"></i> Menampilkan batas 5 dusun</small>
+                        <a href="/#petaWilayah" class="map-link-nav">
+                            Buka di Beranda <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel Pengaduan & Administrasi (Hanya 1 Tombol WA Saja) -->
+            <div class="contact-admin-panel content-box">
+                <div class="contact-admin-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                <span class="sub-heading">HUBUNGI ADMIN</span>
+                <h2>Layanan Administrasi & Pengaduan</h2>
+                <p class="text-muted">Untuk keperluan pengurusan administrasi umum, konsultasi kependudukan, penyampaian kritik, saran, maupun laporan pengaduan warga, silakan menghubungi admin desa secara langsung via WhatsApp.</p>
+
+                <div class="contact-admin-card-box">
+                    <div class="admin-profile-row">
+                        <div class="admin-avatar"><i class="fa-solid fa-user-shield"></i></div>
+                        <div class="admin-details">
+                            <span class="admin-role-tag">Admin Penanggung Jawab</span>
+                            <h3 class="admin-name">Vio Lita Dewi Islamia</h3>
+                            <span class="admin-phone"><i class="fa-brands fa-whatsapp text-success"></i> 0822-2169-6497</span>
+                        </div>
+                    </div>
+
+                    <div class="admin-points-list">
+                        <div class="admin-point"><i class="fa-solid fa-check text-success"></i> Pelayanan respon cepat pada jam operasional kerja</div>
+                        <div class="admin-point"><i class="fa-solid fa-check text-success"></i> Kerahasiaan identitas pelapor pengaduan terjamin</div>
+                        <div class="admin-point"><i class="fa-solid fa-check text-success"></i> Koordinasi langsung dengan perangkat dan kepala desa</div>
+                    </div>
+
+                    <!-- Tombol Tunggal Langsung ke WhatsApp -->
+                    <div class="mt-4">
+                        <a href="https://wa.me/6282221696497?text=Halo%20Bu%20Vio%20Lita%20Dewi%20Islamia%2C%20saya%20warga%20Desa%20Jatirejoyoso.%20Saya%20ingin%20menghubungi%20admin%20terkait%20layanan%20administrasi%20atau%20pengaduan%20desa." target="_blank" rel="noopener" class="btn btn-primary btn-single-wa">
+                            <i class="fa-brands fa-whatsapp"></i> Kirim via WhatsApp ke Vio Lita Dewi Islamia
+                        </a>
+                    </div>
+
+                    <p class="contact-admin-note">
+                        <i class="fa-solid fa-circle-info"></i> Seluruh pesan dan pengaduan diarahkan secara terpadu melalui WhatsApp resmi di atas demi kecepatan respon dan kemudahan tindak lanjut.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</BaseLayout>
