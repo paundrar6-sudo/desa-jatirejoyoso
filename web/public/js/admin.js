@@ -130,6 +130,11 @@
     els.form.querySelectorAll('[data-type-fields]').forEach((group) => {
       const isActive = group.dataset.typeFields === type;
       group.classList.toggle('admin-hidden', !isActive);
+      // Disable input di kelompok non-aktif agar tidak memicu validasi native
+      // (input required yang tersembunyi display:none memblokir submit diam-diam).
+      group.querySelectorAll('input, select, textarea, button').forEach((field) => {
+        field.disabled = !isActive;
+      });
     });
   }
 
