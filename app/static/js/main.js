@@ -100,67 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ====================================================================
-    // 4. INTERAKSI FORM ASPIRASI & PENGADUAN (HALAMAN KONTAK)
-    // ====================================================================
-    const aspirasiForm = document.getElementById('aspirasiForm');
-    const btnAduanWA = document.getElementById('btnAduanWA');
-
-    if (aspirasiForm) {
-        aspirasiForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const nama = document.getElementById('nama')?.value || 'Warga';
-            
-            showToast(
-                'Aspirasi Berhasil Dikirim',
-                `Terima kasih Bapak/Ibu <strong>${nama}</strong>. Laporan/aspirasi Anda telah tercatat pada sistem administrasi Desa Jatirejoyoso.`,
-                'fa-circle-check',
-                'success',
-                5000
-            );
-            this.reset();
-        });
-    }
-
-    if (btnAduanWA) {
-        btnAduanWA.addEventListener('click', function() {
-            const nama = document.getElementById('nama')?.value.trim();
-            const nik = document.getElementById('nik')?.value.trim();
-            const kategori = document.getElementById('kategori')?.value;
-            const pesan = document.getElementById('pesan')?.value.trim();
-
-            if (!nama || !pesan) {
-                showToast(
-                    'Lengkapi Data',
-                    'Mohon isi setidaknya Nama Lengkap dan Pesan sebelum mengirim ke WhatsApp Admin.',
-                    'fa-triangle-exclamation',
-                    'info',
-                    3500
-                );
-                return;
-            }
-
-            const waText = encodeURIComponent(
-                `*PENGADUAN / ASPIRASI WARGA DESA JATIREJOYOSO*\n\n` +
-                `*Nama:* ${nama}\n` +
-                `*NIK:* ${nik || '-'}\n` +
-                `*Kategori:* ${kategori || 'Umum'}\n` +
-                `*Pesan / Uraian:* ${pesan}\n\n` +
-                `Mohon ditindaklanjuti oleh Pemerintah Desa Jatirejoyoso. Terima kasih.`
-            );
-
-            showToast(
-                'Membuka WhatsApp Admin',
-                'Menghubungkan laporan Anda langsung ke WhatsApp Admin Pelayanan...',
-                'fa-whatsapp',
-                'wa',
-                4000
-            );
-
-            window.open(`https://wa.me/6282221696497?text=${waText}`, '_blank');
-        });
-    }
-
     // Feedback instan untuk tombol tunggal WhatsApp di kontak
     const singleWaBtn = document.querySelector('.btn-single-wa');
     if (singleWaBtn) {
@@ -312,66 +251,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
-// ====================================================================
-// 8. INTERAKSI PEMUTAR VIDEO PROFIL & SHORT MOVIE DESA
-// ====================================================================
-const villageLocalVideo = document.getElementById('villageLocalVideo');
-const videoPlayOverlay = document.getElementById('videoPlayOverlay');
-const btnPlayVideo = document.getElementById('btnPlayVideo');
-const btnToggleYouTube = document.getElementById('btnToggleYouTube');
-const youtubeEmbedBox = document.getElementById('youtubeEmbedBox');
-const btnCloseYT = document.getElementById('btnCloseYT');
-
-if (villageLocalVideo && videoPlayOverlay) {
-    function playVillageVideo() {
-        videoPlayOverlay.classList.add('hidden');
-        villageLocalVideo.play().catch(err => {
-            console.log("Menunggu interaksi pengguna untuk pemutaran video:", err);
-        });
-    }
-
-    videoPlayOverlay.addEventListener('click', playVillageVideo);
-    if (btnPlayVideo) {
-        btnPlayVideo.addEventListener('click', (e) => {
-            e.stopPropagation();
-            playVillageVideo();
-        });
-    }
-
-    villageLocalVideo.addEventListener('pause', () => {
-        if (villageLocalVideo.currentTime === 0) {
-            videoPlayOverlay.classList.remove('hidden');
-        }
-    });
-
-    villageLocalVideo.addEventListener('ended', () => {
-        videoPlayOverlay.classList.remove('hidden');
-    });
-}
-
-if (btnToggleYouTube && youtubeEmbedBox) {
-    btnToggleYouTube.addEventListener('click', () => {
-        const isHidden = youtubeEmbedBox.style.display === 'none';
-        youtubeEmbedBox.style.display = isHidden ? 'block' : 'none';
-        if (isHidden) {
-            if (villageLocalVideo) villageLocalVideo.pause();
-            youtubeEmbedBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-    });
-}
-
-if (btnCloseYT && youtubeEmbedBox) {
-    btnCloseYT.addEventListener('click', () => {
-        youtubeEmbedBox.style.display = 'none';
-        const ytIframe = document.getElementById('ytIframe');
-        if (ytIframe) {
-            // Reset iframe agar audio berhenti
-            const src = ytIframe.src;
-            ytIframe.src = src;
-        }
-    });
-}
 
 // ====================================================================
 // 9. INTERAKSI KARTU APARATUR STRUKTUR ORGANISASI (POP UP & DETAIL)

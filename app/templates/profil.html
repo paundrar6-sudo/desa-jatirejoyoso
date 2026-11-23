@@ -220,52 +220,22 @@
         </div>
 
         <!-- ====================================================================
-             3. VIDEO PROFIL & SHORT MOVIE DOKUMENTER DESA
+             3. VIDEO PROFIL & SHORT MOVIE DOKUMENTER DESA (SEGERA HADIR)
              ==================================================================== -->
         <div class="video-showcase-section mt-5">
             <div class="section-header text-center">
                 <span class="sub-heading">DOKUMENTASI POTENSI DESA</span>
                 <h2 class="section-title">Video Profil & Short Movie Desa</h2>
-                <p class="section-desc">Saksikan tayangan visual bentang alam pertanian, dinamika kehidupan warga, dan kemajuan pembangunan Desa Jatirejoyoso.</p>
+                <p class="section-desc">Dokumentasi visual bentang alam pertanian, dinamika kehidupan warga, dan kemajuan pembangunan Desa Jatirejoyoso akan segera dipublikasikan.</p>
             </div>
 
-            <div class="video-player-container">
-                <div class="video-wrapper" id="villageVideoWrapper">
-                    <video id="villageLocalVideo" controls poster="{{ url_for('static', filename='videos/video-thumbnail.svg') }}" preload="metadata">
-                        <source src="{{ url_for('static', filename='videos/profil-desa.mp4') }}" type="video/mp4">
-                        <source src="{{ url_for('static', filename='videos/short-movie-jatirejoyoso.mp4') }}" type="video/mp4">
-                        Browser Anda belum mendukung tag video HTML5.
-                    </video>
-
-                    <div class="video-play-overlay" id="videoPlayOverlay">
-                        <button class="btn-play-pulse" id="btnPlayVideo" aria-label="Putar Video Profil">
-                            <i class="fa-solid fa-play"></i>
-                        </button>
-                        <span class="video-duration-badge"><i class="fa-solid fa-film"></i> Putar Video Profil</span>
-                    </div>
-                </div>
-
-                <div class="video-meta-bar">
-                    <div class="video-meta-info">
-                        <h3><i class="fa-solid fa-circle-play text-primary"></i> Short Movie: Pesona & Potensi Jatirejoyoso</h3>
-                        <p>Dokumentasi resmi Pemerintah Desa Jatirejoyoso. Meliputi keindahan area persawahan 302,9 ha, kehidupan 5 dusun, dan pelayanan terpadu.</p>
-                    </div>
-                    <div class="video-actions">
-                        <button class="btn btn-sm btn-outline" id="btnToggleYouTube" style="color: var(--primary-dark); border-color: var(--primary);">
-                            <i class="fa-brands fa-youtube text-danger"></i> Tonton via YouTube
-                        </button>
-                    </div>
-                </div>
-
-                <div class="youtube-embed-box" id="youtubeEmbedBox" style="display: none;">
-                    <div class="yt-header">
-                        <span><i class="fa-brands fa-youtube text-danger"></i> Tautan YouTube Desa Jatirejoyoso:</span>
-                        <button class="btn-close-yt" id="btnCloseYT">&times;</button>
-                    </div>
-                    <div class="yt-iframe-wrap">
-                        <iframe id="ytIframe" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=0" title="Video Profil Desa Jatirejoyoso" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
+            <div class="content-box text-center">
+                <div class="box-icon" style="margin: 0 auto 16px;"><i class="fa-solid fa-film"></i></div>
+                <h3>Video Profil Sedang Disiapkan</h3>
+                <p class="text-muted">Tim Pemerintah Desa Jatirejoyoso sedang menyiapkan dokumenter profil dan short movie desa. Sementara itu, silakan jelajahi informasi dan potensi desa melalui halaman berikut.</p>
+                <a href="{{ url_for('main.informasi') }}" class="btn btn-outline" style="color: var(--primary-dark); border-color: var(--primary);">
+                    <i class="fa-solid fa-newspaper"></i> Lihat Informasi Desa
+                </a>
             </div>
         </div>
 
